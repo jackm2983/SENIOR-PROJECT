@@ -6,5 +6,9 @@
 * **Ryken Thompson**
 * **Cameron Young**
 
+### Advisor
+* **Nishith Chakraborty**
+
 ## Software
 * Vivado 2024.2
+* OpenLane & Magic VLSI
