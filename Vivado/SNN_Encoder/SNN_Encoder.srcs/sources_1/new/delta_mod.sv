@@ -43,29 +43,23 @@ end
 //-------------------delta modulation logic--------------------
 //jump calculator
 logic [LENGTH-1:0] previous [WIDTH] = '{default: 0};
+logic [LENGTH-1:0] current [WIDTH] = '{default: 0};
 
 //generate spike flags
 always_ff @(posedge sample_clk) begin
-    previous <= data_in;
-    
-    for(int i=0; i < WIDTH; i++)  begin
-        if (($signed(previous[i]) - $signed(data_in[i])) > $signed(JUMP))
-            spikeN[i] <= 1;
-        if (($signed(data_in[i]) - $signed(previous[i])) > $signed(JUMP))
-            spikeP[i] <= 1;
-    end
+    current <= data_in;
 end    
-
 
 //clear spikes after 1CC
 always_ff @ (posedge clk) begin
-    for(int i=0; i < WIDTH; i++)  begin
-        if (spikeN[i]) spikeN[i] <= 0;
-        if (spikeP[i]) spikeP[i] <= 0;
         spikeP <= '{default: 0};
         spikeN <= '{default: 0};
+    for(int i=0; i < WIDTH; i++)  begin
+        if (($signed(previous[i]) - $signed(current[i])) > $signed(JUMP))
+            spikeN[i] <= 1;
+        if (($signed(current[i]) - $signed(previous[i])) > $signed(JUMP))
+            spikeP[i] <= 1; 
+        previous[i] <= current[i];
     end
 end     
-    
-    
 endmodule
