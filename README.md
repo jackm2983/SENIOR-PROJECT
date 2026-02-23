@@ -12,3 +12,6 @@
 ## Software
 * Vivado 2024.2
 * OpenLane & Magic VLSI
+
+![] /Misc/photos/magic_asic_photo.png
+

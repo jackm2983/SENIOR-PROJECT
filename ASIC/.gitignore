@@ -1,0 +1,24 @@
+# Runs
+runs/*
+!run/.gitkeep
+
+
+# Synthesis outputs
+synth/*
+!synth/.gitkeep
+
+# Simulation outputs
+sim/*/
+!sim/*/*.sv
+
+# Build artifacts
+*.o
+*.out
+*.exe
+
+# Temporary files
+*~
+*.swp
+*.swo
+.DS_Store
+*.log
