@@ -6,6 +6,7 @@ module multispike_mod
 (
     input logic clk,
     input logic rst,
+    input sample_pulse,
     input logic [WIDTH-1:0][LENGTH-1:0] data_in,
     input logic [15:0] divider,
     output logic [WIDTH-1:0] spikeP,
@@ -13,23 +14,23 @@ module multispike_mod
 );
     assign spikeN = '0;
     
-    // generate sample clock
-    logic [15:0] sample_cnt;
-    logic sample_pulse;
+//    // generate sample clock
+//    logic [15:0] sample_cnt;
+//    logic sample_pulse;
     
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            sample_cnt <= 0;
-            sample_pulse <= 0;
-        end else begin
-            sample_pulse <= 0;
-            sample_cnt <= sample_cnt + 1;
-            if (sample_cnt >= divider) begin
-                sample_cnt <= 0;
-                sample_pulse <= 1;
-            end
-        end
-    end
+//    always_ff @(posedge clk) begin
+//        if (rst) begin
+//            sample_cnt <= 0;
+//            sample_pulse <= 0;
+//        end else begin
+//            sample_pulse <= 0;
+//            sample_cnt <= sample_cnt + 1;
+//            if (sample_cnt >= divider) begin
+//                sample_cnt <= 0;
+//                sample_pulse <= 1;
+//            end
+//        end
+//    end
     
     // multi-spike encoding logic
     localparam SPIKE_BITS = $clog2(MAX_SPIKES+1);

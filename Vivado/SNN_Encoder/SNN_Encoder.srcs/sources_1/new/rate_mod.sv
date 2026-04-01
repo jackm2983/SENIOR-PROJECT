@@ -4,6 +4,7 @@ module rate_mod
 (
     input logic clk,
     input logic rst,
+    input sample_pulse,
     input logic [WIDTH*LENGTH-1:0] data_in,     //Data in must be vector for yosys
     input logic [15:0] divider,
     output logic [WIDTH-1:0] spikeP,            //spikeP must be vector for yosys
@@ -19,23 +20,23 @@ module rate_mod
     end
     endgenerate
     
-    // Generate sample pulse
-    logic [15:0] sample_cnt;
-    logic sample_pulse;
+//    // Generate sample pulse
+//    logic [15:0] sample_cnt;
+//    logic sample_pulse;
     
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            sample_cnt <= 0;
-            sample_pulse <= 0;
-        end else begin
-            sample_pulse <= 0;
-            sample_cnt <= sample_cnt + 1;
-            if (sample_cnt >= divider) begin
-                sample_cnt <= 0;
-                sample_pulse <= 1;
-            end
-        end
-    end
+//    always_ff @(posedge clk) begin
+//        if (rst) begin
+//            sample_cnt <= 0;
+//            sample_pulse <= 0;
+//        end else begin
+//            sample_pulse <= 0;
+//            sample_cnt <= sample_cnt + 1;
+//            if (sample_cnt >= divider) begin
+//                sample_cnt <= 0;
+//                sample_pulse <= 1;
+//            end
+//        end
+//    end
     
     // Rate encoding logic - all on main clock
     logic [LENGTH-1:0] rate_counter [0:WIDTH-1];
