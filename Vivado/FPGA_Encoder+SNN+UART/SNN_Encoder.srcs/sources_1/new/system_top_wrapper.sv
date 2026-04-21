@@ -1,5 +1,36 @@
 `timescale 1ns / 1ps
 
+// ============================================================================
+// System Top Wrapper (BASYS3 MIT-BIH + Live ECG)
+// ============================================================================
+// Request/response pipeline: PC sends ECG samples in, FPGA sends processed
+// results back. 
+//
+// Data flow:
+//   [UART RX or XADC] -> input mux -> [our encoders or grad student's SNN {with delta encoding}] -> UART TX
+//
+// Input mux (SW[0]):
+//   0 = UART RX from PC      (MIT-BIH playback at 115200 baud, 12-bit samples)
+//   1 = XADC from JXADC J3/K3 (live ECG from AD8232, sampled at ~961 KSPS
+//                              then decimated to 360 Hz)
+//
+// Processing mux (SW[2]):
+//   0 = Encoder (4 types selectable via SW[4:5]: rate/temporal/delta/multi)
+//       TX packs: {input_data[9:0], spikeP, spikeN}
+//       upper 10 bits echo input for debugging, bottom 2 are encoder output
+//   1 = SNN classification
+//       TX packs: {7'b0, winner[N_neurons-1:0], fire[N_neurons-1:0]}
+//       winner = index of firing neuron, fire = bitmask of all firings
+//
+// Status LEDs:
+//   [0] uart rx valid   [4] in encoding mode
+//   [1] adc valid       [5] in snn mode
+//   [2] processing      [6] input is uart
+//   [3] uart tx ready   [7] reset active
+// ============================================================================
+ 
+
+
 module system_top_wrapper #(
     parameter int WIDTH = 1,
     parameter int LENGTH = 12,
