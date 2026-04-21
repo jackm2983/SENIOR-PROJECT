@@ -83,7 +83,7 @@ module scan_chain_wrapper#(
     logic [DATA_WIDTH-1:0] signal;
     logic [1:0] dm_out;
     
-    delta_mod dm_dut(
+    delta_mod_grad dm_dut(
         .clk(clk),
         .dm_reset(dm_reset),
         .ecg_in(ecg_in),
