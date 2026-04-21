@@ -13,19 +13,21 @@ module system_top_wrapper #(
     parameter int b_time = 3,
     parameter int LEARN = 3,
     parameter int DATA_WIDTH = 12,
-    parameter int BAUD_RATE = 9600,
-    parameter int CLK_FREQ = 100_000_000
+    parameter int BAUD_RATE = 115200,
+    parameter int CLK_FREQ = 100_000_000,
+    parameter int ENC_DIVIDER = 100,
+    parameter int XADC_DECIMATION = 2670  // ~961 KSPS → 360 Hz
 )(
     input logic clk,
     input logic rst,
     
-    // uart
+    // uart over usb
     input logic uart_rx,
     output logic uart_tx,
     
-    // basys3 adc input
-    input logic [DATA_WIDTH-1:0] adc_data,
-    input logic adc_valid,
+    // live ecg on pmod jxadc column 1 (J3/K3)
+    input logic vauxp6,
+    input logic vauxn6,
     
     // basys3 switches
     input logic [1:0] input_select,        // 0=uart, 1=adc
@@ -35,7 +37,21 @@ module system_top_wrapper #(
     // status leds
     output logic [7:0] status_led
 );
-
+ 
+    // ============ XADC Adapter (Live ECG) ============
+    logic [DATA_WIDTH-1:0] adc_data;
+    logic adc_valid;
+    
+    xadc_adapter xadc_inst (
+        .clk(clk),
+        .rst(rst),
+        .vauxp6(vauxp6),
+        .vauxn6(vauxn6),
+        .adc_data(adc_data),
+        .adc_valid(adc_valid),
+        .decimation_count(16'(XADC_DECIMATION))
+    );
+ 
     // ============ UART Interface ============
     logic [DATA_WIDTH-1:0] uart_rx_data;
     logic uart_rx_valid;
@@ -83,10 +99,12 @@ module system_top_wrapper #(
     logic [WIDTH-1:0] enc_spikeP, enc_spikeN;
     logic enc_sample_pulse;
     
-    // pack spike outputs for processing
+    // pack spike outputs for transmission
+    // [11:2] = ecg value (for context/debugging)
+    // [1] = spikeP, [0] = spikeN
     logic [DATA_WIDTH-1:0] enc_output;
     always_comb begin
-        enc_output = {10'b0, enc_spikeP, enc_spikeN};
+        enc_output = {input_data[9:0], enc_spikeP, enc_spikeN};
     end
     
     TOP_wrapper #(
@@ -97,8 +115,8 @@ module system_top_wrapper #(
     ) encoder_inst (
         .clk(clk),
         .rst(rst),
-        .data_in({11'b0, input_data[0]}),  // pack single bit data
-        .divider(16'd100),  // configurable sampling divider
+        .data_in(input_data),
+        .divider(16'(ENC_DIVIDER)),
         .encoding_select(encoding_select),
         .sample_pulse(enc_sample_pulse),
         .spikeP(enc_spikeP),
@@ -110,6 +128,7 @@ module system_top_wrapper #(
     logic [N_neurons-1:0] snn_winner;
     
     // pack snn outputs for uart transmission
+    // [11:8] = unused, [7:5] = winner, [4:0] = fire
     logic [DATA_WIDTH-1:0] snn_output;
     always_comb begin
         snn_output = {7'b0, snn_winner, snn_fire};
@@ -166,7 +185,6 @@ module system_top_wrapper #(
     // [5] = in snn mode
     // [6] = input is uart
     // [7] = reset state
-    
     always_comb begin
         status_led[0] = uart_rx_valid;
         status_led[1] = adc_valid;
@@ -177,5 +195,5 @@ module system_top_wrapper #(
         status_led[6] = input_from_uart;
         status_led[7] = rst;
     end
-
+ 
 endmodule
