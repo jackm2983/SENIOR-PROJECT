@@ -124,6 +124,14 @@ N -150 100 -120 100 {
 lab=VDD1v8}
 N -150 120 -120 120 {
 lab=VDD_5V}
+N 1400 -170 1400 -140 {
+lab=VCM}
+N 1400 -150 1530 -150 {
+lab=VCM}
+N 1400 -260 1400 -230 {
+lab=VDD_5V}
+N 1400 -80 1400 -40 {
+lab=GND}
 C {vsource.sym} 690 -330 1 0 {name=V2 value=5 savecurrent=false}
 C {devices/code.sym} 680 40 0 0 {name=TT_MODELS
 only_toplevel=true
@@ -142,8 +150,6 @@ run
 C {gnd.sym} 660 -330 1 0 {name=l1 lab=GND}
 C {vsource.sym} 420 -250 1 0 {name=V1 value=0.1 savecurrent=false}
 C {gnd.sym} 390 -250 1 0 {name=l8 lab=GND}
-C {vsource.sym} 910 -60 0 0 {name=V5 value=2.5 savecurrent=false}
-C {gnd.sym} 910 -30 0 0 {name=l9 lab=GND}
 C {/home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym} 710 -180 0 0 {name=x1}
 C {lab_pin.sym} -120 -380 2 0 {name=p4 sig_type=std_logic lab=b3}
 C {lab_pin.sym} 560 -210 2 1 {name=p10 sig_type=std_logic lab=b3}
@@ -151,7 +157,6 @@ C {lab_pin.sym} 560 -190 2 1 {name=p11 sig_type=std_logic lab=b2}
 C {lab_pin.sym} 560 -170 2 1 {name=p12 sig_type=std_logic lab=b1}
 C {lab_pin.sym} 560 -150 2 1 {name=p13 sig_type=std_logic lab=b0}
 C {opin.sym} -160 -680 3 0 {name=p14 lab=compp}
-C {lab_pin.sym} 910 -90 0 0 {name=p15 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} 520 -230 0 0 {name=p16 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} -500 -680 0 0 {name=p17 sig_type=std_logic lab=VCM}
 C {gnd.sym} 600 -620 0 0 {name=l7 lab=GND}
@@ -232,3 +237,21 @@ C {lab_pin.sym} -120 140 2 0 {name=p38 sig_type=std_logic lab=b0}
 C {gnd.sym} -150 160 3 0 {name=l12 lab=GND}
 C {lab_pin.sym} -120 100 2 0 {name=p44 sig_type=std_logic lab=VDD1v8}
 C {lab_pin.sym} -120 120 0 1 {name=p45 sig_type=std_logic lab=VDD_5V}
+C {gnd.sym} 1400 -40 0 0 {name=l15 lab=GND}
+C {lab_pin.sym} 1530 -150 2 0 {name=p46 sig_type=std_logic lab=VCM}
+C {lab_pin.sym} 720 -330 0 1 {name=p58 sig_type=std_logic lab=VDD_5V}
+C {lab_pin.sym} 1400 -260 0 1 {name=p59 sig_type=std_logic lab=VDD_5V}
+C {sky130_fd_pr/res_high_po.sym} 1400 -200 0 0 {name=R1
+W=2
+L=50
+model=res_high_po
+spiceprefix=X
+mult=1}
+C {sky130_fd_pr/res_high_po.sym} 1400 -110 0 0 {name=R2
+W=2
+L=50
+model=res_high_po
+spiceprefix=X
+mult=1}
+C {gnd.sym} 1380 -110 0 0 {name=l9 lab=GND}
+C {gnd.sym} 1380 -200 0 0 {name=l16 lab=GND}
