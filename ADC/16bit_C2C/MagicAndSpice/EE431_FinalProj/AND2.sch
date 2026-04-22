@@ -77,6 +77,18 @@ N 80 10 190 10 {
 lab=#net2}
 N 270 10 290 10 {
 lab=Y}
+N 120 -70 230 -70 {
+lab=VDD}
+N 230 50 230 160 {
+lab=GND}
+N 120 160 230 160 {
+lab=GND}
+N 230 -70 230 -30 {
+lab=VDD}
+N 230 -30 230 -20 {
+lab=VDD}
+N 230 40 230 50 {
+lab=GND}
 C {sky130_fd_pr/pfet_01v8.sym} -100 -50 0 0 {name=M1
 W=2
 L=0.5

@@ -148,7 +148,7 @@ C {code_shown.sym} 350 90 0 0 {name=spice only_toplevel=false value=".tran 10u 1
 run
 .endc"}
 C {gnd.sym} 660 -330 1 0 {name=l1 lab=GND}
-C {vsource.sym} 420 -250 1 0 {name=V1 value=0.1 savecurrent=false}
+C {vsource.sym} 420 -250 1 0 {name=V1 value=5 savecurrent=false}
 C {gnd.sym} 390 -250 1 0 {name=l8 lab=GND}
 C {/home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym} 710 -180 0 0 {name=x1}
 C {lab_pin.sym} -120 -380 2 0 {name=p4 sig_type=std_logic lab=b3}
@@ -173,7 +173,7 @@ C {lab_pin.sym} 1220 -670 2 0 {name=p24 sig_type=std_logic lab=ADC_OUT3}
 C {lab_pin.sym} 1220 -650 2 0 {name=p25 sig_type=std_logic lab=ADC_OUT2}
 C {lab_pin.sym} 1220 -630 2 0 {name=p26 sig_type=std_logic lab=ADC_OUT1}
 C {lab_pin.sym} 1220 -610 2 0 {name=p27 sig_type=std_logic lab=ADC_OUT0}
-C {vsource.sym} 700 -510 0 0 {name=V10 value="PULSE(0 1.8 2m .1n .1n 1e9 2e9)" savecurrent=false}
+C {vsource.sym} 700 -510 0 0 {name=V10 value="PULSE(0 1.8 1.5m .1n .1n 1e9 2e9)" savecurrent=false}
 C {lab_pin.sym} 700 -570 2 1 {name=p28 sig_type=std_logic lab=RST_N}
 C {gnd.sym} 820 -540 0 0 {name=l35 lab=GND}
 C {SAR.sym} 970 -600 0 0 {name=x7}
