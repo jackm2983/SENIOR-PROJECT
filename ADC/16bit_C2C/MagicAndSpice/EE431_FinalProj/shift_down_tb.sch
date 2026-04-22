@@ -21,7 +21,7 @@ N -280 -10 -150 -10 {
 lab=IN_5v}
 N 150 -30 220 -30 {
 lab=OUT_1v8}
-C {/home/ee431/workspace/EE431_FinalProj/Shift_5v_to_1v8.sym} 0 -10 0 0 {name=x1}
+C {Shift_5v_to_1v8.sym} 0 -10 0 0 {name=x1}
 C {gnd.sym} -150 40 0 0 {name=l1 lab=GND}
 C {vsource.sym} -240 -100 0 0 {name=V1 value=1.8 savecurrent=false}
 C {gnd.sym} -240 -70 0 0 {name=l2 lab=GND}
