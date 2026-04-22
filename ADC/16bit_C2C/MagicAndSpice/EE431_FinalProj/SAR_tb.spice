@@ -1,0 +1,330 @@
+** sch_path: /home/ee431/workspace/EE431_FinalProj/SAR_tb.sch
+**.subckt SAR_tb
+
+
+x1 COMP RST_N CLK CLK_N ADC_OUT3 ADC_OUT2 ADC_OUT1 ADC_OUT0 DAC_B3 DAC_B2 DAC_B1 DAC_B0 net3 GND SAR
+V1 CLK GND PULSE(0 1.8 50n 10n 10n 312.4u 625u)
+V2 net3 GND 1.8
+V4 RST_N GND PULSE(0 1.8 2m 10n 10n 1e9 2e9)
+V5 VIN GND 3.85
+V6 CLK_N GND PULSE(0 1.8 312.55u 10n 10n 312.4u 625u)
+BVDAC net2 GND V = { 5.0 * ( u(V(DAC_B3)-0.9)*8 + u(V(DAC_B2)-0.9)*4 + u(V(DAC_B1)-0.9)*2 + u(V(DAC_B0)-0.9)*1 ) / 16 }
+BVCOMP net1 GND V = {1.8*u(V(VIN)-V(VDAC))}
+R1 COMP net1 100 m=1
+R2 VDAC net2 100 m=1
+C1 net2 GND 50f m=1
+C2 net1 GND 50f m=1
+**** begin user architecture code
+ .lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+.tran 100n 10m
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/SAR.sym # of pins=14
+** sym_path: /home/ee431/workspace/EE431_FinalProj/SAR.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/SAR.sch
+.subckt SAR COMP RST_N PHIA PHIB ADC_OUT_B3 ADC_OUT_B2 ADC_OUT_B1 ADC_OUT_B0 DAC_B3 DAC_B2 DAC_B1
++ DAC_B0 VP VN
+*.ipin RST_N
+*.ipin COMP
+*.ipin VP
+*.ipin PHIA
+*.opin ADC_OUT_B2
+*.opin ADC_OUT_B3
+*.opin ADC_OUT_B1
+*.opin ADC_OUT_B0
+*.opin DAC_B0
+*.opin DAC_B1
+*.opin DAC_B2
+*.opin DAC_B3
+*.ipin PHIB
+*.ipin VN
+x2 PHIA PHIB S3 S2 RST_N VP VN DFFRN
+x3 PHIA PHIB S2 S1 RST_N VP VN DFFRN
+x4 PHIA PHIB S1 DAC_B0 RST_N VP VN DFFRN
+x12 net6 S1 DAC_B1 VP VN OR2
+x13 net5 S2 DAC_B2 VP VN OR2
+x14 net4 S3 DAC_B3 VP VN OR2
+x15 PHIA PHIB net2 net4 RST_N VP VN DFFRN
+x16 PHIA PHIB net3 net5 RST_N DAC_B0 VP VN DFFRNRS
+x17 PHIA PHIB net1 net6 RST_N DAC_B0 VP VN DFFRNRS
+x18 DAC_B0 COMP net7 VP VN AND2
+x1 PHIA PHIB DAC_B0 S3 RST_N VP VN DFFS
+x5 net6 COMP S1 net1 VP VN MUX_2_1
+x6 net5 COMP S2 net3 VP VN MUX_2_1
+x7 net4 COMP S3 net2 VP VN MUX_2_1
+x8 PHIA_GATED PHIB_GATED net4 ADC_OUT_B3 RST_N VP VN DFFRN
+x9 PHIA_GATED PHIB_GATED net5 ADC_OUT_B2 RST_N VP VN DFFRN
+x10 PHIA_GATED PHIB_GATED net6 ADC_OUT_B1 RST_N VP VN DFFRN
+x11 PHIA_GATED PHIB_GATED net7 ADC_OUT_B0 RST_N VP VN DFFRN
+x19 PHIA DAC_B0 PHIA_GATED VP VN AND2
+x20 PHIB DAC_B0 PHIB_GATED VP VN AND2
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/DFFRN.sym # of pins=7
+** sym_path: /home/ee431/workspace/EE431_FinalProj/DFFRN.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/DFFRN.sch
+.subckt DFFRN PHIA PHIB D Q RST_N VP VN
+*.opin Q
+*.ipin D
+*.ipin VN
+*.ipin RST_N
+*.ipin VP
+*.ipin PHIB
+*.ipin PHIA
+x1 D net5 VP VN inverter
+x2 net3 net5 PHIB PHIB_N TGATE
+x3 net3 net4 VP VN inverter
+x4 net4 net2 PHIA PHIA_N TGATE
+x6 net1 Q VP VN inverter
+x7 net1 net2 PHIA_N PHIA VP VN tristate_inv
+x8 net4 RST_N net3 PHIB_N PHIB VP VN tristate_NAND2
+x10 VP net1 net2 RST_N VN NAND2
+x5 PHIA PHIA_N VP VN inverter
+x9 PHIB PHIB_N VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/OR2.sym # of pins=5
+** sym_path: /home/ee431/workspace/EE431_FinalProj/OR2.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/OR2.sch
+.subckt OR2 A B Y VP VN
+*.ipin A
+*.ipin B
+*.ipin VP
+*.ipin VN
+*.opin Y
+x1 A B net1 VP VN NOR2
+x2 net1 Y VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/DFFRNRS.sym # of pins=8
+** sym_path: /home/ee431/workspace/EE431_FinalProj/DFFRNRS.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/DFFRNRS.sch
+.subckt DFFRNRS PHIA PHIB D Q RST_N RST VP VN
+*.opin Q
+*.ipin D
+*.ipin VN
+*.ipin RST_N
+*.ipin VP
+*.ipin PHIB
+*.ipin PHIA
+*.ipin RST
+x2 net3 net5 PHIB PHIB_N TGATE
+x3 net3 net4 VP VN inverter
+x4 net4 net2 PHIA PHIA_N TGATE
+x6 net1 Q VP VN inverter
+x7 net1 net2 PHIA_N PHIA VP VN tristate_inv
+x8 net4 RST_N net3 PHIB_N PHIB VP VN tristate_NAND2
+x10 VP net1 net2 RST_N VN NAND2
+x5 PHIA PHIA_N VP VN inverter
+x9 PHIB PHIB_N VP VN inverter
+x1 VP net5 D net6 VN NAND2
+x11 RST net6 VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/AND2.sym # of pins=5
+** sym_path: /home/ee431/workspace/AND2.sym
+** sch_path: /home/ee431/workspace/AND2.sch
+.subckt AND2 A B Y VP VN
+*.ipin A
+*.ipin B
+*.ipin VP
+*.ipin VN
+*.opin Y
+x1 VP net1 A B VN NAND2
+x2 net1 Y VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/DFFS.sym # of pins=7
+** sym_path: /home/ee431/workspace/EE431_FinalProj/DFFS.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/DFFS.sch
+.subckt DFFS PHIA PHIB D Q SET_N VP VN
+*.ipin D
+*.ipin VN
+*.ipin SET_N
+*.ipin VP
+*.opin Q
+*.ipin PHIB
+*.ipin PHIA
+x1 D net3 VP VN inverter
+x2 net3 net1 PHIB PHIB_N TGATE
+x3 VP net2 net1 SET_N VN NAND2
+x4 net2 net1 PHIB_N PHIB VP VN tristate_inv
+x6 net2 net4 PHIA PHIA_N TGATE
+x7 net4 net5 VP VN inverter
+x8 net5 SET_N net4 PHIA_N PHIA VP VN tristate_NAND2
+x9 net5 Q VP VN inverter
+x5 PHIA PHIA_N VP VN inverter
+x10 PHIB PHIB_N VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/MUX_2_1.sym # of pins=6
+** sym_path: /home/ee431/workspace/EE431_FinalProj/MUX_2_1.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/MUX_2_1.sch
+.subckt MUX_2_1 A B S Y VP VN
+*.ipin A
+*.ipin B
+*.ipin S
+*.opin Y
+*.ipin VN
+*.ipin VP
+x1 B Y S net1 TGATE
+x2 A Y net1 S TGATE
+x3 S net1 VP VN inverter
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/inverter.sym # of pins=4
+** sym_path: /home/ee431/workspace/EE431_FinalProj/inverter.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/inverter.sch
+.subckt inverter A Y VP VN
+*.ipin A
+*.opin Y
+*.iopin VP
+*.iopin VN
+XM1 Y A VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/TGATE.sym # of pins=6
+** sym_path: /home/ee431/workspace/EE431_FinalProj/TGATE.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/TGATE.sch
+.subckt TGATE A Y EN EN_N
+*.iopin A
+*.iopin Y
+*.ipin EN
+*.ipin EN_N
+*.ipin VP
+*.ipin VN
+XM5 A EN Y VN sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 A EN_N Y VP sky130_fd_pr__pfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/tristate_inv.sym # of pins=6
+** sym_path: /home/ee431/workspace/EE431_FinalProj/tristate_inv.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/tristate_inv.sch
+.subckt tristate_inv A Y EN EN_N VP VN
+*.ipin A
+*.opin Y
+*.ipin VP
+*.ipin VN
+*.ipin EN_N
+*.ipin EN
+XM1 net2 A VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y EN net1 VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y EN_N net2 VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/tristate_NAND2.sym # of pins=7
+** sym_path: /home/ee431/workspace/EE431_FinalProj/tristate_NAND2.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/tristate_NAND2.sch
+.subckt tristate_NAND2 A B Y EN EN_N VDD GND
+*.ipin A
+*.ipin B
+*.ipin VDD
+*.ipin GND
+*.opin Y
+*.ipin EN
+*.ipin EN_N
+XM1 net2 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net2 A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net3 A net1 GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Y EN_N net2 VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 Y EN net3 GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/NAND2.sym # of pins=5
+** sym_path: /home/ee431/workspace/EE431_FinalProj/NAND2.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/NAND2.sch
+.subckt NAND2 VDD Y A B GND
+*.ipin A
+*.ipin B
+*.ipin VDD
+*.ipin GND
+*.opin Y
+XM1 Y B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y A net1 GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/EE431_FinalProj/NOR2.sym # of pins=5
+** sym_path: /home/ee431/workspace/EE431_FinalProj/NOR2.sym
+** sch_path: /home/ee431/workspace/EE431_FinalProj/NOR2.sch
+.subckt NOR2 A B Y VP VN
+*.ipin A
+*.ipin B
+*.ipin VP
+*.ipin VN
+*.opin Y
+XM1 Y A net1 VP sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 B VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y B VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

@@ -1,0 +1,26 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell SAR is a black box; will not flatten Circuit 2
+Equate elements:  no current cell.
+Device classes SAR and SAR are equivalent.
+
+Subcircuit summary:
+Circuit 1: SAR_magic.cir                   |Circuit 2: SAR_xschem.cir                  
+-------------------------------------------|-------------------------------------------
+SAR (1)                                    |SAR (1)                                    
+Number of devices: 1                       |Number of devices: 1                       
+Number of nets: 14                         |Number of nets: 14                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+Cells have no pins;  pin matching not needed.
+Device classes SAR_magic.cir and SAR_xschem.cir are equivalent.
+
+Final result: Circuits match uniquely.
+.

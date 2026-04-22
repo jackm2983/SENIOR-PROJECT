@@ -1,0 +1,4 @@
+** OR2_magic.cir
+.include OR2.spice
+X1 A B Y VP VN OR2
+.end

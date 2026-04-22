@@ -5,7 +5,7 @@ K {}
 V {}
 S {}
 E {}
-T {Short To Ground In Sample Phase} -360 310 0 0 0.4 0.4 {}
+T {Short To VCM In Sample Phase} -360 310 0 0 0.4 0.4 {}
 T {0-10us -> SPDT (Vin) Connected
 >10us  -> VDD Connected} -1280 -220 1 0 0.4 0.4 {}
 T {Switching Scheme:
@@ -53,9 +53,9 @@ lab=clkbar}
 N 100 -190 130 -190 {
 lab=clk}
 N -410 240 -400 240 {
-lab=#net2}
+lab=clkbar}
 N -370 50 -370 60 {
-lab=#net3}
+lab=#net2}
 N -310 -150 -290 -150 {
 lab=clkbar}
 N -310 -190 -280 -190 {
@@ -63,13 +63,13 @@ lab=clk}
 N -390 -380 -390 -250 {
 lab=Vin}
 N -780 50 -780 60 {
-lab=#net4}
+lab=#net3}
 N -720 -150 -700 -150 {
 lab=clkbar}
 N -720 -190 -690 -190 {
 lab=clk}
 N -1180 50 -1180 60 {
-lab=#net5}
+lab=#net4}
 N -1120 -150 -1100 -150 {
 lab=clkbar}
 N -1120 -190 -1090 -190 {
@@ -93,7 +93,7 @@ lab=VDD}
 N -1100 320 -1090 320 {
 lab=VDD}
 N 380 50 380 60 {
-lab=#net6}
+lab=#net5}
 N 440 -150 460 -150 {
 lab=clkbar}
 N 440 -190 470 -190 {
@@ -110,29 +110,23 @@ C {sky130_fd_pr/cap_mim_m3_2.sym} 380 90 0 0 {name=C1 model=cap_mim_m3_2 W=5 L=5
 C {sky130_fd_pr/cap_mim_m3_2.sym} 40 90 0 0 {name=C2 model=cap_mim_m3_2 W=5 L=5 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/T_gate.sym} -460 340 1 0 {name=x2}
 C {gnd.sym} -510 400 1 0 {name=l5 lab=GND}
-C {vdd.sym} -410 400 1 0 {name=l7 lab=VDD}
 C {lab_pin.sym} -1110 240 0 0 {name=p2 sig_type=std_logic lab=clk}
 C {lab_pin.sym} -1110 200 2 1 {name=p3 sig_type=std_logic lab=clkbar}
-C {vdd.sym} -1060 320 1 0 {name=l6 lab=VDD}
 C {lab_pin.sym} -1060 280 2 0 {name=p7 sig_type=std_logic lab=vcm}
 C {lab_pin.sym} -460 490 3 0 {name=p8 sig_type=std_logic lab=vcm}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} 40 -100 1 0 {name=x3}
 C {gnd.sym} -20 -40 1 0 {name=l4 lab=GND}
-C {vdd.sym} 100 -40 1 0 {name=l9 lab=VDD}
 C {lab_pin.sym} -400 280 2 0 {name=p10 sig_type=std_logic lab=clk}
 C {lab_pin.sym} -400 240 2 0 {name=p11 sig_type=std_logic lab=clkbar}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -370 90 0 0 {name=C3 model=cap_mim_m3_2 W=10 L=5 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -370 -100 1 0 {name=x4}
 C {gnd.sym} -430 -40 1 0 {name=l19 lab=GND}
-C {vdd.sym} -310 -40 1 0 {name=l20 lab=VDD}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -780 90 0 0 {name=C4 model=cap_mim_m3_2 W=10 L=10 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -780 -100 1 0 {name=x5}
 C {gnd.sym} -840 -40 1 0 {name=l24 lab=GND}
-C {vdd.sym} -720 -40 1 0 {name=l25 lab=VDD}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -1180 90 0 0 {name=C5 model=cap_mim_m3_2 W=20 L=10 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -1180 -100 1 0 {name=x6}
 C {gnd.sym} -1240 -40 1 0 {name=l29 lab=GND}
-C {vdd.sym} -1120 -40 1 0 {name=l30 lab=VDD}
 C {ipin.sym} -1260 -380 0 0 {name=p1 lab=Vin}
 C {ipin.sym} -1070 240 2 0 {name=p4 lab=clk}
 C {ipin.sym} -1090 200 2 0 {name=p18 lab=clkbar}
@@ -153,7 +147,13 @@ C {lab_pin.sym} 130 -190 0 1 {name=p6 sig_type=std_logic lab=clk}
 C {lab_pin.sym} 120 -150 0 1 {name=p27 sig_type=std_logic lab=clkbar}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} 380 -100 1 0 {name=x1}
 C {gnd.sym} 320 -40 1 0 {name=l16 lab=GND}
-C {vdd.sym} 440 -40 1 0 {name=l17 lab=VDD}
 C {lab_pin.sym} 470 -190 0 1 {name=p9 sig_type=std_logic lab=clk}
 C {lab_pin.sym} 460 -150 0 1 {name=p13 sig_type=std_logic lab=clkbar}
 C {gnd.sym} 390 -250 2 1 {name=l18 lab=GND}
+C {lab_pin.sym} -1060 320 0 1 {name=p16 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -1120 -40 0 1 {name=p28 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -720 -40 0 1 {name=p29 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -310 -40 0 1 {name=p30 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 100 -40 0 1 {name=p31 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 440 -40 0 1 {name=p32 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -410 400 0 1 {name=p33 sig_type=std_logic lab=VDD}

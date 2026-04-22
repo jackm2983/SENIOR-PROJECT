@@ -27,3 +27,11 @@ C {vsource.sym} -300 0 1 0 {name=V2 value="PULSE(0 1.8 0 1m 1m 1m 2m)" savecurre
 C {gnd.sym} -330 0 1 0 {name=l5 lab=GND}
 C {opin.sym} 200 0 0 0 {name=p1 lab=out}
 C {lab_pin.sym} -230 0 1 0 {name=p2 sig_type=std_logic lab=in}
+C {/home/ee431/workspace/6SAR_CDAC/inverter_5v.sym} -90 340 0 0 {name=x2}
+C {/home/ee431/workspace/6SAR_CDAC/inverter_5v.sym} 210 340 0 0 {name=x3}
+C {opin.sym} 360 340 0 0 {name=p3 lab=out2}
+C {gnd.sym} -50 390 0 0 {name=l6 lab=GND}
+C {vdd.sym} -50 290 0 0 {name=l7 lab=VDD}
+C {gnd.sym} 250 390 0 0 {name=l8 lab=GND}
+C {vdd.sym} 250 290 0 0 {name=l9 lab=VDD}
+C {lab_pin.sym} -240 340 2 1 {name=p4 sig_type=std_logic lab=in}

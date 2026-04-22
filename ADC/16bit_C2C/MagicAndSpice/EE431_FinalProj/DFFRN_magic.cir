@@ -1,0 +1,4 @@
+** DFFRN_magic.cir
+.include DFFR.spice
+X1 PHIA PHIB D Q RST_N VP VN DFFR
+.end

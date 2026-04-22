@@ -1,0 +1,56 @@
+*=========================================================
+* DFFR async reset testbench with two-phase clocks @1600 Hz
+* Single D pulse (wide enough to be captured)
+*=========================================================
+
+* Sky130A PDK (TT corner)
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+* Your DFF with async reset
+.include DFFR.spice
+
+*---------------------------------------------------------
+* Power supplies
+*---------------------------------------------------------
+VDD     VP      0      1.8
+VSS     VN      0      0
+
+*---------------------------------------------------------
+* Two-phase non-overlapping clocks (1600 Hz, T = 625 us)
+*---------------------------------------------------------
+VPHIA   PHIA    0  PULSE(0 1.8 50n       10n 10n 312.4u 625u)
+VPHIB   PHIB    0  PULSE(0 1.8 312.55u   10n 10n 312.4u 625u)
+
+*---------------------------------------------------------
+* Asynchronous active-low reset (RST_N)
+*---------------------------------------------------------
+VRST    RST_N   0  PULSE(0 1.8 1250u 10n 10n 99m 100m)
+
+*---------------------------------------------------------
+* D input stimulus — single wide pulse
+*---------------------------------------------------------
+* One pulse after reset is released:
+*   - D stays 0 until 700 us
+*   - Goes high for 1 ms (700 us → 1.7 ms)
+*   - Returns to 0 and stays low for rest of sim
+* PER is large so only one pulse happens within 3 ms.
+VD      D       0  PULSE(0 1.8 700u 10n 10n 1m 10m)
+
+*---------------------------------------------------------
+* DUT instantiation
+* Pin order: PHIA, PHIB, D, Q, RST_N, VP, VN
+*---------------------------------------------------------
+XDUT   PHIA PHIB D Q RST_N VP VN  DFFR
+
+*---------------------------------------------------------
+* Simulation control
+*---------------------------------------------------------
+.tran 1u 3m
+
+.control
+  run
+  plot v(PHIA) v(PHIB)+2 v(D)+4 v(Q)+6 v(RST_N)+8
+.endc
+
+.end
+

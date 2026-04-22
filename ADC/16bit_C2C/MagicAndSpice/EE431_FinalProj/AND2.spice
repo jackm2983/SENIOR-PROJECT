@@ -1,0 +1,17 @@
+* NGSPICE file created from /home/ee431/workspace/EE431_FinalProj/AND2.ext - technology: sky130A
+
+.subckt x/home/ee431/workspace/EE431_FinalProj/AND2 A B Y VP VN
+X0 a_90_n200# B VN VN sky130_fd_pr__nfet_01v8 ad=0.25 pd=2.25 as=0.8 ps=5.066667 w=2 l=0.5
+**devattr s=32000,960 d=10000,450
+X1 a_n100_530# A a_90_n200# VN sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.25 ps=2.25 w=2 l=0.5
+**devattr s=10000,450 d=32000,960
+X2 Y a_n100_530# VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.4 ps=2.533333 w=1 l=0.5
+**devattr s=16000,560 d=16000,560
+X3 Y a_n100_530# VP VP sky130_fd_pr__pfet_01v8 ad=0.804 pd=4.82 as=0.56989 ps=3.250782 w=2.01 l=0.5
+**devattr s=32160,964 d=32160,964
+X4 a_n100_530# A VP VP sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.567055 ps=3.234609 w=2 l=0.5
+**devattr s=18000,490 d=36000,980
+X5 VP B a_n100_530# VP sky130_fd_pr__pfet_01v8 ad=0.567055 pd=3.234609 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=18000,490
+.ends
+

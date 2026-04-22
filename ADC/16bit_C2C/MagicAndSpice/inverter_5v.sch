@@ -5,6 +5,7 @@ K {}
 V {}
 S {}
 E {}
+T {} 180 -30 0 0 0.4 0.4 {}
 N 70 -60 70 10 {
 lab=VP}
 N 70 40 90 40 {
@@ -44,8 +45,8 @@ C {iopin.sym} 70 -60 0 0 {name=p3 lab=VP
 C {iopin.sym} 70 240 0 0 {name=p4 lab=VN
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 50 150 0 0 {name=M6
-W=100
-L=0.5
+W=5
+L=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -58,8 +59,8 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 50 40 0 0 {name=M11
-W=100
-L=0.5
+W=10
+L=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

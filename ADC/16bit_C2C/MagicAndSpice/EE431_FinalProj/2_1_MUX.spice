@@ -1,0 +1,17 @@
+* NGSPICE file created from /home/ee431/workspace/EE431_FinalProj/2_1_MUX.ext - technology: sky130A
+
+.subckt MUX_2_1 A B S Y VP VN
+X0 Y S A VN sky130_fd_pr__nfet_01v8 ad=1.35 pd=6.9 as=1.35 ps=6.9 w=3 l=0.5
+**devattr s=54000,1380 d=54000,1380
+X1 Y a_n1230_610# A VP sky130_fd_pr__pfet_01v8 ad=1.35 pd=6.9 as=1.35 ps=6.9 w=3 l=0.5
+**devattr s=54000,1380 d=54000,1380
+X2 a_n1230_610# S VP VP sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=36000,980
+X3 a_n1230_610# S VN VN sky130_fd_pr__nfet_01v8 ad=0.45 pd=2.9 as=0.45 ps=2.9 w=1 l=0.5
+**devattr s=18000,580 d=18000,580
+X4 B S Y VP sky130_fd_pr__pfet_01v8 ad=1.35 pd=6.9 as=1.35 ps=6.9 w=3 l=0.5
+**devattr s=54000,1380 d=54000,1380
+X5 B a_n1230_610# Y VN sky130_fd_pr__nfet_01v8 ad=1.35 pd=6.9 as=1.35 ps=6.9 w=3 l=0.5
+**devattr s=54000,1380 d=54000,1380
+.ends
+

@@ -1,0 +1,61 @@
+* NGSPICE file created from DFFS.ext - technology: sky130A
+
+.subckt DFFS PHIA PHIB D Q SET_N VP VN
+X0 a_2090_n400# a_n50_n400# a_350_n430# VP sky130_fd_pr__pfet_01v8 ad=1.328571 pd=7.114286 as=1.2 ps=6.685714 w=3 l=0.5
+**devattr s=48000,1360 d=60000,1400
+X1 VP a_600_n400# a_2090_n400# VP sky130_fd_pr__pfet_01v8 ad=0.408333 pd=2.341667 as=0.885714 ps=4.742857 w=2 l=0.5
+**devattr s=32000,960 d=16000,480
+X2 VN PHIB a_n420_n400# VN sky130_fd_pr__nfet_01v8 ad=0.295455 pd=1.827273 as=0.4 ps=2.8 w=1 l=0.5
+**devattr s=16000,560 d=9000,290
+X3 a_2550_n400# a_n420_n400# a_600_n400# VN sky130_fd_pr__nfet_01v8 ad=0.125 pd=1.25 as=0.4 ps=2.4 w=1 l=0.5
+**devattr s=16000,560 d=5000,250
+X4 VN a_2090_n400# a_2550_n400# VN sky130_fd_pr__nfet_01v8 ad=0.295455 pd=1.827273 as=0.125 ps=1.25 w=1 l=0.5
+**devattr s=5000,250 d=8000,280
+X5 a_1460_n400# a_450_n400# a_1310_n400# VN sky130_fd_pr__nfet_01v8 ad=0.375 pd=3.25 as=0.375 ps=3.25 w=3 l=0.5
+**devattr s=15000,650 d=15000,650
+X6 a_350_n430# a_n50_n400# a_1460_n400# VN sky130_fd_pr__nfet_01v8 ad=1.2 pd=6.8 as=0.375 ps=3.25 w=3 l=0.5
+**devattr s=15000,650 d=48000,1360
+X7 VN SET_N a_3210_n400# VN sky130_fd_pr__nfet_01v8 ad=0.590909 pd=3.654546 as=0.25 ps=2.25 w=2 l=0.5
+**devattr s=10000,450 d=32000,960
+X8 a_90_n400# PHIB a_600_n400# VN sky130_fd_pr__nfet_01v8 ad=1.425 pd=7.35 as=1.2 ps=7.2 w=3 l=0.5
+**devattr s=48000,1360 d=60000,1400
+X9 a_n50_n400# PHIA VP VP sky130_fd_pr__pfet_01v8 ad=0.8 pd=4.8 as=0.408333 ps=2.341667 w=2 l=0.5
+**devattr s=18000,490 d=32000,960
+X10 a_n50_n400# PHIA VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.295455 ps=1.827273 w=1 l=0.5
+**devattr s=9000,290 d=16000,560
+X11 a_2550_720# PHIB a_600_n400# VP sky130_fd_pr__pfet_01v8 ad=0.25 pd=2.25 as=0.8 ps=4.64 w=2 l=0.5
+**devattr s=32000,960 d=10000,450
+X12 a_350_n430# PHIA a_1130_520# VP sky130_fd_pr__pfet_01v8 ad=1.6 pd=8.914286 as=1.066667 ps=5.866667 w=4 l=0.5
+**devattr s=32000,880 d=64000,1760
+X13 a_1130_520# a_450_n400# VP VP sky130_fd_pr__pfet_01v8 ad=1.066667 pd=5.866667 as=0.816667 ps=4.683333 w=4 l=0.5
+**devattr s=32000,880 d=32000,880
+X14 Q a_450_n400# VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.295455 ps=1.827273 w=1 l=0.5
+**devattr s=8000,280 d=16000,560
+X15 Q a_450_n400# VP VP sky130_fd_pr__pfet_01v8 ad=0.8 pd=4.8 as=0.408333 ps=2.341667 w=2 l=0.5
+**devattr s=16000,480 d=32000,960
+X16 a_90_n400# a_n420_n400# a_600_n400# VP sky130_fd_pr__pfet_01v8 ad=1.38 pd=7.08 as=1.2 ps=6.96 w=3 l=0.5
+**devattr s=48000,1360 d=60000,1400
+X17 a_2090_n400# SET_N VP VP sky130_fd_pr__pfet_01v8 ad=0.885714 pd=4.742857 as=0.408333 ps=2.341667 w=2 l=0.5
+**devattr s=16000,480 d=32000,960
+X18 a_450_n400# a_350_n430# VP VP sky130_fd_pr__pfet_01v8 ad=0.8 pd=4.8 as=0.408333 ps=2.341667 w=2 l=0.5
+**devattr s=16000,480 d=32000,960
+X19 VP SET_N a_1130_520# VP sky130_fd_pr__pfet_01v8 ad=0.816667 pd=4.683333 as=1.066667 ps=5.866667 w=4 l=0.5
+**devattr s=64000,1760 d=32000,880
+X20 VN D a_90_n400# VN sky130_fd_pr__nfet_01v8 ad=0.295455 pd=1.827273 as=0.475 ps=2.45 w=1 l=0.5
+**devattr s=16000,560 d=8000,280
+X21 a_2090_n400# PHIA a_350_n430# VN sky130_fd_pr__nfet_01v8 ad=1.38 pd=7.08 as=1.2 ps=6.8 w=3 l=0.5
+**devattr s=48000,1360 d=60000,1400
+X22 VP D a_90_n400# VP sky130_fd_pr__pfet_01v8 ad=0.408333 pd=2.341667 as=0.92 ps=4.72 w=2 l=0.5
+**devattr s=32000,960 d=16000,480
+X23 a_450_n400# a_350_n430# VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.295455 ps=1.827273 w=1 l=0.5
+**devattr s=8000,280 d=16000,560
+X24 a_1310_n400# SET_N VN VN sky130_fd_pr__nfet_01v8 ad=0.375 pd=3.25 as=0.886364 ps=5.481818 w=3 l=0.5
+**devattr s=48000,1360 d=15000,650
+X25 VP PHIB a_n420_n400# VP sky130_fd_pr__pfet_01v8 ad=0.408333 pd=2.341667 as=0.8 ps=4.8 w=2 l=0.5
+**devattr s=32000,960 d=18000,490
+X26 a_3210_n400# a_600_n400# a_2090_n400# VN sky130_fd_pr__nfet_01v8 ad=0.25 pd=2.25 as=0.92 ps=4.72 w=2 l=0.5
+**devattr s=32000,960 d=10000,450
+X27 VP a_2090_n400# a_2550_720# VP sky130_fd_pr__pfet_01v8 ad=0.408333 pd=2.341667 as=0.25 ps=2.25 w=2 l=0.5
+**devattr s=10000,450 d=16000,480
+.ends
+

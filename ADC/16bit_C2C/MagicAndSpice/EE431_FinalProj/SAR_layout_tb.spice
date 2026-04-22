@@ -1,0 +1,25 @@
+** sch_path: /home/ee431/workspace/EE431_FinalProj/SAR_tb.sch
+**.subckt SAR_tb
+
+.include SAR.spice
+
+x1 COMP RST_N CLK CLK_N ADC_OUT3 ADC_OUT2 ADC_OUT1 ADC_OUT0 DAC_B3 DAC_B2 DAC_B1 DAC_B0 net3 GND SAR
+V1 CLK GND PULSE(0 1.8 50n 10n 10n 312.4u 625u)
+V2 net3 GND 1.8
+V4 RST_N GND PULSE(0 1.8 2m 10n 10n 1e9 2e9)
+V5 VIN GND 3.85
+V6 CLK_N GND PULSE(0 1.8 312.55u 10n 10n 312.4u 625u)
+BVDAC net2 GND V = { 5.0 * ( u(V(DAC_B3)-0.9)*8 + u(V(DAC_B2)-0.9)*4 + u(V(DAC_B1)-0.9)*2 + u(V(DAC_B0)-0.9)*1 ) / 16 }
+BVCOMP net1 GND V = {1.8*u(V(VIN)-V(VDAC))}
+R1 COMP net1 100 m=1
+R2 VDAC net2 100 m=1
+C1 net2 GND 50f m=1
+C2 net1 GND 50f m=1
+**** begin user architecture code
+ .lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+.tran 100n 10m
+.control
+run
+.endc

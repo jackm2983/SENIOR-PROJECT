@@ -1,0 +1,89 @@
+*=====================================================================
+* SAR ADC comparison testbench with VIN sweep (10 steps)
+*  - PHIA/PHIB = 1600 Hz (T = 625 us)
+*  - ~100 ns non-overlap between PHIA and PHIB
+*  - 10 ms transient per VIN
+*=====================================================================
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.include SAR_xschem.cir
+.include sar_flat.spice      * must contain: .subckt SAR_LAYOUT ...
+
+*=====================================================================
+* Sweep parameter: VIN input voltage
+* 10 values from 0.25 V to 4.75 V
+*=====================================================================
+.param VIN_VAL = 2.5
+
+
+*=====================================================================
+* Supplies
+*=====================================================================
+VDD VP 0 1.8
+VSS VN 0 0
+
+*=====================================================================
+* VIN (swept)
+*=====================================================================
+VIN_SRC VIN 0 {VIN_VAL}
+
+*=====================================================================
+* Reset (active low)
+*  Low for 50 µs, then high
+*=====================================================================
+V_RST RST_N 0 PULSE(0 1.8 50u 5n 5n 1m 2m)
+
+*=====================================================================
+* 1600 Hz 2-phase clocks with ~100 ns non-overlap
+*  T = 625 us
+*=====================================================================
+V_PHIA_LAYOUT PHIA_LAYOUT 0 PULSE(0 1.8 50n 10n 10n 312.4u 625u)
+V_PHIB_LAYOUT PHIB_LAYOUT 0 PULSE(0 1.8 312.55u 10n 10n 312.4u 625u)
+
+V_PHIA_SCHEM  PHIA_SCHEM  0 PULSE(0 1.8 50n 10n 10n 312.4u 625u)
+V_PHIB_SCHEM  PHIB_SCHEM  0 PULSE(0 1.8 312.55u 10n 10n 312.4u 625u)
+
+*=====================================================================
+* Instantiate SAR (schematic)
+*  Pins:
+*   COMP RST_N PHIA PHIB ADC[3:0] DAC[3:0] VP VN
+*=====================================================================
+X_SAR_SCHEM COMP_SCHEM RST_N PHIA_SCHEM PHIB_SCHEM ADC_SCHEM_B3 ADC_SCHEM_B2
++ ADC_SCHEM_B1 ADC_SCHEM_B0 DAC_SCHEM_B3 DAC_SCHEM_B2 DAC_SCHEM_B1 DAC_SCHEM_B0
++ VP VN SAR
+
+*=====================================================================
+* Instantiate SAR (layout)
+*=====================================================================
+X_SAR_LAYOUT COMP_LAYOUT RST_N PHIA_LAYOUT PHIB_LAYOUT ADC_LAY_B3 ADC_LAY_B2
++ ADC_LAY_B1 ADC_LAY_B0 DAC_LAY_B3 DAC_LAY_B2 DAC_LAY_B1 DAC_LAY_B0
++ VP VN SAR_LAYOUT
+
+*=====================================================================
+* Ideal 4-bit DACs (Vref = 5 V)
+*=====================================================================
+.param VREF = 5.0
+
+B_DAC_SCHEM VDAC_SCHEM 0 V = { VREF * ((V(DAC_SCHEM_B0)/1.8)*(1/16) + (V(DAC_SCHEM_B1)/1.8)*(2/16) + (V(DAC_SCHEM_B2)/1.8)*(4/16) + (V(DAC_SCHEM_B3)/1.8)*(8/16) ) }
+
+B_DAC_LAYOUT VDAC_LAYOUT 0 V = { VREF * ((V(DAC_LAY_B0)/1.8)*(1/16) + (V(DAC_LAY_B1)/1.8)*(2/16) + (V(DAC_LAY_B2)/1.8)*(4/16) + (V(DAC_LAY_B3)/1.8)*(8/16) ) }
+
+*=====================================================================
+* Ideal comparators
+*  Output = 1.8 V if VIN > VDAC, else 0 V
+*=====================================================================
+B_COMP_SCHEM   COMP_SCHEM   0  V = { V(VIN) > V(VDAC_SCHEM)  ? 1.8 : 0 }
+B_COMP_LAYOUT  COMP_LAYOUT  0  V = { V(VIN) > V(VDAC_LAYOUT) ? 1.8 : 0 }
+
+*=====================================================================
+* Transient analysis
+*  10 ms per VIN → ~4 conversions at 400 S/s
+*=====================================================================
+.control
+  tran 100n 10m
+  plot (v(ADC_SCHEM_B3)+6)  (v(ADC_LAY_B3)+6) (v(ADC_SCHEM_B2)+4)  (v(ADC_LAY_B2)+4) (v(ADC_SCHEM_B1)+2)
++ (v(ADC_LAY_B1)+2) v(ADC_SCHEM_B0) v(ADC_LAY_B0)
+
+.endc
+.end

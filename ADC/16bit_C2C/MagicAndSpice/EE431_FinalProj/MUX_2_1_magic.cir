@@ -1,0 +1,4 @@
+** MUX_2_1_magic.cir
+.include 2_1_MUX.spice
+X1 A B S Y VP VN MUX_2_1
+.end

@@ -1,0 +1,17 @@
+* NGSPICE file created from OR2.ext - technology: sky130A
+
+.subckt OR2 A B Y VP VN
+X0 VN B a_n80_n540# VN sky130_fd_pr__nfet_01v8 ad=0.266667 pd=1.866667 as=0.4 ps=2.8 w=1 l=0.5
+**devattr s=16000,560 d=8000,280
+X1 Y a_n80_n540# VP VP sky130_fd_pr__pfet_01v8 ad=0.8 pd=4.8 as=0.733333 ps=4.5 w=2 l=0.5
+**devattr s=32000,960 d=32000,960
+X2 a_n80_n540# A VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.266667 ps=1.866667 w=1 l=0.5
+**devattr s=8000,280 d=16000,560
+X3 a_n80_n540# A a_100_0# VP sky130_fd_pr__pfet_01v8 ad=1.4 pd=8.7 as=0.5 ps=4.25 w=4 l=0.5
+**devattr s=20000,850 d=56000,1740
+X4 Y a_n80_n540# VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.266667 ps=1.866667 w=1 l=0.5
+**devattr s=16000,560 d=16000,560
+X5 a_100_0# B VP VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=4.25 as=1.466667 ps=9 w=4 l=0.5
+**devattr s=56000,1740 d=20000,850
+.ends
+

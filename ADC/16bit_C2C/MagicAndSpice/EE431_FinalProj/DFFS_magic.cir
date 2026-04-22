@@ -1,0 +1,4 @@
+** DFFS_magic.cir
+.include DFFS.spice
+X1 PHIA PHIB D Q SET_N VP VN DFFS
+.end

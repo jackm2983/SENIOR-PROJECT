@@ -1,0 +1,4 @@
+** SAR_magic.cir
+.include sar_flat.spice
+X1 COMP RST_N PHIA PHIB ADC_OUT_B3 ADC_OUT_B2 ADC_OUT_B1 ADC_OUT_B0 DAC_B3 DAC_B2 DAC_B1 DAC_B0 VP VN SAR
+.end

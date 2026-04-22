@@ -35,10 +35,11 @@ N -30 -160 -30 -110 {
 lab=c}
 N -210 140 -190 140 {
 lab=Vss}
-N -30 -50 -30 -0 {}
+N -30 -50 -30 -0 {
+lab=GND}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -30 -90 3 1 {name=M1
 W=10
-L=0.5
+L=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -52,7 +53,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -30 180 3 0 {name=M2
 W=10
-L=0.5
+L=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
