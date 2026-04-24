@@ -126,6 +126,19 @@ module system_top_wrapper #(
         end
     end
     
+    logic [DATA_WIDTH-1:0] input_data_q;
+    logic input_valid_q;
+ 
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            input_data_q  <= '0;
+            input_valid_q <= 1'b0;
+        end else begin
+            input_data_q  <= input_data;
+            input_valid_q <= input_valid;
+        end
+    end
+    
     // ============ Encoding Wrapper ============
     logic [WIDTH-1:0] enc_spikeP, enc_spikeN;
     logic enc_sample_pulse;
@@ -135,7 +148,7 @@ module system_top_wrapper #(
     // [1] = spikeP, [0] = spikeN
     logic [DATA_WIDTH-1:0] enc_output;
     always_comb begin
-        enc_output = {input_data[9:0], enc_spikeP, enc_spikeN};
+        enc_output = {input_data_q[9:0], enc_spikeP, enc_spikeN};
     end
     
     TOP_wrapper #(
@@ -146,7 +159,7 @@ module system_top_wrapper #(
     ) encoder_inst (
         .clk(clk),
         .rst(rst),
-        .data_in(input_data),
+        .data_in(input_data_q),
         .divider(16'(ENC_DIVIDER)),
         .encoding_select(encoding_select),
         .sample_pulse(enc_sample_pulse),
@@ -181,7 +194,7 @@ module system_top_wrapper #(
         .prog_data(1'b0),
         .load_config(1'b0),
         .dm_reset(rst),
-        .ecg_in(input_data),
+        .ecg_in(input_data_q),
         .fire(snn_fire),
         .winner(snn_winner)
     );

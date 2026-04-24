@@ -1,76 +1,74 @@
+`timescale 1ns / 1ps
+
 module rate_mod
     #(parameter WIDTH = 1,
       parameter LENGTH = 12)
 (
-    input logic clk,
-    input logic rst,
-    input sample_pulse,
-    input logic [WIDTH*LENGTH-1:0] data_in,     //Data in must be vector for yosys
-    input logic [15:0] divider,
-    output logic [WIDTH-1:0] spikeP,            //spikeP must be vector for yosys
-    output logic [WIDTH-1:0] spikeN             //spikeN must be vector for yosys
+    input  logic                     clk,
+    input  logic                     rst,
+    input  logic                     sample_pulse,
+    input  logic [WIDTH*LENGTH-1:0]  data_in,
+    input  logic [15:0]              divider,
+    output logic [WIDTH-1:0]         spikeP,
+    output logic [WIDTH-1:0]         spikeN
 );
-    assign spikeN = {WIDTH{1'b0}};  //unused in rate encoding
-
-    //To deal with the vector data input
+    assign spikeN = {WIDTH{1'b0}};
+    
+    
+    // unpack input vector
     logic [LENGTH-1:0] data_in_array [0:WIDTH-1];
     generate
-    for (genvar i = 0; i < WIDTH; i++) begin : g_data_in
-        assign data_in_array[i] = data_in[i*LENGTH +: LENGTH];
-    end
+        for (genvar i = 0; i < WIDTH; i++) begin : g_data_in
+            assign data_in_array[i] = data_in[i*LENGTH +: LENGTH];
+        end
     endgenerate
     
-//    // Generate sample pulse
-//    logic [15:0] sample_cnt;
-//    logic sample_pulse;
-    
-//    always_ff @(posedge clk) begin
-//        if (rst) begin
-//            sample_cnt <= 0;
-//            sample_pulse <= 0;
-//        end else begin
-//            sample_pulse <= 0;
-//            sample_cnt <= sample_cnt + 1;
-//            if (sample_cnt >= divider) begin
-//                sample_cnt <= 0;
-//                sample_pulse <= 1;
-//            end
-//        end
-//    end
-    
-    // Rate encoding logic - all on main clock
+    logic [LENGTH-1:0] data_in_q [0:WIDTH-1];
+    always_ff @(posedge clk) begin
+        for (int i = 0; i < WIDTH; i++) begin
+            data_in_q[i] <= data_in_array[i];
+        end
+    end
+
+    // local registered copy of sample_pulse. placed close to threshold/counter
+    // regs so the CE net stays short. adds 1 cycle latency, fine at 360 Hz.
+    logic sample_pulse_q;
+    always_ff @(posedge clk) begin
+        if (rst) sample_pulse_q <= 1'b0;
+        else     sample_pulse_q <= sample_pulse;
+    end
+
+    // rate encoding
     logic [LENGTH-1:0] rate_counter [0:WIDTH-1];
-    logic [LENGTH-1:0] threshold [0:WIDTH-1];
-    
+    logic [LENGTH-1:0] threshold    [0:WIDTH-1];
+
     always_ff @(posedge clk) begin
         if (rst) begin
             for (int i = 0; i < WIDTH; i++) begin
-                rate_counter[i] <= 0;
-                threshold[i] <= 0;
-                spikeP[i] <= 0;
+                rate_counter[i] <= '0;
+                threshold[i]    <= '0;
+                spikeP[i]       <= 1'b0;
             end
         end else begin
             for (int i = 0; i < WIDTH; i++) begin
-                // Update threshold at sample time
-                if (sample_pulse) begin
-                    threshold[i] <= data_in_array[i];
-                    rate_counter[i] <= 0;  // Reset counter at new sample
-                end
-                
-                // Increment counter every clock
-                rate_counter[i] <= rate_counter[i] + 1;
-                
-                // Fire spike when counter exceeds inverse of input
-                // higher input = lower threshold = more frequent spikes
-                if (threshold[i] == 0) begin
-                    spikeP[i] <= 0;  // No spikes if input is 0
+                // explicit priority ordering to avoid multiple non-blocking
+                // assignments stomping on rate_counter in the same cycle
+                if (sample_pulse_q) begin
+                    threshold[i]    <= data_in_q[i];
+                    rate_counter[i] <= '0;
+                    spikeP[i]       <= 1'b0;
+                end else if (threshold[i] == '0) begin
+                    spikeP[i]       <= 1'b0;
+                    rate_counter[i] <= '0;
                 end else if (rate_counter[i] >= ((2**LENGTH - 1) - threshold[i])) begin
-                    spikeP[i] <= 1;
-                    rate_counter[i] <= 0;
+                    spikeP[i]       <= 1'b1;
+                    rate_counter[i] <= '0;
                 end else begin
-                    spikeP[i] <= 0;
+                    spikeP[i]       <= 1'b0;
+                    rate_counter[i] <= rate_counter[i] + 1;
                 end
             end
         end
     end
+
 endmodule
