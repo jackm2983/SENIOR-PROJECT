@@ -6,7 +6,6 @@ reads 2-byte results back and logs to csv.
 
 usage:
   python mitbih_stream.py --port COM3 --record 100 --mode snn
-  python mitbih_stream.py --port /dev/ttyUSB0 --record 100 --mode encoding
 """
 
 import argparse
