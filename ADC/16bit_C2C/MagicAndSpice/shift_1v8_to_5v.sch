@@ -134,7 +134,7 @@ C {iopin.sym} 20 -150 0 0 {name=p3 lab=VP
 C {iopin.sym} 280 340 0 0 {name=p4 lab=VN
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 0 60 0 0 {name=M6
-W=30
+W=6
 L=1
 nf=1
 mult=1
@@ -148,7 +148,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 40 -50 0 1 {name=M11
-W=10
+W=2
 L=1
 nf=1
 mult=1
@@ -162,7 +162,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 480 210 0 0 {name=M1
-W=30
+W=6
 L=1
 nf=1
 mult=1
@@ -176,7 +176,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 480 20 0 0 {name=M2
-W=10
+W=2
 L=1
 nf=1
 mult=1
@@ -190,7 +190,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 260 260 0 0 {name=M3
-W=5
+W=1
 L=1
 nf=1
 mult=1
@@ -204,7 +204,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 260 150 0 0 {name=M4
-W=10
+W=2
 L=1
 nf=1
 mult=1

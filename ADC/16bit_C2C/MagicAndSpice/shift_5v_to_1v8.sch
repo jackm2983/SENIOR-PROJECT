@@ -48,13 +48,13 @@ lab=#net1}
 N 210 0 310 0 {
 lab=Y}
 N 210 -50 250 -50 {
-lab=#net2}
+lab=VP}
 N 250 -100 250 -50 {
-lab=#net2}
+lab=VP}
 N 210 -100 250 -100 {
-lab=#net2}
+lab=VP}
 N 210 -100 210 -80 {
-lab=#net2}
+lab=VP}
 N 210 80 210 100 {
 lab=VN}
 N 210 50 230 50 {
@@ -65,11 +65,14 @@ N 210 90 230 90 {
 lab=VN}
 N 90 0 110 0 {
 lab=#net1}
-N -10 100 210 100 {}
-N 210 -110 210 -100 {}
-N -10 -110 210 -110 {}
+N -10 100 210 100 {
+lab=VN}
+N 210 -110 210 -100 {
+lab=VP}
+N -10 -110 210 -110 {
+lab=VP}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -30 -50 0 0 {name=M1
-W=10
+W=2
 L=1
 nf=1
 mult=1
@@ -83,7 +86,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -30 50 0 0 {name=M2
-W=5
+W=1
 L=1
 nf=1
 mult=1
@@ -105,7 +108,7 @@ C {ipin.sym} -130 0 0 0 {name=p4 lab=A}
 C {opin.sym} 310 0 0 0 {name=p1 lab=Y
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 190 -50 0 0 {name=M3
-W=10
+W=2
 L=1
 nf=1
 mult=1
@@ -119,7 +122,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 190 50 0 0 {name=M4
-W=5
+W=1
 L=1
 nf=1
 mult=1
