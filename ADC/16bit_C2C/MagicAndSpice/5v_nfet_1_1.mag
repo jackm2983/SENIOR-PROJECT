@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1777351504
+timestamp 1777353718
 << pwell >>
 rect -150 -50 350 150
 << mvnmos >>
@@ -18,7 +18,12 @@ rect 100 0 200 25
 rect -70 25 -30 75
 rect 130 25 170 75
 << mvpsubdiff >>
-rect 290 5 335 100
+rect 275 80 435 150
+rect 275 30 335 80
+rect 375 30 435 80
+rect 275 -50 435 30
+<< mvpsubdiffcont >>
+rect 335 30 375 80
 << poly >>
 rect 0 100 100 200
 rect 0 -100 100 0
@@ -31,13 +36,27 @@ rect 115 75 185 200
 rect 115 25 130 75
 rect 170 25 185 75
 rect 115 -100 185 25
+rect 275 80 435 150
+rect 275 30 335 80
+rect 375 30 435 80
+rect 275 15 435 30
+rect 275 -35 335 15
+rect 375 -35 435 15
+rect 275 -50 435 -35
+<< viali >>
+rect 335 -35 375 15
 << metal1 >>
-rect 275 -100 350 200
+rect 275 15 435 200
+rect 275 -35 335 15
+rect 375 -35 435 15
+rect 275 -100 435 -35
 << labels >>
 rlabel locali -50 195 -50 195 5 S
 port 1 s
 rlabel poly 50 195 50 195 5 G
+port 3 s
 rlabel locali 150 195 150 195 5 D
-rlabel metal1 315 195 315 195 5 B
+port 4 s
+rlabel metal1 360 195 360 195 5 B
 port 2 s
 << end >>
