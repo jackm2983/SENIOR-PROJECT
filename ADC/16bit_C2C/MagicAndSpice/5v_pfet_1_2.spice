@@ -1,0 +1,6 @@
+* NGSPICE file created from 5v_pfet_1_2.ext - technology: sky130A
+
+.subckt x5v_pfet_1_2 B D G S
+X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
+.ends
+
