@@ -132,8 +132,6 @@ N 1400 -260 1400 -230 {
 lab=VDD_5V}
 N 1400 -80 1400 -40 {
 lab=GND}
-N 1120 -490 1220 -490 {
-lab=DATA_VALID}
 C {vsource.sym} 690 -330 1 0 {name=V2 value=5 savecurrent=false}
 C {devices/code.sym} 680 40 0 0 {name=TT_MODELS
 only_toplevel=true
@@ -150,7 +148,7 @@ C {code_shown.sym} 350 90 0 0 {name=spice only_toplevel=false value=".tran 10u 1
 run
 .endc"}
 C {gnd.sym} 660 -330 1 0 {name=l1 lab=GND}
-C {vsource.sym} 420 -250 1 0 {name=V1 value=5 savecurrent=false}
+C {vsource.sym} 420 -250 1 0 {name=V1 value=2.75 savecurrent=false}
 C {gnd.sym} 390 -250 1 0 {name=l8 lab=GND}
 C {/home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym} 710 -180 0 0 {name=x1}
 C {lab_pin.sym} -120 -380 2 0 {name=p4 sig_type=std_logic lab=b3}
@@ -178,7 +176,6 @@ C {lab_pin.sym} 1220 -610 2 0 {name=p27 sig_type=std_logic lab=ADC_OUT0}
 C {vsource.sym} 700 -510 0 0 {name=V10 value="PULSE(0 1.8 1.5m .1n .1n 1e9 2e9)" savecurrent=false}
 C {lab_pin.sym} 700 -570 2 1 {name=p28 sig_type=std_logic lab=RST_N}
 C {gnd.sym} 820 -540 0 0 {name=l35 lab=GND}
-C {SAR.sym} 970 -580 0 0 {name=x7}
 C {lab_pin.sym} 660 -690 0 1 {name=p18 sig_type=std_logic lab=comp1v8}
 C {lab_pin.sym} -450 -230 2 1 {name=p33 sig_type=std_logic lab=DAC_B2}
 C {/home/ee431/workspace/6SAR_CDAC/strongarm_comp.sym} -350 -660 0 0 {name=x13}
@@ -240,21 +237,21 @@ C {gnd.sym} 1400 -40 0 0 {name=l15 lab=GND}
 C {lab_pin.sym} 1530 -150 2 0 {name=p46 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} 720 -330 0 1 {name=p58 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} 1400 -260 0 1 {name=p59 sig_type=std_logic lab=VDD_5V}
-C {sky130_fd_pr/res_high_po.sym} 1400 -200 0 0 {name=R1
-W=2
-L=50
-model=res_high_po
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_high_po.sym} 1400 -110 0 0 {name=R2
-W=2
-L=50
-model=res_high_po
-spiceprefix=X
-mult=1}
 C {gnd.sym} 1380 -110 0 0 {name=l9 lab=GND}
 C {gnd.sym} 1380 -200 0 0 {name=l16 lab=GND}
 C {lab_pin.sym} 790 -630 0 0 {name=p60 sig_type=std_logic lab=CLK}
 C {lab_pin.sym} 780 -610 2 1 {name=p30 sig_type=std_logic lab=CLK_N}
 C {lab_pin.sym} 790 -590 0 0 {name=p31 sig_type=std_logic lab=VDD1v8}
-C {lab_pin.sym} 1220 -490 2 0 {name=p15 sig_type=std_logic lab=DATA_VALID}
+C {SAR.sym} 970 -580 0 0 {name=x5}
+C {sky130_fd_pr/res_xhigh_po.sym} 1400 -200 0 0 {name=R3
+W=2
+L=10
+model=res_xhigh_po
+spiceprefix=X
+mult=1}
+C {sky130_fd_pr/res_xhigh_po.sym} 1400 -110 0 0 {name=R4
+W=2
+L=10
+model=res_xhigh_po
+spiceprefix=X
+mult=1}

@@ -260,7 +260,7 @@ C {inverter.sym} -1500 890 0 0 {name=x5}
 C {inverter.sym} -1500 730 0 0 {name=x8}
 C {inverter.sym} -1500 570 0 0 {name=x7}
 C {inverter.sym} -1500 400 0 0 {name=x6}
-C {SAR.sym} -260 30 0 0 {name=x1}
+C {SAR.sym} -260 50 0 0 {name=x1}
 C {lab_pin.sym} -910 870 1 1 {name=p39 sig_type=std_logic lab=b0_5v}
 C {lab_pin.sym} -890 710 1 1 {name=p40 sig_type=std_logic lab=b1_5v}
 C {lab_pin.sym} -900 550 1 1 {name=p41 sig_type=std_logic lab=b2_5v}

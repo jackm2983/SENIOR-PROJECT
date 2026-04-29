@@ -106,8 +106,8 @@ N -410 280 -400 280 {
 lab=clk}
 N -1100 280 -1060 280 {
 lab=vcm}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 380 90 0 0 {name=C1 model=cap_mim_m3_2 W=5 L=5 MF=1 spiceprefix=X}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 40 90 0 0 {name=C2 model=cap_mim_m3_2 W=5 L=5 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 380 90 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 40 90 0 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/T_gate.sym} -460 340 1 0 {name=x2}
 C {gnd.sym} -510 400 1 0 {name=l5 lab=GND}
 C {lab_pin.sym} -1110 240 0 0 {name=p2 sig_type=std_logic lab=clk}
@@ -118,13 +118,13 @@ C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} 40 -100 1 0 {name=x3}
 C {gnd.sym} -20 -40 1 0 {name=l4 lab=GND}
 C {lab_pin.sym} -400 280 2 0 {name=p10 sig_type=std_logic lab=clk}
 C {lab_pin.sym} -400 240 2 0 {name=p11 sig_type=std_logic lab=clkbar}
-C {sky130_fd_pr/cap_mim_m3_2.sym} -370 90 0 0 {name=C3 model=cap_mim_m3_2 W=10 L=5 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -370 90 0 0 {name=C3 model=cap_mim_m3_1 W=10 L=5 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -370 -100 1 0 {name=x4}
 C {gnd.sym} -430 -40 1 0 {name=l19 lab=GND}
-C {sky130_fd_pr/cap_mim_m3_2.sym} -780 90 0 0 {name=C4 model=cap_mim_m3_2 W=10 L=10 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -780 90 0 0 {name=C4 model=cap_mim_m3_1 W=10 L=10 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -780 -100 1 0 {name=x5}
 C {gnd.sym} -840 -40 1 0 {name=l24 lab=GND}
-C {sky130_fd_pr/cap_mim_m3_2.sym} -1180 90 0 0 {name=C5 model=cap_mim_m3_2 W=20 L=10 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -1180 90 0 0 {name=C5 model=cap_mim_m3_1 W=20 L=10 MF=1 spiceprefix=X}
 C {/home/ee431/workspace/6SAR_CDAC/SPDT.sym} -1180 -100 1 0 {name=x6}
 C {gnd.sym} -1240 -40 1 0 {name=l29 lab=GND}
 C {ipin.sym} -1260 -380 0 0 {name=p1 lab=Vin}

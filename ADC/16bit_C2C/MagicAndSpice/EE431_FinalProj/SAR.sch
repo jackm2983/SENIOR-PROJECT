@@ -509,10 +509,10 @@ N 460 90 700 90 {
 lab=PHIA}
 N 1390 200 1490 200 {
 lab=DAC_B0}
-N 1660 490 1760 490 {
-lab=VALID}
 N 1490 200 1490 500 {
 lab=DAC_B0}
+N 1670 490 1750 490 {
+lab=xxx}
 C {DFFRN.sym} 30 -140 0 0 {name=x2}
 C {DFFRN.sym} 340 -140 0 0 {name=x3}
 C {DFFRN.sym} 650 -140 0 0 {name=x4}
@@ -623,4 +623,4 @@ C {lab_pin.sym} 550 -130 1 0 {name=p85 sig_type=std_logic lab=PHIB}
 C {lab_pin.sym} 1490 570 0 0 {name=p86 sig_type=std_logic lab=PHIB}
 C {lab_pin.sym} 1490 590 0 0 {name=p87 sig_type=std_logic lab=PHIA}
 C {opin.sym} 1390 270 1 0 {name=p88 lab=DAC_B0}
-C {opin.sym} 1750 490 0 0 {name=p89 lab=VALID}
+C {opin.sym} 1750 490 0 0 {name=p3 lab=VALID}
