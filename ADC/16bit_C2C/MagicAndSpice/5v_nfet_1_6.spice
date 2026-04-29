@@ -1,0 +1,6 @@
+* NGSPICE file created from 5v_nfet_1_6.ext - technology: sky130A
+
+.subckt x5v_nfet_1_6 S G D B
+X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=18 pd=18 as=18 ps=18 w=6 l=1
+.ends
+

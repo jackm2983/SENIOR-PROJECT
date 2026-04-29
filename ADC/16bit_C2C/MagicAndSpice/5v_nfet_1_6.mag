@@ -1,0 +1,62 @@
+magic
+tech sky130A
+timestamp 1777442114
+<< pwell >>
+rect -400 0 620 600
+<< mvnmos >>
+rect 0 0 100 600
+<< mvndiff >>
+rect -300 350 0 600
+rect -300 255 -205 350
+rect -105 255 0 350
+rect -300 0 0 255
+rect 100 345 400 600
+rect 100 250 205 345
+rect 305 250 400 345
+rect 100 0 400 250
+<< mvndiffc >>
+rect -205 255 -105 350
+rect 205 250 305 345
+<< mvpsubdiff >>
+rect 510 370 595 570
+rect 510 260 525 370
+rect 585 260 595 370
+rect 510 35 595 260
+<< mvpsubdiffcont >>
+rect 525 260 585 370
+<< poly >>
+rect 0 600 100 650
+rect 0 -60 100 0
+<< locali >>
+rect -235 350 -90 650
+rect -235 255 -205 350
+rect -105 255 -90 350
+rect -235 -60 -90 255
+rect 180 345 325 650
+rect 180 250 205 345
+rect 305 250 325 345
+rect 180 -60 325 250
+rect 510 370 595 570
+rect 510 260 525 370
+rect 585 260 595 370
+rect 510 210 595 260
+rect 510 115 530 210
+rect 575 115 595 210
+rect 510 35 595 115
+<< viali >>
+rect 530 115 575 210
+<< metal1 >>
+rect 505 210 605 650
+rect 505 115 530 210
+rect 575 115 605 210
+rect 505 -60 605 115
+<< labels >>
+rlabel locali -180 635 -180 635 1 S
+port 1 n
+rlabel poly 45 645 45 645 1 G
+port 2 n
+rlabel locali 255 640 255 640 1 D
+port 3 n
+rlabel metal1 550 640 550 640 1 B
+port 4 n
+<< end >>
