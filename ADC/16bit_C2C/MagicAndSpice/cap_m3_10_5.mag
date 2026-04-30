@@ -1,0 +1,23 @@
+magic
+tech sky130A
+timestamp 1777502656
+<< metal3 >>
+rect -15 -15 1015 515
+<< mimcap >>
+rect 0 45 1000 500
+rect 0 10 10 45
+rect 45 10 1000 45
+rect 0 0 1000 10
+<< mimcapcontact >>
+rect 10 10 45 45
+<< metal4 >>
+rect 5 45 50 50
+rect 5 10 10 45
+rect 45 10 50 45
+rect 5 -15 50 10
+<< labels >>
+rlabel metal4 5 -15 50 0 5 Top
+port 1 s
+rlabel metal3 455 -15 500 0 5 Bot
+port 2 s
+<< end >>

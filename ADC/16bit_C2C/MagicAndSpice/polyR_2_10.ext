@@ -1,0 +1,20 @@
+timestamp 1777504981
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+parameters sky130_fd_pr__res_xhigh_po_5p73 l=l+32
+parameters sky130_fd_pr__res_xhigh_po_2p85 l=l+32
+parameters sky130_fd_pr__res_xhigh_po_1p41 l=l+32
+parameters sky130_fd_pr__res_xhigh_po_0p69 l=l+32
+parameters sky130_fd_pr__res_xhigh_po_0p35 l=l+32
+parameters sky130_fd_pr__res_xhigh_po l=l+32 w=w
+port "Bot" 2 0 -440 400 0 li
+port "Top" 1 0 1970 400 2410 li
+port "GND" 3 -200 1840 -120 1920 li
+node "Bot" 75 765.116 0 -440 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 352000 3360 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_0_0#" 9850 0 0 0 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 788000 4740 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "Top" 75 765.116 0 1970 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 352000 3360 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "GND" 0 0 -200 1840 li 0 0 0 0 0 0 0 0 0 0 10000 400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 320 0 0 0 0 0 0 0 0 0 0 0 0
+device rsubckt sky130_fd_pr__res_xhigh_po 0 0 1 1 l=1970 w=400 "GND" "a_0_0#" 0 0 "Top" 400 176000,1680 "Bot" 400 176000,1680

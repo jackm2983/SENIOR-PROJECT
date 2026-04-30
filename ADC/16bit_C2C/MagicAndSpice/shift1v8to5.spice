@@ -1,0 +1,23 @@
+* NGSPICE file created from shift1v8to5.ext - technology: sky130A
+
+.subckt x5v_nfet_1_6 S G D B
+X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=18 pd=18 as=18 ps=18 w=6 l=1
+.ends
+
+.subckt x5v_pfet_1_2 B D G S
+X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
+.ends
+
+.subckt x5v_nfet_1_1 S B G D
+X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=1 pd=4 as=1 ps=4 w=1 l=1
+.ends
+
+.subckt shift1v8to5 VP Y X
+X5v_nfet_1_6_0 VSUBS X 5v_pfet_1_2_2/D VSUBS x5v_nfet_1_6
+X5v_nfet_1_6_1 VSUBS 5v_pfet_1_2_0/D Y VSUBS x5v_nfet_1_6
+X5v_pfet_1_2_0 VP 5v_pfet_1_2_0/D X VP x5v_pfet_1_2
+X5v_pfet_1_2_1 VP Y 5v_pfet_1_2_2/D VP x5v_pfet_1_2
+X5v_pfet_1_2_2 VP 5v_pfet_1_2_2/D Y VP x5v_pfet_1_2
+X5v_nfet_1_1_0 VSUBS VSUBS X 5v_pfet_1_2_0/D x5v_nfet_1_1
+.ends
+
