@@ -1,0 +1,9 @@
+* SPICE3 file created from SPDT.ext - technology: sky130A
+
+X0 out Cbar in1 Tgate_1/5v_pfet_1_10_0/B sky130_fd_pr__pfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X1 in1 C out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X2 out C in2 Tgate_1/5v_pfet_1_10_0/B sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=30 ps=26 w=10 l=1
+X3 in2 Cbar out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=60 ps=52 w=10 l=1
+C0 in2 out 2.08923f
+C1 Tgate_1/5v_pfet_1_10_0/B VSS 29.29641f
+C2 out VSS 3.04997f

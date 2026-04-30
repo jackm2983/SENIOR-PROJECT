@@ -1,0 +1,71 @@
+magic
+tech sky130A
+timestamp 1777584931
+<< polycont >>
+rect 15 1620 75 1695
+rect 15 515 75 585
+<< locali >>
+rect 0 1695 100 1710
+rect 0 1620 15 1695
+rect 85 1620 100 1695
+rect 0 1610 100 1620
+rect 0 585 100 600
+rect 0 515 15 585
+rect 85 515 100 585
+rect 0 500 100 515
+<< viali >>
+rect 1130 1810 1190 1890
+rect 15 1620 75 1695
+rect 75 1620 85 1695
+rect 175 1400 235 1480
+rect 1130 730 1190 810
+rect 15 515 75 585
+rect 75 515 85 585
+rect 175 320 235 400
+<< metal1 >>
+rect 1120 1890 1200 1900
+rect 1120 1810 1130 1890
+rect 1190 1810 1200 1890
+rect 0 1695 100 1710
+rect 0 1620 15 1695
+rect 85 1620 100 1695
+rect 0 1610 100 1620
+rect 165 1480 245 1490
+rect 165 1400 175 1480
+rect 235 1400 245 1480
+rect 165 1035 245 1400
+rect 0 950 245 1035
+rect 0 585 100 600
+rect 0 515 15 585
+rect 85 515 100 585
+rect 0 500 100 515
+rect 165 400 245 950
+rect 1120 810 1200 1810
+rect 1120 730 1130 810
+rect 1190 730 1200 810
+rect 1120 720 1200 730
+rect 165 320 175 400
+rect 235 320 245 400
+rect 165 310 245 320
+use 5v_nfet_1_10  5v_nfet_1_10_0
+timestamp 1777443000
+transform 0 1 100 -1 0 600
+box -500 -100 600 1100
+use 5v_pfet_1_10  5v_pfet_1_10_0
+timestamp 1777584450
+transform 0 -1 1100 1 0 1610
+box -500 -100 605 1100
+<< labels >>
+rlabel metal1 0 950 70 1035 7 in
+port 1 w
+rlabel metal1 1120 945 1200 1030 3 out
+port 2 e
+rlabel metal1 0 500 85 600 7 C
+port 3 w
+rlabel metal1 0 1610 85 1710 7 Cbar
+port 4 w
+rlabel space 0 2095 85 2195 7 VDD
+port 5 w
+rlabel space 0 15 85 115 7 VSS
+port 6 w
+<< end >>

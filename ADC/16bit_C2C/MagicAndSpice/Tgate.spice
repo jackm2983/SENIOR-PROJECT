@@ -1,0 +1,5 @@
+* SPICE3 file created from Tgate.ext - technology: sky130A
+
+X0 out Cbar in 5v_pfet_1_10_0/B sky130_fd_pr__pfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X1 in C out VSUBS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+C0 5v_pfet_1_10_0/B VSUBS 14.6689f

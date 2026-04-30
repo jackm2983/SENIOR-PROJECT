@@ -1,0 +1,8 @@
+* SPICE3 file created from shift5to1v8.ext - technology: sky130A
+
+X0 5v_pfet_1_2_1/G A VP VP sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
+X1 Y 5v_pfet_1_2_1/G VP VP sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=4 ps=12 w=2 l=1
+X2 5v_pfet_1_2_1/G A VN VN sky130_fd_pr__nfet_g5v0d10v5 ad=1 pd=4 as=1 ps=4 w=1 l=1
+X3 Y 5v_pfet_1_2_1/G VN VN sky130_fd_pr__nfet_g5v0d10v5 ad=1 pd=4 as=2 ps=8 w=1 l=1
+C0 VP VN 6.3711f
+C1 5v_pfet_1_2_1/G VN 2.18483f
