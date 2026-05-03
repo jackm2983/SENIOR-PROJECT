@@ -1,0 +1,17 @@
+* SPICE3 file created from SRLatch5V.ext - technology: sky130A
+
+X0 Q S AND5v_0/5v_nfet_1_2_1/D VSS sky130_fd_pr__nfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
+X1 AND5v_0/5v_nfet_1_2_1/D NQ VSS VSS sky130_fd_pr__nfet_g5v0d10v5 ad=4 pd=12 as=4 ps=12 w=2 l=1
+X2 Q S VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
+X3 Q NQ VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4 pd=12 as=8 ps=24 w=2 l=1
+X4 NQ Q AND5v_1/5v_nfet_1_2_1/D VSS sky130_fd_pr__nfet_g5v0d10v5 ad=2 pd=6 as=4 ps=12 w=2 l=1
+X5 AND5v_1/5v_nfet_1_2_1/D R VSS VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=2 l=1
+X6 NQ Q VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4 pd=12 as=0 ps=0 w=2 l=1
+X7 NQ R VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=2 l=1
+C0 NQ VDD 2.18788f
+C1 NQ Q 2.24956f
+C2 Q VDD 2.54719f
+C3 Q R 2.00073f
+C4 VDD VSS 12.52306f
+C5 NQ VSS 2.39585f
+C6 Q VSS 2.02552f

@@ -1,0 +1,79 @@
+magic
+tech sky130A
+timestamp 1777792623
+<< locali >>
+rect 1740 705 1780 710
+rect 810 700 1780 705
+rect 810 695 1750 700
+rect 810 675 930 695
+rect 960 675 1750 695
+rect 1770 675 1780 700
+rect 810 665 1780 675
+rect 380 600 425 610
+rect 380 550 390 600
+rect 415 550 425 600
+rect 380 520 425 550
+rect -40 510 425 520
+rect -40 485 -30 510
+rect -10 485 425 510
+rect -40 475 425 485
+rect 810 515 860 665
+rect 810 490 820 515
+rect 850 490 860 515
+rect 810 480 860 490
+<< viali >>
+rect 930 675 960 695
+rect 1750 675 1770 700
+rect 390 550 415 600
+rect -30 485 -10 510
+rect 820 490 850 515
+<< metal1 >>
+rect -40 1065 0 1190
+rect 810 1065 970 1190
+rect -40 665 0 725
+rect 1740 700 1810 710
+rect 1740 675 1750 700
+rect 1770 675 1810 700
+rect 1740 665 1810 675
+rect 380 600 970 610
+rect 380 550 390 600
+rect 415 550 970 600
+rect 380 540 970 550
+rect -40 510 0 520
+rect -40 485 -30 510
+rect -10 485 0 510
+rect -40 475 0 485
+rect 1780 480 1810 525
+rect -40 0 0 125
+rect 810 0 970 125
+<< via1 >>
+rect 240 490 275 520
+rect 1335 490 1370 520
+<< metal2 >>
+rect 235 520 1380 525
+rect 235 490 240 520
+rect 275 490 1335 520
+rect 1370 490 1380 520
+rect 235 480 1380 490
+use AND5v  AND5v_0
+timestamp 1777791478
+transform 1 0 20 0 1 0
+box -20 0 840 1220
+use AND5v  AND5v_1
+timestamp 1777791478
+transform 1 0 940 0 1 0
+box -20 0 840 1220
+<< labels >>
+rlabel metal1 -40 665 0 725 7 S
+port 1 w
+rlabel metal1 -40 475 0 520 7 R
+port 2 w
+rlabel metal1 1780 665 1810 710 3 Q
+port 3 e
+rlabel metal1 1780 480 1810 525 3 NQ
+port 4 e
+rlabel metal1 -40 1065 0 1190 7 VDD
+port 5 w
+rlabel metal1 -40 0 0 125 7 VSS
+port 6 w
+<< end >>

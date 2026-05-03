@@ -1,0 +1,122 @@
+timestamp 1777792471
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use AND5v AND5v_1 1 0 1880 0 1 0
+use AND5v AND5v_0 1 0 40 0 1 0
+port "VSS" 6 -80 0 0 250 m1
+port "NQ" 4 3560 960 3620 1050 m1
+port "S" 1 -80 1330 0 1450 m1
+port "VDD" 5 -80 2130 0 2380 m1
+port "R" 2 -80 950 0 1040 m1
+port "Q" 3 3560 1330 3620 1420 m1
+node "m1_1620_0#" 0 263.93 1620 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80000 1140 0 0 0 0 0 0 0 0 0 0
+node "VSS" 0 141.543 -80 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20000 660 0 0 0 0 0 0 0 0 0 0
+node "NQ" 0 53.5848 3560 960 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5400 300 0 0 0 0 0 0 0 0 0 0
+node "m1_480_980#" 4 978.418 480 980 v 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8400 520 206100 4760 0 0 0 0 0 0 0 0
+node "S" 0 72.3753 -80 1330 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9600 400 0 0 0 0 0 0 0 0 0 0
+node "m1_1620_2130#" 0 263.389 1620 2130 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80000 1140 0 0 0 0 0 0 0 0 0 0
+node "VDD" 0 141.415 -80 2130 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20000 660 0 0 0 0 0 0 0 0 0 0
+node "R" 159 1166.5 -80 950 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 99900 2400 172400 2980 0 0 0 0 0 0 0 0 0 0
+node "Q" 357 1255.96 3560 1330 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 193000 4800 18000 880 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "m1_480_980#" "Q" 99.8301
+cap "m1_1620_0#" "Q" 4.27479
+cap "m1_1620_2130#" "m1_480_980#" 0.884486
+cap "VDD" "R" 0.131732
+cap "m1_480_980#" "NQ" 3.39316
+cap "S" "VDD" 4.82192
+cap "S" "R" 11.0848
+cap "m1_1620_2130#" "Q" 5.313
+cap "Q" "NQ" 8
+cap "m1_480_980#" "R" 408.686
+cap "m1_1620_0#" "R" 13
+cap "VSS" "R" 4.98079
+cap "Q" "R" 181.532
+cap "m1_1620_2130#" "R" 11.9167
+cap "m1_1620_0#" "m1_480_980#" 2.34936
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_1/A" 275.905
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_1/VSS" 34.0746
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_0/A" -3.175
+cap "AND5v_1/B" "AND5v_0/5v_nfet_1_2_1/D" 303.048
+cap "AND5v_1/B" "AND5v_1/VDD" 111.329
+cap "AND5v_1/A" "AND5v_0/5v_nfet_1_2_1/D" -15.2575
+cap "AND5v_0/A" "AND5v_0/5v_nfet_1_2_1/D" -7.3632
+cap "AND5v_1/A" "AND5v_1/VDD" -54.3227
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_0/5v_nfet_1_2_1/D" -48.1682
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_1/VDD" 50.6991
+cap "AND5v_0/5v_nfet_1_2_1/D" "AND5v_1/VDD" -15.1567
+cap "AND5v_1/B" "AND5v_1/VSS" 10.5956
+cap "AND5v_1/A" "AND5v_1/B" 488.36
+cap "AND5v_0/A" "AND5v_1/B" 96.7382
+cap "AND5v_1/A" "AND5v_0/A" -1.83792
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_1/B" 172.729
+cap "AND5v_1/VSS" "AND5v_1/5v_nfet_1_2_1/D" 17.3941
+cap "AND5v_1/VDD" "AND5v_1/A" 104.266
+cap "AND5v_1/A" "AND5v_0/A" 0.136721
+cap "AND5v_1/Y" "AND5v_1/VDD" 39.2941
+cap "AND5v_1/Y" "AND5v_1/A" 309.544
+cap "AND5v_1/VSS" "AND5v_1/VDD" -2.01482
+cap "AND5v_1/VSS" "AND5v_1/A" 57.6019
+cap "AND5v_1/VDD" "AND5v_1/B" -13.5464
+cap "AND5v_1/A" "AND5v_1/B" 334.174
+cap "AND5v_1/Y" "AND5v_1/VSS" 59.8839
+cap "AND5v_1/Y" "AND5v_1/B" 114.543
+cap "AND5v_1/VDD" "AND5v_1/5v_nfet_1_2_1/D" -9.71593
+cap "AND5v_1/A" "AND5v_1/5v_nfet_1_2_1/D" 15.0714
+cap "AND5v_1/Y" "AND5v_1/5v_nfet_1_2_1/D" 52.7379
+cap "AND5v_1/VSS" "AND5v_1/B" -0.361371
+cap "AND5v_1/Y" "AND5v_0/5v_nfet_1_2_1/D" 20.2286
+cap "AND5v_1/VDD" "AND5v_1/VSS" -28.0994
+cap "AND5v_1/A" "AND5v_1/VSS" 45.953
+cap "AND5v_1/VDD" "AND5v_1/B" -0.512271
+cap "AND5v_1/A" "AND5v_1/B" 1.44199
+cap "AND5v_1/A" "AND5v_1/VDD" 87.9502
+cap "AND5v_1/Y" "AND5v_1/VSS" 1.43651
+cap "AND5v_1/Y" "AND5v_1/B" 1.65258
+cap "AND5v_1/5v_nfet_1_2_1/D" "AND5v_1/Y" 0.299199
+cap "AND5v_1/VDD" "AND5v_1/Y" -10.2093
+cap "AND5v_1/A" "AND5v_1/Y" 27.479
+cap "AND5v_0/A" "AND5v_1/A" -0.427032
+cap "AND5v_1/5v_pfet_1_2_1/D" "AND5v_1/VDD" -0.398938
+cap "AND5v_1/A" "AND5v_1/VDD" -11.8198
+cap "AND5v_1/A" "AND5v_1/5v_pfet_1_2_1/D" 2.2467
+cap "AND5v_1/B" "AND5v_0/A" 1.03131
+cap "AND5v_1/B" "AND5v_1/VDD" 28.8411
+cap "AND5v_1/B" "AND5v_1/5v_pfet_1_2_1/D" 1.1021
+cap "AND5v_0/A" "AND5v_1/VDD" 2.04281e-13
+cap "AND5v_0/5v_nfet_1_2_1/D" "AND5v_1/VDD" -5.80014
+cap "AND5v_0/A" "AND5v_1/A" 0.0116864
+cap "AND5v_1/VSS" "AND5v_1/VDD" -1.30102
+cap "AND5v_1/A" "AND5v_1/Y" 57.5744
+cap "AND5v_1/A" "AND5v_1/B" 11.8357
+cap "AND5v_1/Y" "AND5v_1/B" 0.754068
+cap "AND5v_1/VDD" "AND5v_1/5v_nfet_1_2_1/D" -5.80014
+cap "AND5v_1/A" "AND5v_1/VDD" 316.698
+cap "AND5v_1/Y" "AND5v_1/VDD" 7.42266
+cap "AND5v_1/VDD" "AND5v_1/B" -18.1516
+cap "AND5v_1/B" "AND5v_1/VDD" -0.327763
+cap "AND5v_1/Y" "AND5v_1/VDD" -3.91606
+cap "AND5v_1/A" "AND5v_1/B" 4.98843
+cap "AND5v_1/A" "AND5v_1/Y" 0.761295
+cap "AND5v_1/A" "AND5v_1/VDD" 282.841
+cap "AND5v_1/VDD" "AND5v_1/VSS" -17.8412
+merge "AND5v_0/VSUBS" "AND5v_1/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "AND5v_1/VSUBS" "VSUBS"
+merge "AND5v_1/Y" "NQ" -815.333 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8400 -700 0 0 0 0 0 0 0 0 0 0
+merge "NQ" "AND5v_0/B"
+merge "AND5v_0/B" "AND5v_1/5v_pfet_1_2_1/D"
+merge "AND5v_1/5v_pfet_1_2_1/D" "m1_480_980#"
+merge "AND5v_0/5v_nfet_1_2_1/S" "AND5v_0/VSS" -524.82 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -40000 -1820 0 0 0 0 0 0 0 0 0 0
+merge "AND5v_0/VSS" "VSS"
+merge "VSS" "AND5v_1/VSS"
+merge "AND5v_1/VSS" "m1_1620_0#"
+merge "AND5v_0/VDD" "VDD" -648.295 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -40000 -1820 0 0 0 0 0 0 0 0 0 0
+merge "VDD" "AND5v_1/VDD"
+merge "AND5v_1/VDD" "m1_1620_2130#"
+merge "AND5v_0/Y" "AND5v_1/A" -1180.88 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5400 -420 0 0 0 0 0 0 0 0 0 0
+merge "AND5v_1/A" "Q"
+merge "AND5v_1/B" "R" -816.286 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14000 -480 0 0 0 0 0 0 0 0 0 0
+merge "AND5v_0/A" "S" -79.4099 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -240 0 0 0 0 0 0 0 0 0 0

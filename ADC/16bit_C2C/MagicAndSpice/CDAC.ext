@@ -1,0 +1,1209 @@
+timestamp 1777789552
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use cap_m3_20_10 cap_m3_20_10_0 0 -1 2030 1 0 360
+use SPDT SPDT_0 1 0 0 0 1 0
+use SPDT SPDT_1 1 0 5080 0 1 0
+use cap_m3_10_10 cap_m3_10_10_0 0 -1 7110 1 0 2360
+use SPDT SPDT_2 1 0 10160 0 1 0
+use cap_m3_10_5 cap_m3_10_5_0 0 -1 11190 1 0 2360
+use SPDT SPDT_3 1 0 15240 0 1 0
+use cap_m3_5_5 cap_m3_5_5_0 0 -1 16270 1 0 3360
+use SPDT SPDT_4 1 0 20320 0 1 0
+use cap_m3_5_5 cap_m3_5_5_1 0 -1 21350 1 0 3360
+use Tgate Tgate_0 1 0 25400 0 1 0
+port "b0" 6 -40 880 0 1050 m2
+port "b1" 5 -40 1220 0 1390 m2
+port "b2" 4 -40 1560 0 1730 m2
+port "b3" 3 -40 1900 0 2070 m2
+port "clkbar" 2 -40 2300 0 2540 m2
+port "VSS" 11 -40 30 0 230 m1
+port "clk" 7 -40 370 0 510 m2
+port "Vcm" 9 27800 1440 27870 1640 m2
+port "Vout" 8 27800 1870 27870 2070 m2
+port "Vin" 1 -40 3220 0 3420 m2
+port "VDD" 10 -40 4190 0 4390 m1
+node "m2_24990_1980#" 1 2429.59 24990 1980 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77700 1160 1480000 8740 340400 3420 0 0 0 0
+node "b0" 12 3631.88 -40 880 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2740400 33180 0 0 0 0 0 0 0 0
+node "m2_19910_1980#" 1 2429.97 19910 1980 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77700 1160 1480000 8740 340400 3420 0 0 0 0
+node "b1" 8 2278.95 -40 1220 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1836000 22340 0 0 0 0 0 0 0 0
+node "m2_14830_1980#" 1 2012.5 14830 1980 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77700 1160 495800 3420 1054900 6580 0 0 0 0
+node "b2" 4 1305.87 -40 1560 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 931600 11500 0 0 0 0 0 0 0 0
+node "m2_9750_1980#" 1 1618.89 9750 1980 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77700 1160 481000 3340 703400 4680 0 0 0 0
+node "b3" 0 89.0114 -40 1900 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 27200 660 0 0 0 0 0 0 0 0
+node "m2_4670_1980#" 1 1959.38 4670 1980 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77700 1160 1043000 8780 129800 1620 0 0 0 0
+node "clkbar" 32 6777.66 -40 2300 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2137200 47140 0 0 0 0 0 0 0 0
+node "VSS" 18 14936.8 -40 30 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5635200 56920 0 0 0 0 0 0 0 0 0 0
+node "clk" 27 11230.4 -40 370 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 996000 12360 3589600 51560 0 0 0 0 0 0 0 0
+node "Vcm" 0 326.129 27800 1440 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 46000 860 46000 860 0 0 0 0 0 0 0 0
+node "Vout" 3 17185.3 27800 1870 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32000 720 502000 5420 27284800 56080 0 0 0 0 0 0
+node "Vin" 19 10350.5 -40 3220 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 126000 3480 5128000 51680 0 0 0 0 0 0 0 0
+node "VDD" 17 14915.4 -40 4190 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5568000 56080 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "clkbar" "m2_19910_1980#" 736.387
+cap "Vin" "m2_19910_1980#" 83.8081
+cap "m2_24990_1980#" "clk" 16.7878
+cap "b2" "Vout" 0.518526
+cap "b2" "VSS" 4.79065
+cap "Vout" "VDD" 7086.15
+cap "m2_4670_1980#" "clk" 1372.01
+cap "clk" "m2_9750_1980#" 8.46503
+cap "m2_14830_1980#" "clk" 11.9783
+cap "clk" "b1" 179.209
+cap "m2_24990_1980#" "VDD" 2.48986
+cap "b0" "m2_19910_1980#" 2.27501
+cap "m2_4670_1980#" "b2" 330.852
+cap "b2" "b1" 1139.13
+cap "clkbar" "clk" 1.75064
+cap "clk" "b3" 0.380305
+cap "m2_24990_1980#" "Vout" 701.78
+cap "clkbar" "b2" 319.497
+cap "Vin" "b2" 0.295786
+cap "Vin" "VDD" 228.106
+cap "m2_4670_1980#" "VSS" 298.671
+cap "m2_4670_1980#" "Vout" 13.2593
+cap "Vout" "m2_9750_1980#" 118.824
+cap "b2" "b3" 34.7826
+cap "m2_14830_1980#" "Vout" 135.736
+cap "VSS" "b1" 16.5425
+cap "clk" "b0" 2947.87
+cap "Vout" "b1" 0.518526
+cap "clk" "m2_19910_1980#" 16.7878
+cap "clkbar" "Vout" 77.1768
+cap "Vin" "Vout" 14786.8
+cap "VSS" "Vcm" 5.88536
+cap "Vout" "Vcm" 44.6662
+cap "m2_14830_1980#" "m2_9750_1980#" 6.53682
+cap "m2_4670_1980#" "b1" 278.787
+cap "m2_9750_1980#" "b1" 119.023
+cap "m2_24990_1980#" "Vin" 104.542
+cap "m2_14830_1980#" "b1" 2.37021
+cap "m2_24990_1980#" "clkbar" 390.163
+cap "Vout" "b3" 0.289881
+cap "VDD" "m2_19910_1980#" 2.48986
+cap "Vin" "m2_4670_1980#" 0.466952
+cap "clkbar" "m2_4670_1980#" 69.3541
+cap "Vin" "m2_9750_1980#" 17.9719
+cap "clkbar" "m2_9750_1980#" 387.871
+cap "m2_14830_1980#" "Vin" 25.0301
+cap "m2_14830_1980#" "clkbar" 454.158
+cap "clkbar" "b1" 225.69
+cap "Vin" "b1" 0.236163
+cap "VSS" "b0" 53.0868
+cap "Vout" "b0" 0.518526
+cap "Vout" "m2_19910_1980#" 549.185
+cap "clkbar" "Vin" 1577.97
+cap "m2_24990_1980#" "m2_19910_1980#" 28.3643
+cap "b2" "clk" 4.17066
+cap "m2_4670_1980#" "b0" 390.523
+cap "b0" "m2_9750_1980#" 23.2352
+cap "clkbar" "b3" 27.5862
+cap "Vin" "b3" 0.111427
+cap "m2_14830_1980#" "b0" 93.5701
+cap "b0" "b1" 2243.48
+cap "m2_14830_1980#" "m2_19910_1980#" 27.9236
+cap "clkbar" "b0" 176.308
+cap "Vin" "b0" 0.236163
+cap "clk" "VSS" 2903.59
+cap "clk" "Vout" 22.9537
+cap "cap_m3_20_10_0/Bot" "SPDT_0/C" 965.552
+cap "b0" "SPDT_0/Tgate_1/C" 84.9968
+cap "b0" "SPDT_0/in1" 448.469
+cap "SPDT_0/in2" "SPDT_0/C" -0.262997
+cap "SPDT_0/VSS" "SPDT_0/in1" -2.78491
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_1/C" 43.6893
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in1" 318.093
+cap "b0" "SPDT_0/Tgate_0/out" 3.34636
+cap "SPDT_0/VSS" "b1" -0.759605
+cap "cap_m3_20_10_0/Bot" "b1" 884.59
+cap "SPDT_0/Tgate_1/C" "SPDT_0/C" 0.66334
+cap "SPDT_0/in1" "SPDT_0/C" 568.126
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/out" 7.5615
+cap "b1" "SPDT_0/C" 282.32
+cap "b2" "SPDT_0/VSS" -0.43817
+cap "SPDT_0/Tgate_1/C" "b1" 175.313
+cap "b0" "SPDT_0/VSS" -0.839446
+cap "SPDT_0/in1" "b1" 230.727
+cap "cap_m3_20_10_0/Bot" "b0" 941.33
+cap "b2" "SPDT_0/C" 0.651536
+cap "cap_m3_20_10_0/Bot" "SPDT_0/VSS" 171.579
+cap "SPDT_0/Tgate_0/out" "b1" 127.03
+cap "b0" "SPDT_0/C" 174.178
+cap "SPDT_0/VSS" "SPDT_0/C" 0.411038
+cap "b0" "cap_m3_20_10_0/Bot" 534.684
+cap "b0" "SPDT_0/VSS" -1.18729
+cap "SPDT_0/Tgate_1/C" "SPDT_0/C" 7.58627
+cap "b0" "cap_m3_20_10_0/Top" -5.2435
+cap "b0" "SPDT_0/Tgate_0/out" 3.48775
+cap "b0" "SPDT_0/in2" 38.4952
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in1" 153.548
+cap "SPDT_0/VSS" "SPDT_0/C" 0.630721
+cap "SPDT_0/C" "b2" 0.130307
+cap "cap_m3_20_10_0/Bot" "SPDT_0/C" 404.82
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "cap_m3_20_10_0/Bot" 1.36754
+cap "cap_m3_20_10_0/Top" "SPDT_0/in1" 23.4005
+cap "b1" "SPDT_0/in1" 9.77591
+cap "SPDT_0/Tgate_1/C" "cap_m3_20_10_0/Bot" 213.287
+cap "SPDT_0/Tgate_1/C" "b2" 11.1517
+cap "cap_m3_20_10_0/Top" "SPDT_0/C" -47.8015
+cap "b1" "SPDT_0/C" 2.74981
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "cap_m3_20_10_0/Top" 3.48481
+cap "SPDT_0/Tgate_1/C" "cap_m3_20_10_0/Top" 25.5987
+cap "SPDT_0/C" "SPDT_0/in2" 34.078
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "b1" 24.3159
+cap "SPDT_0/Tgate_1/C" "b1" 567.676
+cap "SPDT_0/Tgate_1/C" "SPDT_0/in2" 0.512754
+cap "SPDT_0/VSS" "b2" -1.2853
+cap "SPDT_0/VSS" "cap_m3_20_10_0/Bot" 87.5722
+cap "b0" "SPDT_0/in1" 193.856
+cap "b0" "SPDT_0/C" 2.03329
+cap "SPDT_0/VSS" "cap_m3_20_10_0/Top" -0.663322
+cap "cap_m3_20_10_0/Top" "b2" -1.1892
+cap "cap_m3_20_10_0/Top" "cap_m3_20_10_0/Bot" 175.597
+cap "b0" "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" 0.377054
+cap "SPDT_0/VSS" "b1" -2.22818
+cap "SPDT_0/Tgate_0/out" "cap_m3_20_10_0/Bot" 7.18173
+cap "b1" "cap_m3_20_10_0/Bot" 505.48
+cap "b0" "SPDT_0/Tgate_1/C" 765.353
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in2" 22.1361
+cap "b1" "cap_m3_20_10_0/Top" -2.14241
+cap "cap_m3_20_10_0/Top" "SPDT_0/Tgate_0/out" 9.23785
+cap "b1" "SPDT_0/Tgate_0/out" 142.263
+cap "cap_m3_20_10_0/Top" "SPDT_0/in2" 26.3052
+cap "b1" "SPDT_0/in2" 0.831993
+cap "SPDT_0/C" "SPDT_0/in1" 178.599
+cap "b0" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" -0.578602
+cap "SPDT_0/Tgate_1/in" "cap_m3_20_10_0/Bot" 4.58204
+cap "cap_m3_20_10_0/Top" "SPDT_0/Tgate_1/C" 47.0314
+cap "b1" "SPDT_0/Tgate_1/C" 56.2407
+cap "cap_m3_20_10_0/Top" "b0" 5.84434
+cap "SPDT_1/in1" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" -0.155794
+cap "b1" "SPDT_0/Tgate_1/in" 262.183
+cap "cap_m3_20_10_0/Top" "SPDT_0/Tgate_1/in" 188.395
+cap "b0" "SPDT_0/Tgate_1/C" 95.2717
+cap "SPDT_1/C" "SPDT_0/Tgate_1/in" 274.608
+cap "cap_m3_20_10_0/Top" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" 5.717
+cap "b1" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" -0.270082
+cap "SPDT_1/C" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" 11.7735
+cap "cap_m3_20_10_0/Top" "b1" 202.168
+cap "b0" "SPDT_0/Tgate_1/in" 518.355
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "b1" 1.01516
+cap "SPDT_0/Tgate_1/C" "SPDT_1/C" 51.6397
+cap "SPDT_0/out" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 138.9
+cap "b0" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 0.612713
+cap "SPDT_0/out" "b0" 2.45085
+cap "b0" "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" -0.54244
+cap "b1" "SPDT_0/Tgate_1/C" 35.4057
+cap "b0" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 134.045
+cap "SPDT_0/out" "SPDT_1/in1" 40.9404
+cap "SPDT_1/in1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" -2.9407
+cap "cap_m3_10_10_0/Bot" "SPDT_1/C" 0.348232
+cap "SPDT_0/out" "SPDT_1/C" 16.2343
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" "SPDT_1/C" -10.7317
+cap "SPDT_1/in1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 22.3684
+cap "SPDT_1/in1" "b0" 220.766
+cap "b1" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 41.9195
+cap "SPDT_0/out" "b1" 106.394
+cap "SPDT_1/C" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 156.296
+cap "b1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" -0.253202
+cap "b0" "SPDT_1/C" 13.0285
+cap "SPDT_0/out" "SPDT_0/Tgate_1/C" 81.6289
+cap "b1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 8.73057
+cap "SPDT_1/in1" "SPDT_1/C" 401.178
+cap "SPDT_0/Tgate_1/C" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 0.0283644
+cap "b0" "SPDT_0/Tgate_1/C" 58.1623
+cap "SPDT_1/in1" "b1" 211.389
+cap "SPDT_0/out" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 1.50325
+cap "b1" "SPDT_1/C" 24.638
+cap "SPDT_0/out" "SPDT_1/Cbar" 0.651555
+cap "SPDT_0/out" "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" -0.437147
+cap "SPDT_1/in1" "SPDT_0/Tgate_1/C" 0.130307
+cap "SPDT_1/Tgate_0/out" "b0" 4.71318
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" "b0" -0.764724
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/C" 1.12562
+cap "SPDT_1/in1" "b1" 40.6399
+cap "b1" "SPDT_1/C" 269.023
+cap "SPDT_1/in2" "SPDT_1/Tgate_1/C" 0.197314
+cap "SPDT_1/in1" "b0" 334.45
+cap "b0" "SPDT_1/C" 166.134
+cap "SPDT_1/C" "SPDT_1/Tgate_1/C" 3.3167
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "b1" 5.07578
+cap "b1" "SPDT_1/Tgate_1/C" 477.85
+cap "b0" "SPDT_1/Tgate_1/C" 376.952
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" "SPDT_1/C" 11.7735
+cap "SPDT_1/in1" "SPDT_1/C" 266.785
+cap "SPDT_1/Tgate_0/out" "b1" 218.911
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" "b1" -1.38417
+cap "SPDT_1/in2" "b1" 4.83247
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/B" "b0" -1.29817
+cap "SPDT_1/Tgate_1/in" "b1" 271.504
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "clk" 79.7013
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/G" "clk" 0.850819
+cap "SPDT_1/Tgate_1/C" "cap_m3_10_10_0/Bot" 0.482409
+cap "SPDT_1/Tgate_1/C" "SPDT_1/Tgate_1/in" 0.31544
+cap "b0" "SPDT_1/out" 3.58202
+cap "SPDT_1/Tgate_1/in" "clk" 141.299
+cap "SPDT_1/Tgate_1/C" "b1" 297.77
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/B" "b1" -1.62049
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/G" "SPDT_1/out" 0.137901
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "b0" 87.1096
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/G" "b0" 2.03329
+cap "SPDT_1/Tgate_1/C" "clk" 4.93291
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "b1" 1.58303
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "b1" 1.82728
+cap "b1" "SPDT_1/out" 220.323
+cap "SPDT_1/Tgate_1/in" "b0" 369.016
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/G" "SPDT_1/Tgate_1/in" 0.021746
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "b1" 5.40795
+cap "SPDT_1/Tgate_1/C" "SPDT_1/out" 3.52625
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/G" "b1" 2.74981
+cap "SPDT_1/Tgate_1/C" "b0" 501.057
+cap "SPDT_1/out" "b0" 6.59845
+cap "SPDT_2/in1" "SPDT_1/Tgate_1/in" 14.5599
+cap "SPDT_2/in1" "SPDT_1/Tgate_1/C" 63.4976
+cap "SPDT_1/Tgate_1/in" "b0" 298.827
+cap "b0" "SPDT_1/Tgate_1/C" 107.565
+cap "SPDT_1/Tgate_1/in" "SPDT_2/C" 266.263
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/B" "SPDT_2/C" 11.7735
+cap "SPDT_2/in1" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 7.09811
+cap "SPDT_2/in1" "SPDT_1/out" 318.433
+cap "cap_m3_10_5_0/Top" "b0" -0.184205
+cap "SPDT_2/C" "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" -7.15762
+cap "SPDT_2/C" "b0" 173.591
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "b0" 1.68877
+cap "SPDT_2/C" "SPDT_2/in2" -0.014001
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "SPDT_2/in1" 11.8209
+cap "SPDT_2/Tgate_0/out" "SPDT_2/in1" 14.7597
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/D" "SPDT_2/in1" 24.4484
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "b0" 18.2097
+cap "SPDT_2/Tgate_0/out" "b0" 44.2152
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/D" "b0" 23.0526
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" "SPDT_2/in1" -2.78491
+cap "b0" "SPDT_2/in1" 385.442
+cap "cap_m3_10_5_0/Bot" "SPDT_2/C" 0.348232
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" "b0" -0.722516
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "SPDT_2/in2" 0.0283644
+cap "SPDT_2/Tgate_1/C" "SPDT_2/in1" 0.442091
+cap "b0" "SPDT_2/in2" 1.7254
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "SPDT_2/C" 51.6397
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "SPDT_1/out" 0.119186
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/D" "SPDT_2/C" 57.4123
+cap "SPDT_2/C" "SPDT_2/in1" 509.828
+cap "SPDT_1/out" "SPDT_2/in1" 38.8573
+cap "b0" "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" -1.05237
+cap "SPDT_2/Tgate_0/out" "b0" 90.6376
+cap "SPDT_2/Tgate_1/C" "SPDT_2/C" 5.97006
+cap "SPDT_2/Tgate_1/C" "SPDT_2/in2" 0.366441
+cap "SPDT_2/in2" "SPDT_2/C" 0.021746
+cap "SPDT_2/in1" "b0" 269.636
+cap "b0" "cap_m3_10_5_0/Top" -1.53115
+cap "SPDT_2/C" "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" 8.19938
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "b0" 3.1012
+cap "SPDT_2/C" "b0" 19.7047
+cap "SPDT_2/Tgate_1/C" "b0" 685.275
+cap "SPDT_2/in2" "b0" 2.74495
+cap "SPDT_2/in1" "SPDT_2/C" 247.067
+cap "SPDT_2/Tgate_1/C" "cap_m3_10_5_0/Top" 6.61444
+cap "SPDT_2/C" "cap_m3_10_5_0/Top" 0.137901
+cap "SPDT_2/Tgate_1/C" "SPDT_3/in1" 250.08
+cap "SPDT_3/in1" "SPDT_2/out" 94.1857
+cap "SPDT_3/in1" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 2.65503
+cap "SPDT_2/Tgate_1/C" "SPDT_2/Tgate_1/in" 0.146313
+cap "SPDT_2/Tgate_0/5v_nfet_1_10_0/B" "SPDT_3/C" 10.3018
+cap "SPDT_2/Tgate_1/in" "SPDT_3/C" 240.196
+cap "SPDT_2/Tgate_1/C" "SPDT_3/C" 2.27955
+cap "SPDT_2/Tgate_1/C" "SPDT_2/out" 0.897439
+cap "SPDT_2/Tgate_0/5v_nfet_1_10_0/B" "SPDT_3/in1" -0.830451
+cap "SPDT_2/Tgate_1/in" "SPDT_3/in1" 494.251
+cap "SPDT_3/in1" "SPDT_2/Tgate_1/in" 233.255
+cap "SPDT_2/Tgate_1/C" "SPDT_2/out" 0.119186
+cap "SPDT_3/in1" "SPDT_2/Tgate_0/5v_nfet_1_10_0/B" -1.67095
+cap "SPDT_3/C" "SPDT_2/Tgate_1/in" 224.769
+cap "SPDT_3/C" "SPDT_2/Tgate_0/5v_nfet_1_10_0/B" -4.96734
+cap "SPDT_2/Tgate_1/C" "SPDT_2/Tgate_1/in" 0.0283644
+cap "SPDT_3/C" "SPDT_3/in1" 109.142
+cap "SPDT_3/in1" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 2.78298
+cap "SPDT_3/in1" "SPDT_2/out" 100.78
+cap "SPDT_3/in1" "SPDT_2/Tgate_1/C" 102.853
+cap "SPDT_3/C" "SPDT_2/Tgate_1/C" 51.6397
+cap "SPDT_3/in2" "SPDT_3/C" -0.00560039
+cap "SPDT_3/Tgate_0/out" "SPDT_3/C" 23.087
+cap "SPDT_3/Tgate_1/C" "SPDT_3/in2" 0.0281877
+cap "SPDT_3/Tgate_1/C" "SPDT_3/C" 7.17239
+cap "SPDT_3/in1" "SPDT_3/C" 530.149
+cap "m2_19910_1980#" "SPDT_3/Tgate_1/C" 0.499618
+cap "SPDT_3/in1" "SPDT_2/out" 5.57569
+cap "SPDT_2/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/C" 7.48078
+cap "SPDT_2/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/in1" -1.11396
+cap "SPDT_3/C" "SPDT_3/in1" 160.063
+cap "SPDT_3/C" "m2_19910_1980#" 0.18538
+cap "SPDT_3/Tgate_1/C" "SPDT_3/in2" 0.484566
+cap "SPDT_3/Tgate_1/C" "m2_19910_1980#" 6.95677
+cap "SPDT_3/C" "SPDT_3/Tgate_1/C" 20.2608
+cap "SPDT_3/C" "SPDT_3/in2" 76.5121
+cap "SPDT_3/Tgate_0/out" "SPDT_3/C" 21.3183
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/S" "SPDT_3/C" 5.20086
+cap "SPDT_4/C" "SPDT_3/Tgate_1/in" 294.112
+cap "SPDT_4/C" "SPDT_3/out" 39.4972
+cap "SPDT_3/Tgate_1/C" "SPDT_4/C" 28.4031
+cap "SPDT_4/C" "SPDT_3/Tgate_0/5v_nfet_1_10_0/B" 11.7735
+cap "SPDT_4/C" "SPDT_3/out" 11.8153
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/Tgate_0/5v_nfet_1_10_0/S" -7.10543e-15
+cap "SPDT_4/C" "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" 132.163
+cap "SPDT_3/out" "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" 5.57569
+cap "SPDT_4/C" "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" 367.676
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" 22.3684
+cap "SPDT_4/C" "SPDT_3/Tgate_1/5v_nfet_1_10_0/G" 63.4218
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/G" "SPDT_3/out" 0.119186
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/G" "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" 0.0283644
+cap "SPDT_4/C" "SPDT_4/Tgate_0/5v_nfet_1_10_0/S" 7.24887
+cap "SPDT_4/Tgate_1/C" "SPDT_4/C" 14.6473
+cap "SPDT_4/Tgate_1/C" "m2_24990_1980#" 4.82964
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/C" 302.524
+cap "SPDT_4/C" "SPDT_4/Tgate_0/out" 31.8903
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/Tgate_1/C" -2.84217e-14
+cap "SPDT_4/Tgate_1/C" "SPDT_4/in2" 0.272481
+cap "clk" "SPDT_4/Tgate_1/in" 187.845
+cap "SPDT_4/Tgate_1/C" "SPDT_4/Tgate_1/in" 0.240273
+cap "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" "SPDT_4/Tgate_1/in" -4.26326e-14
+cap "clk" "SPDT_4/Tgate_1/C" 22.6744
+cap "clk" "SPDT_4/out" 25.0563
+cap "SPDT_4/Tgate_1/C" "SPDT_4/out" 2.62675
+cap "clk" "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" 54.803
+cap "SPDT_4/Tgate_1/in" "SPDT_4/Tgate_0/5v_nfet_1_10_0/G" 0.021746
+cap "clk" "SPDT_4/Tgate_0/5v_nfet_1_10_0/G" 0.850819
+cap "SPDT_4/out" "SPDT_4/Tgate_0/5v_nfet_1_10_0/G" 0.18538
+cap "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" "SPDT_4/Tgate_0/5v_nfet_1_10_0/G" 3.55271e-15
+cap "SPDT_4/Tgate_1/in" "Tgate_0/C" 272.595
+cap "SPDT_4/Tgate_1/C" "SPDT_4/out" 0.119186
+cap "Tgate_0/C" "SPDT_4/Tgate_1/C" 30.1358
+cap "Tgate_0/C" "SPDT_4/out" 37.3108
+cap "Tgate_0/C" "SPDT_4/Tgate_0/5v_nfet_1_10_0/B" 9.04034
+cap "Tgate_0/out" "Tgate_0/C" 1.39743
+cap "Tgate_0/in" "SPDT_4/Tgate_1/5v_nfet_1_10_0/D" 22.3684
+cap "Tgate_0/in" "SPDT_4/Tgate_1/5v_nfet_1_10_0/B" -2.78491
+cap "SPDT_4/out" "Tgate_0/C" 0.250809
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/D" "Tgate_0/C" 42.3393
+cap "Tgate_0/in" "Tgate_0/C" 354.475
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/B" "Tgate_0/C" -10.7317
+cap "Tgate_0/in" "SPDT_4/out" 5.57569
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/G" "Tgate_0/C" 51.8007
+cap "Tgate_0/in" "Tgate_0/C" 0.154289
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/B" "Tgate_0/out" -2.79365
+cap "b2" "cap_m3_20_10_0/Bot" 954.396
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/in2" 11.6366
+cap "SPDT_0/in1" "SPDT_0/Tgate_0/out" -4.81848
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/C" -6.0953
+cap "SPDT_0/in1" "b1" 1.8235
+cap "b2" "SPDT_0/Tgate_0/out" 201.138
+cap "SPDT_0/Cbar" "cap_m3_20_10_0/Bot" 195.75
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "b2" 7.0606
+cap "SPDT_0/C" "SPDT_0/in2" 76.7342
+cap "SPDT_0/in1" "SPDT_0/in2" 46.4212
+cap "SPDT_0/in1" "SPDT_0/C" -0.504123
+cap "SPDT_0/in1" "b0" 0.290201
+cap "b2" "SPDT_0/in2" 17.5519
+cap "b2" "SPDT_0/C" 236.513
+cap "SPDT_0/Tgate_0/out" "cap_m3_20_10_0/Bot" 130.681
+cap "b2" "SPDT_0/in1" 255.174
+cap "SPDT_0/Cbar" "SPDT_0/in2" 12.4096
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_20_10_0/Bot" 42.058
+cap "SPDT_0/Cbar" "SPDT_0/C" -1.81143
+cap "SPDT_0/Tgate_0/out" "b1" 31.7968
+cap "b2" "SPDT_0/Cbar" 183.185
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in2" 1217.78
+cap "cap_m3_20_10_0/Bot" "SPDT_0/C" 405.932
+cap "SPDT_0/Tgate_0/out" "SPDT_0/in2" -31.2146
+cap "SPDT_0/in1" "cap_m3_20_10_0/Bot" 502.704
+cap "SPDT_0/Tgate_0/out" "b0" 6.37999
+cap "b1" "SPDT_0/in2" 1.54721
+cap "b0" "SPDT_0/in2" 0.178585
+cap "SPDT_0/Cbar" "SPDT_0/in2" -11.4062
+cap "SPDT_0/Tgate_0/out" "cap_m3_20_10_0/Top" 0.0270884
+cap "b2" "SPDT_0/Cbar" 150.791
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in1" 61.9094
+cap "cap_m3_20_10_0/Top" "SPDT_0/in2" 0.136436
+cap "SPDT_0/Cbar" "SPDT_0/C" -1.39341
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/in2" 15.4773
+cap "b2" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 7.0606
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/C" -10.1588
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Cbar" 176.12
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "SPDT_0/in2" -5.13182
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 44.0839
+cap "b2" "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" 52.5906
+cap "SPDT_0/Tgate_0/out" "SPDT_0/in2" 45.3689
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/D" "SPDT_0/in2" -1.52963
+cap "b2" "SPDT_0/Tgate_0/out" 440.94
+cap "SPDT_0/Tgate_0/out" "SPDT_0/C" -2.22946
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" 13.5238
+cap "b2" "SPDT_0/in2" 41.6782
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/out" 220.532
+cap "SPDT_0/in2" "SPDT_0/C" 42.7129
+cap "cap_m3_20_10_0/Bot" "SPDT_0/in2" 712.44
+cap "cap_m3_20_10_0/Bot" "b2" 544.886
+cap "cap_m3_20_10_0/Bot" "SPDT_0/C" 147.251
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "b1" 9.78363
+cap "b0" "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" 0.859168
+cap "SPDT_0/in1" "SPDT_0/in2" 3.2291
+cap "SPDT_0/Tgate_0/out" "b1" 49.1947
+cap "SPDT_0/in1" "b2" 1.01994
+cap "b0" "SPDT_0/Tgate_0/out" 7.33421
+cap "SPDT_0/Tgate_0/out" "SPDT_0/Cbar" 0.293973
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_0/Tgate_1/in" 89.1455
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/in1" 10.5547
+cap "cap_m3_20_10_0/Top" "b0" 13.3171
+cap "SPDT_0/Tgate_1/in" "b1" 0.276288
+cap "SPDT_0/Tgate_1/in" "SPDT_1/C" 0.0376178
+cap "SPDT_0/Tgate_1/C" "SPDT_0/Tgate_1/in" -0.335124
+cap "cap_m3_20_10_0/Top" "b1" 43.3275
+cap "SPDT_1/in1" "SPDT_0/Tgate_1/in" 262.549
+cap "b0" "SPDT_0/Tgate_1/in" 0.111616
+cap "SPDT_1/Cbar" "SPDT_0/Tgate_1/in" 0.0735427
+cap "cap_m3_20_10_0/Top" "SPDT_0/Tgate_1/in" 102.841
+cap "cap_m3_20_10_0/Top" "SPDT_1/in1" 325.758
+cap "SPDT_0/Tgate_1/in" "cap_m3_20_10_0/Bot" 0.670721
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_1/in" -2.55122
+cap "SPDT_0/out" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 238.339
+cap "cap_m3_10_10_0/Bot" "SPDT_0/out" 31.2591
+cap "cap_m3_10_10_0/Bot" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 384.997
+cap "SPDT_0/out" "SPDT_0/Tgate_1/C" -1.31497
+cap "SPDT_0/out" "SPDT_1/in1" 555.674
+cap "SPDT_0/out" "b1" 41.1992
+cap "SPDT_1/C" "SPDT_0/out" 9.21462
+cap "SPDT_1/in1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 45.3098
+cap "SPDT_1/C" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" -0.856812
+cap "b1" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 1.24264
+cap "SPDT_0/out" "SPDT_1/Cbar" 3.11552
+cap "SPDT_1/Cbar" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" -2.13118
+cap "cap_m3_10_10_0/Bot" "SPDT_1/C" 2.45094
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in1" 127.908
+cap "cap_m3_10_10_0/Bot" "b1" 1.99144
+cap "b1" "SPDT_1/in1" 1.8235
+cap "SPDT_1/C" "SPDT_1/in1" 2.71109
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/D" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" -6.35015
+cap "b0" "SPDT_0/out" 9.12258
+cap "SPDT_0/out" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 61.4113
+cap "SPDT_1/in1" "SPDT_1/Cbar" 0.835061
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" -0.690493
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/out" 30.6292
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" 55.5233
+cap "b0" "cap_m3_10_10_0/Bot" 1.12591
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 8.98541
+cap "b0" "SPDT_1/in1" 0.290201
+cap "SPDT_1/in1" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 46.1149
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 27.8822
+cap "b1" "SPDT_1/Tgate_0/5v_nfet_1_10_0/S" 11.5307
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/in1" 4.52346
+cap "SPDT_1/Cbar" "SPDT_1/C" -3.20484
+cap "SPDT_1/C" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" -11.115
+cap "SPDT_1/in2" "b1" 4.83247
+cap "SPDT_1/in2" "SPDT_1/in1" 13.8829
+cap "SPDT_1/Tgate_0/out" "b1" 34.9415
+cap "SPDT_0/out" "SPDT_1/C" 0.0723834
+cap "SPDT_1/C" "SPDT_0/Tgate_1/5v_pfet_1_10_0/S" 0.344135
+cap "b0" "SPDT_1/Tgate_0/out" 9.99113
+cap "SPDT_1/Cbar" "cap_m3_10_10_0/Top" 4.17368
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in2" 937.283
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/out" 43.3613
+cap "cap_m3_10_10_0/Bot" "SPDT_1/C" 371.357
+cap "SPDT_1/Cbar" "cap_m3_10_10_0/Bot" 142.298
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 37.5453
+cap "SPDT_1/in2" "SPDT_1/Tgate_0/out" -9.26654
+cap "cap_m3_10_10_0/Bot" "b1" 5.80838
+cap "SPDT_1/C" "SPDT_1/in2" 95.6405
+cap "b0" "cap_m3_10_10_0/Bot" 3.2839
+cap "SPDT_1/Cbar" "SPDT_1/in2" 34.7332
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in1" 95.6733
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/in2" 16.3913
+cap "SPDT_1/Tgate_1/in" "SPDT_1/out" 297.636
+cap "SPDT_1/Tgate_1/in" "cap_m3_10_10_0/Bot" 199.839
+cap "cap_m3_10_10_0/Bot" "SPDT_1/out" 109.745
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/out" 24.3418
+cap "SPDT_1/Tgate_1/in" "SPDT_1/Tgate_1/Cbar" 23.7051
+cap "SPDT_1/Tgate_1/Cbar" "cap_m3_10_10_0/Bot" 42.4423
+cap "SPDT_1/Tgate_1/C" "SPDT_1/Tgate_1/in" -2.64821
+cap "SPDT_1/Tgate_1/C" "SPDT_1/out" 21.7755
+cap "SPDT_1/Tgate_1/C" "cap_m3_10_10_0/Bot" 0.890978
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "SPDT_1/Tgate_1/in" 1.67963
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "SPDT_1/out" 15.5902
+cap "SPDT_1/Tgate_1/in" "b1" 5.58592
+cap "b1" "SPDT_1/out" 56.8818
+cap "SPDT_1/Tgate_0/5v_nfet_1_10_0/D" "cap_m3_10_10_0/Bot" 19.2637
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/out" 25.6666
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/in" 30.0118
+cap "cap_m3_10_10_0/Bot" "b1" 0.746791
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_10_10_0/Bot" 18.8673
+cap "SPDT_1/Tgate_1/in" "b0" 0.290201
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/Cbar" -5.13917
+cap "b0" "SPDT_1/out" 8.44849
+cap "SPDT_1/Tgate_1/in" "clk" 0.0978062
+cap "cap_m3_10_10_0/Bot" "b0" 0.422216
+cap "SPDT_1/Tgate_1/in" "Vin" -26.8358
+cap "Vin" "SPDT_1/out" -0.941176
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/in" 107.682
+cap "SPDT_1/Tgate_1/C" "SPDT_1/out" 31.7993
+cap "cap_m3_10_10_0/Bot" "SPDT_1/out" 0.541691
+cap "SPDT_2/in1" "SPDT_1/out" 49.3584
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/out" 40.2947
+cap "b0" "SPDT_1/out" 15.0354
+cap "SPDT_1/Tgate_1/in" "SPDT_1/out" 295.509
+cap "SPDT_1/out" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 0.414248
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/out" 0.923629
+cap "cap_m3_10_5_0/Top" "SPDT_1/out" 0.742476
+cap "SPDT_2/Tgate_0/out" "b0" 3.00709
+cap "SPDT_2/Tgate_0/out" "cap_m3_10_5_0/Bot" 28.0502
+cap "SPDT_2/C" "SPDT_2/in2" 71.6375
+cap "SPDT_1/out" "b0" 3.53799
+cap "SPDT_1/out" "cap_m3_10_5_0/Bot" 33.4045
+cap "SPDT_2/C" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" -3.34644
+cap "SPDT_1/out" "SPDT_2/Tgate_0/out" 34.6079
+cap "SPDT_2/in2" "SPDT_2/in1" 55.8417
+cap "cap_m3_10_5_0/Top" "SPDT_2/in2" -5.67631
+cap "SPDT_2/Cbar" "SPDT_2/in1" 1.22803
+cap "cap_m3_10_5_0/Top" "SPDT_2/Cbar" -0.66508
+cap "cap_m3_10_5_0/Top" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 5.70649
+cap "SPDT_2/C" "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" 0.344135
+cap "SPDT_2/in2" "b0" 1.7254
+cap "SPDT_2/in2" "cap_m3_10_5_0/Bot" 719.476
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 41.023
+cap "SPDT_2/Tgate_0/out" "SPDT_2/in2" -6.80773
+cap "SPDT_1/out" "SPDT_2/in2" 193.777
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "SPDT_2/in1" 2.23684
+cap "SPDT_1/Tgate_1/5v_nfet_1_10_0/G" "SPDT_1/out" 0.540848
+cap "SPDT_1/out" "SPDT_2/Cbar" 1.26327
+cap "SPDT_1/out" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 35.1103
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_10_5_0/Bot" 15.6546
+cap "SPDT_2/C" "SPDT_2/in1" 4.22414
+cap "cap_m3_10_5_0/Top" "SPDT_2/C" 15.3086
+cap "SPDT_1/out" "SPDT_1/Tgate_1/5v_nfet_1_10_0/D" 0.683867
+cap "SPDT_1/out" "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" 1.12544
+cap "SPDT_2/C" "cap_m3_10_5_0/Bot" 190.392
+cap "SPDT_2/Cbar" "SPDT_2/in2" -17.3512
+cap "SPDT_2/in2" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 21.2006
+cap "cap_m3_10_5_0/Top" "SPDT_2/in1" 10.0347
+cap "b0" "SPDT_2/in1" 0.290201
+cap "SPDT_1/out" "SPDT_2/C" 4.58826
+cap "cap_m3_10_5_0/Bot" "SPDT_2/in1" 170.65
+cap "cap_m3_10_5_0/Top" "cap_m3_10_5_0/Bot" 43.3296
+cap "SPDT_2/Tgate_0/out" "SPDT_2/in1" 74.5848
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "SPDT_2/in2" 2.16486
+cap "cap_m3_10_5_0/Bot" "b0" 2.34565
+cap "cap_m3_10_5_0/Top" "SPDT_2/Tgate_0/out" 4.81485
+cap "SPDT_1/out" "SPDT_2/in1" 214.118
+cap "cap_m3_10_5_0/Bot" "b0" 0.140739
+cap "SPDT_2/Tgate_0/out" "SPDT_2/in2" 52.6844
+cap "SPDT_2/Tgate_0/out" "SPDT_2/C" -2.22946
+cap "cap_m3_10_5_0/Bot" "cap_m3_10_5_0/Top" 29.8081
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_2/in2" 16.7414
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_2/C" -12.0711
+cap "SPDT_2/Tgate_0/out" "b0" 10.5952
+cap "SPDT_2/C" "SPDT_2/in2" 43.8004
+cap "SPDT_2/Cbar" "SPDT_2/in2" 33.9495
+cap "SPDT_2/Cbar" "SPDT_2/C" -3.20484
+cap "SPDT_2/Tgate_0/out" "cap_m3_10_5_0/Top" 129.979
+cap "SPDT_2/Tgate_0/out" "cap_m3_10_5_0/Bot" 4.39255
+cap "SPDT_2/in2" "SPDT_2/in1" 3.55242
+cap "b0" "SPDT_2/in2" 2.74495
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 10.4879
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Top" 25.4779
+cap "cap_m3_10_5_0/Bot" "SPDT_2/in2" 109.993
+cap "cap_m3_10_5_0/Top" "SPDT_2/in2" 92.2797
+cap "cap_m3_10_5_0/Top" "SPDT_2/C" 40.5948
+cap "cap_m3_10_5_0/Bot" "SPDT_2/C" 19.6463
+cap "cap_m3_10_5_0/Top" "SPDT_2/Cbar" 103.266
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Cbar" 27.977
+cap "cap_m3_10_5_0/Bot" "SPDT_2/in1" 20.8878
+cap "cap_m3_10_5_0/Top" "SPDT_2/in1" 61.5308
+cap "SPDT_2/Tgate_1/C" "SPDT_2/Tgate_1/in" 3.14635
+cap "SPDT_2/out" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 0.260838
+cap "SPDT_2/out" "SPDT_2/Tgate_1/Cbar" 14.1797
+cap "SPDT_2/out" "SPDT_3/Cbar" 0.293973
+cap "SPDT_2/out" "cap_m3_10_5_0/Bot" 0.500868
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "SPDT_2/Tgate_1/Cbar" -0.836609
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "SPDT_2/out" 23.4214
+cap "SPDT_2/Tgate_1/in" "SPDT_2/Tgate_1/Cbar" 7.30866
+cap "SPDT_2/Tgate_1/in" "SPDT_3/Cbar" -9.26825
+cap "SPDT_2/out" "SPDT_3/in1" 10.7072
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_1/in" 0.355996
+cap "SPDT_2/out" "SPDT_2/Tgate_1/in" 336.302
+cap "SPDT_2/Tgate_1/in" "SPDT_3/C" 0.0978062
+cap "SPDT_2/out" "SPDT_2/Tgate_1/C" 18.4057
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "SPDT_2/Tgate_1/in" 63.9843
+cap "SPDT_2/Tgate_1/in" "SPDT_3/in1" 1.40779
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/D" "SPDT_2/Tgate_1/in" -0.597867
+cap "SPDT_3/in1" "SPDT_3/C" -0.601929
+cap "SPDT_3/Tgate_0/5v_nfet_1_10_0/S" "SPDT_3/in1" 30.2326
+cap "SPDT_2/Tgate_1/in" "SPDT_3/in1" -8.70193
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/in" -0.532795
+cap "SPDT_3/in1" "SPDT_2/out" 158.84
+cap "SPDT_3/Tgate_0/5v_nfet_1_10_0/S" "SPDT_2/Tgate_1/in" 0.189183
+cap "SPDT_2/Tgate_1/in" "SPDT_2/Tgate_1/C" 3.64511
+cap "SPDT_3/Cbar" "SPDT_2/out" 0.400712
+cap "SPDT_3/Tgate_0/5v_nfet_1_10_0/S" "SPDT_2/out" 34.6079
+cap "SPDT_2/out" "SPDT_3/C" 4.78177
+cap "SPDT_2/out" "SPDT_2/Tgate_1/C" 23.6228
+cap "SPDT_2/Tgate_1/in" "SPDT_2/out" 377.669
+cap "SPDT_2/Tgate_1/in" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 81.042
+cap "SPDT_2/out" "cap_m3_5_5_0/Top" 0.344939
+cap "SPDT_2/out" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 58.8217
+cap "SPDT_3/in2" "SPDT_3/Tgate_0/out" -5.94186
+cap "SPDT_3/C" "SPDT_3/in1" 0.0978062
+cap "cap_m3_5_5_0/Top" "SPDT_3/C" 93.7559
+cap "SPDT_3/in2" "SPDT_3/Cbar" 47.4328
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/S" "SPDT_3/C" 0.344135
+cap "SPDT_3/C" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" -6.81239
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_0/Top" 0.703379
+cap "SPDT_3/in2" "SPDT_3/C" 88.8708
+cap "SPDT_2/out" "SPDT_3/in1" 46.2531
+cap "cap_m3_5_5_0/Top" "SPDT_2/out" 2.91011
+cap "cap_m3_5_5_0/Top" "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" 0.167517
+cap "SPDT_3/C" "SPDT_3/Cbar" -3.20484
+cap "cap_m3_5_5_0/Top" "SPDT_3/in1" 97.1921
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_5_5_0/Top" 2.32573
+cap "cap_m3_5_5_0/Top" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 38.6522
+cap "SPDT_3/C" "SPDT_2/out" 0.0723834
+cap "SPDT_3/in2" "SPDT_3/in1" 75.2694
+cap "cap_m3_5_5_0/Top" "SPDT_3/in2" 283.68
+cap "SPDT_3/Tgate_0/out" "SPDT_3/in1" 5.68434e-14
+cap "cap_m3_5_5_0/Top" "SPDT_3/Tgate_0/out" 57.782
+cap "SPDT_3/in2" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 12.626
+cap "cap_m3_5_5_0/Top" "SPDT_3/Cbar" 206.826
+cap "SPDT_3/in2" "SPDT_3/Cbar" -38.998
+cap "SPDT_3/Tgate_0/out" "SPDT_3/C" -2.22946
+cap "SPDT_3/in2" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 15.1166
+cap "SPDT_3/Tgate_0/out" "SPDT_3/Cbar" 0.293973
+cap "SPDT_3/in2" "SPDT_3/Tgate_0/out" 72.7293
+cap "cap_m3_5_5_0/Top" "SPDT_3/in1" 56.6715
+cap "SPDT_3/in2" "cap_m3_5_5_0/Bot" 0.355996
+cap "SPDT_3/Tgate_0/out" "cap_m3_5_5_0/Bot" 0.500868
+cap "SPDT_3/in2" "SPDT_3/in1" 8.7388
+cap "cap_m3_5_5_0/Top" "SPDT_3/C" 27.4625
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/S" "cap_m3_5_5_0/Top" 19.5046
+cap "cap_m3_5_5_0/Top" "SPDT_3/Cbar" 17.7439
+cap "SPDT_3/in2" "cap_m3_5_5_0/Top" 657.091
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_0/Top" 32.0211
+cap "SPDT_3/Tgate_0/out" "cap_m3_5_5_0/Top" 252.188
+cap "SPDT_3/in2" "SPDT_3/C" 35.7616
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/C" -9.44173
+cap "SPDT_3/in2" "SPDT_3/Tgate_1/5v_pfet_1_10_0/D" -4.58889
+cap "SPDT_3/Tgate_1/C" "SPDT_3/Tgate_1/in" 7.30179
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "SPDT_3/Tgate_1/in" 100.823
+cap "SPDT_3/out" "SPDT_3/Tgate_1/C" 41.0218
+cap "SPDT_3/out" "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" 37.7945
+cap "SPDT_3/out" "SPDT_3/Tgate_1/in" 389.615
+cap "SPDT_3/Tgate_1/in" "SPDT_3/Tgate_1/Cbar" -0.607432
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_3/Tgate_1/5v_nfet_1_10_0/G" 1.89306
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_3/out" 274.65
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/out" 160.295
+cap "SPDT_4/Cbar" "SPDT_3/out" 0.400712
+cap "SPDT_4/Tgate_0/5v_nfet_1_10_0/S" "SPDT_3/out" 34.6079
+cap "cap_m3_5_5_1/Top" "SPDT_3/out" -0.0958332
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/out" 44.2638
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" 73.1747
+cap "SPDT_4/C" "SPDT_3/out" 4.85415
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/Cbar" -5.18908
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/G" "SPDT_3/out" 15.0177
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/Tgate_0/5v_nfet_1_10_0/S" 0.630611
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "cap_m3_5_5_1/Top" 1.00683
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 44.2732
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/Tgate_0/5v_pfet_1_10_0/D" -7.87977
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/C" 28.2034
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/C" 2.91262
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "SPDT_4/in2" 17.9732
+cap "cap_m3_5_5_1/Top" "SPDT_3/out" 2.91011
+cap "SPDT_4/C" "SPDT_4/in2" 77.0741
+cap "SPDT_4/C" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" -13.0272
+cap "cap_m3_5_5_1/Top" "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" 2.04007
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Top" 2.92913
+cap "SPDT_4/Cbar" "SPDT_4/in2" 34.5215
+cap "SPDT_4/C" "SPDT_4/Cbar" -3.20484
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "cap_m3_5_5_1/Top" 140.229
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_5_5_1/Top" 0.285661
+cap "cap_m3_5_5_1/Top" "SPDT_4/Tgate_0/out" 110.222
+cap "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/in2" 13.4417
+cap "cap_m3_5_5_1/Top" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 54.7957
+cap "cap_m3_5_5_1/Top" "SPDT_4/in2" 466.645
+cap "SPDT_4/C" "cap_m3_5_5_1/Top" 103.169
+cap "SPDT_4/in2" "SPDT_4/Tgate_0/out" 1.71842
+cap "cap_m3_5_5_1/Top" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" 0.703379
+cap "cap_m3_5_5_1/Top" "SPDT_4/Cbar" 213.009
+cap "SPDT_4/Tgate_1/in" "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" 2.32623
+cap "SPDT_4/out" "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" 14.9025
+cap "SPDT_4/Tgate_1/in" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" 16.8107
+cap "SPDT_4/Tgate_1/in" "Vin" -21.4304
+cap "SPDT_4/out" "Vin" 0.293973
+cap "SPDT_4/out" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" 32.7149
+cap "SPDT_4/Tgate_1/in" "SPDT_4/out" 689.864
+cap "SPDT_4/Tgate_1/in" "clk" 0.0978062
+cap "SPDT_4/Tgate_1/in" "cap_m3_5_5_1/Bot" 0.355996
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" -3.22692
+cap "SPDT_4/Tgate_1/C" "SPDT_4/out" 25.8422
+cap "SPDT_4/out" "cap_m3_5_5_1/Bot" 0.500868
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/out" 15.8196
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/Tgate_1/in" 18.66
+cap "SPDT_4/out" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" 59.7994
+cap "SPDT_4/out" "Tgate_0/C" 0.192371
+cap "SPDT_4/out" "SPDT_4/Tgate_1/in" 124.374
+cap "SPDT_4/out" "SPDT_4/Tgate_1/C" 41.0308
+cap "Tgate_0/C" "Tgate_0/in" 7.86728
+cap "Tgate_0/out" "Tgate_0/in" 126.441
+cap "Tgate_0/C" "SPDT_4/out" 0.0641238
+cap "SPDT_4/out" "Tgate_0/out" 34.6079
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/G" "SPDT_4/out" 0.727005
+cap "Tgate_0/5v_pfet_1_10_0/B" "Tgate_0/in" 131.223
+cap "SPDT_4/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/out" 0.361232
+cap "Tgate_0/5v_pfet_1_10_0/B" "SPDT_4/out" 31.7596
+cap "Tgate_0/Cbar" "Tgate_0/in" 4.29424
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/S" "Tgate_0/in" 19.0729
+cap "SPDT_4/out" "Tgate_0/in" 190.401
+cap "Tgate_0/5v_pfet_1_10_0/B" "Tgate_0/in" 67.4416
+cap "Tgate_0/Cbar" "Tgate_0/in" 6.72366
+cap "Tgate_0/out" "Tgate_0/C" 6.11654
+cap "Tgate_0/C" "Tgate_0/in" 15.3728
+cap "Tgate_0/out" "Tgate_0/in" 415.847
+cap "Tgate_0/out" "SPDT_4/Tgate_1/5v_nfet_1_10_0/B" -2.79365
+cap "SPDT_0/Cbar" "b2" 0.349936
+cap "SPDT_0/in2" "cap_m3_20_10_0/Bot" -5.33835
+cap "SPDT_0/Cbar" "cap_m3_20_10_0/Bot" 630
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_0/out" -37.7189
+cap "SPDT_0/Cbar" "SPDT_0/in1" 87.6228
+cap "SPDT_0/Cbar" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 20.7658
+cap "SPDT_0/Tgate_1/Cbar" "cap_m3_20_10_0/Bot" 484.869
+cap "SPDT_0/Tgate_0/out" "cap_m3_20_10_0/Bot" 385.924
+cap "SPDT_0/Cbar" "SPDT_0/in2" -25.8913
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" -8.30313
+cap "SPDT_0/Cbar" "SPDT_0/Tgate_1/Cbar" 110.526
+cap "SPDT_0/Cbar" "SPDT_0/Tgate_0/out" 158.511
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_20_10_0/Bot" 78.5186
+cap "SPDT_0/in1" "cap_m3_20_10_0/Bot" 212.585
+cap "b2" "SPDT_0/Tgate_1/Cbar" 0.103616
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_1/5v_pfet_1_10_0/D" 56.0174
+cap "SPDT_0/in1" "cap_m3_20_10_0/Bot" 86.1138
+cap "SPDT_0/in2" "SPDT_0/Cbar" -33.2455
+cap "SPDT_0/Tgate_0/out" "SPDT_0/Cbar" 396.689
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 79.4169
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_1/5v_pfet_1_10_0/D" -2.70056
+cap "SPDT_0/in2" "cap_m3_20_10_0/Bot" 33.3962
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Cbar" 251.591
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" -14.8387
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/out" 473.28
+cap "b2" "SPDT_0/Cbar" 0.0207232
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Cbar" 489.985
+cap "SPDT_0/in2" "SPDT_0/Tgate_1/Cbar" 0.300098
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/Tgate_0/out" -47.347
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/D" "SPDT_0/Cbar" 22.9694
+cap "SPDT_0/Tgate_1/Cbar" "cap_m3_20_10_0/Bot" 506.006
+cap "SPDT_0/in1" "SPDT_0/Cbar" 58.9377
+cap "SPDT_0/Tgate_1/5v_nfet_1_10_0/S" "cap_m3_20_10_0/Bot" 0.180133
+cap "SPDT_0/Cbar" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 26.7399
+cap "SPDT_1/Cbar" "SPDT_0/Tgate_1/Cbar" 171.5
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Cbar" 32.8331
+cap "SPDT_0/Tgate_1/in" "SPDT_1/Cbar" 197.394
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_20_10_0/Bot" 90.4809
+cap "SPDT_1/Cbar" "SPDT_0/out" 213.698
+cap "SPDT_0/Tgate_1/in" "cap_m3_20_10_0/Bot" 149.291
+cap "SPDT_0/out" "cap_m3_20_10_0/Bot" 428.475
+cap "SPDT_0/in2" "SPDT_1/in1" 20.1316
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/in2" 0.0756212
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_1/in1" 0.0207232
+cap "SPDT_1/in1" "SPDT_0/out" 36.4471
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_0/out" 0.156293
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/D" "SPDT_1/Cbar" 46.4226
+cap "SPDT_0/out" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 5.19768
+cap "SPDT_1/Cbar" "cap_m3_10_10_0/Bot" 241.727
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/D" "cap_m3_10_10_0/Bot" 120.643
+cap "SPDT_0/in2" "SPDT_1/Cbar" 76.4715
+cap "SPDT_0/in2" "cap_m3_10_10_0/Bot" 89.5137
+cap "SPDT_1/Cbar" "SPDT_1/in1" 39.2049
+cap "SPDT_0/Tgate_1/Cbar" "SPDT_1/Cbar" 101.765
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in1" 112.294
+cap "SPDT_1/Cbar" "SPDT_0/out" 413.128
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/D" "SPDT_0/out" 47.1838
+cap "SPDT_0/Tgate_1/Cbar" "cap_m3_10_10_0/Bot" 2.33255
+cap "SPDT_1/Cbar" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 27.7294
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 77.5901
+cap "cap_m3_10_10_0/Bot" "SPDT_0/out" 398.624
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in1" 149.421
+cap "SPDT_1/Cbar" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 21.1083
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 76.4087
+cap "SPDT_1/Cbar" "cap_m3_10_10_0/Bot" 573.989
+cap "SPDT_0/out" "SPDT_1/Cbar" 3.56757
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/Tgate_0/out" -62.2361
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" -13.7002
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/Cbar" 178.285
+cap "SPDT_1/Cbar" "SPDT_1/in2" -43.6923
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_0/Tgate_1/5v_pfet_1_10_0/S" 3.09721
+cap "SPDT_1/Tgate_1/Cbar" "cap_m3_10_10_0/Bot" 768.953
+cap "cap_m3_10_10_0/Bot" "SPDT_1/in2" -4.58613
+cap "SPDT_0/out" "SPDT_1/Tgate_1/Cbar" 0.65145
+cap "SPDT_1/Cbar" "SPDT_1/Tgate_0/out" 188.935
+cap "SPDT_1/Cbar" "SPDT_1/in1" 81.4848
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/out" 427.787
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/S" "cap_m3_10_10_0/Bot" 36.7545
+cap "Vin" "SPDT_1/Tgate_1/Cbar" 499.688
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/G" "SPDT_1/out" 0.119953
+cap "cap_m3_10_10_0/Bot" "Vin" 77.4676
+cap "SPDT_1/Tgate_1/in" "SPDT_1/Tgate_0/5v_pfet_1_10_0/G" 0.0600197
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/Cbar" 221.921
+cap "Vin" "SPDT_1/Tgate_0/5v_pfet_1_10_0/G" 45.4763
+cap "Vin" "SPDT_1/out" 422.185
+cap "Vin" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 29.7338
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/G" "SPDT_1/Tgate_1/Cbar" -13.7622
+cap "SPDT_1/Tgate_1/in" "Vin" 57.477
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/G" 2.33255
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/out" -25.3473
+cap "cap_m3_10_10_0/Bot" "SPDT_1/out" 527.679
+cap "SPDT_1/Tgate_1/Cbar" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" -9.44169
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/S" "Vin" 25.9469
+cap "SPDT_1/Tgate_1/in" "SPDT_1/Tgate_1/Cbar" 0.300098
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 81.2635
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/in" 96.7958
+cap "SPDT_2/Cbar" "SPDT_1/Tgate_1/in" 197.558
+cap "SPDT_1/out" "cap_m3_10_10_0/Bot" 417.205
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_10_10_0/Bot" 93.0512
+cap "SPDT_1/out" "SPDT_2/Cbar" 213.698
+cap "SPDT_2/Cbar" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 34.0284
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/in" 139.356
+cap "SPDT_2/Cbar" "SPDT_1/Tgate_1/Cbar" 171.5
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "SPDT_2/Cbar" 2.53774
+cap "SPDT_2/Tgate_0/out" "SPDT_2/Cbar" 112.657
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "SPDT_2/in1" 20.1316
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_1/out" 0.65145
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Cbar" 453.985
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/G" "SPDT_1/out" 0.0750294
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 70.3659
+cap "cap_m3_10_5_0/Bot" "SPDT_2/in1" 184.712
+cap "SPDT_1/out" "SPDT_2/Tgate_0/out" 47.1838
+cap "cap_m3_10_5_0/Bot" "cap_m3_10_5_0/Top" -0.517636
+cap "SPDT_2/in1" "SPDT_2/Cbar" 74.2964
+cap "SPDT_2/Cbar" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 22.7842
+cap "cap_m3_10_5_0/Top" "SPDT_2/Cbar" 0.488981
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/G" "SPDT_2/in2" 0.0756212
+cap "cap_m3_10_5_0/Bot" "SPDT_1/out" 238.54
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "SPDT_2/Tgate_1/Cbar" 3.09721
+cap "SPDT_1/out" "SPDT_2/Cbar" 333.754
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_2/Tgate_0/out" -20.7454
+cap "SPDT_1/out" "SPDT_2/in1" 36.4471
+cap "SPDT_1/out" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 5.19768
+cap "cap_m3_10_5_0/Bot" "SPDT_2/in2" -3.27581
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_1/Cbar" 288.195
+cap "SPDT_2/Cbar" "SPDT_2/in2" -13.7654
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_2/Cbar" 60.7891
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/G" "cap_m3_10_5_0/Bot" 2.33255
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" -4.56672
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_10_5_0/Bot" 39.3255
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_0/out" 280.529
+cap "SPDT_1/Tgate_1/5v_pfet_1_10_0/G" "SPDT_2/Cbar" 38.0647
+cap "SPDT_2/Cbar" "SPDT_1/out" 3.56757
+cap "SPDT_2/Cbar" "cap_m3_10_5_0/Bot" 168.016
+cap "SPDT_2/in2" "cap_m3_10_5_0/Bot" 5.43941
+cap "SPDT_2/Cbar" "SPDT_2/in2" -46.8795
+cap "cap_m3_10_5_0/Bot" "cap_m3_10_5_0/Top" -0.443688
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_0/out" 501.178
+cap "SPDT_2/Cbar" "cap_m3_10_5_0/Top" 1.7266
+cap "SPDT_2/Cbar" "SPDT_2/Tgate_0/out" 417.4
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 83.5961
+cap "SPDT_2/Tgate_1/Cbar" "cap_m3_10_5_0/Bot" 127.096
+cap "SPDT_2/Cbar" "SPDT_2/Tgate_1/Cbar" 190.401
+cap "SPDT_2/Cbar" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 24.7474
+cap "SPDT_2/in1" "cap_m3_10_5_0/Bot" 93.3355
+cap "SPDT_2/Cbar" "SPDT_2/in1" 72.3403
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_2/Tgate_0/out" -64.3205
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_2/Tgate_1/Cbar" -15.134
+cap "SPDT_2/out" "SPDT_2/Tgate_1/Cbar" -2.51758
+cap "SPDT_2/Tgate_1/Cbar" "cap_m3_10_5_0/Bot" 52.6659
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 85.2653
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/Cbar" 476.721
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 31.0399
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "SPDT_2/Tgate_1/Cbar" -3.44115
+cap "SPDT_2/Tgate_1/in" "cap_m3_10_5_0/Bot" 124.209
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/in" 148.423
+cap "SPDT_2/out" "cap_m3_10_5_0/Bot" 373.294
+cap "SPDT_2/Tgate_1/Cbar" "SPDT_2/Tgate_1/in" 0.300098
+cap "SPDT_3/Cbar" "SPDT_2/out" 181.716
+cap "SPDT_3/in1" "SPDT_2/Tgate_1/in" 20.1316
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 23.5722
+cap "SPDT_2/Tgate_1/in" "SPDT_2/Tgate_1/Cbar" 0.0756212
+cap "cap_m3_5_5_0/Bot" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 67.9938
+cap "SPDT_2/out" "SPDT_3/in1" 29.6196
+cap "SPDT_3/Cbar" "cap_m3_5_5_0/Bot" 0.150619
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/D" "SPDT_3/Cbar" 6.45487
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/D" "cap_m3_5_5_0/Bot" 22.2437
+cap "SPDT_2/out" "SPDT_2/Tgate_1/Cbar" 0.0750294
+cap "SPDT_2/Tgate_1/in" "SPDT_3/Cbar" 126.918
+cap "SPDT_2/Tgate_1/in" "cap_m3_5_5_0/Bot" 89.7535
+cap "SPDT_2/out" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 5.19768
+cap "SPDT_2/out" "SPDT_3/Cbar" 468.079
+cap "SPDT_2/out" "cap_m3_5_5_0/Bot" 455.262
+cap "SPDT_3/in1" "SPDT_3/Cbar" 5.14466
+cap "SPDT_3/in1" "cap_m3_5_5_0/Bot" 3.98184
+cap "SPDT_2/out" "SPDT_3/Tgate_0/5v_pfet_1_10_0/D" 47.1838
+cap "SPDT_3/Cbar" "SPDT_2/Tgate_1/Cbar" 145.865
+cap "SPDT_2/out" "cap_m3_5_5_0/Top" 1.03107
+cap "cap_m3_5_5_0/Bot" "SPDT_2/Tgate_1/Cbar" 2.33255
+cap "SPDT_3/Cbar" "SPDT_2/out" 3.56757
+cap "SPDT_3/in1" "SPDT_3/Cbar" 87.2673
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_2/out" 0.65145
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/Cbar" 27.9549
+cap "cap_m3_5_5_0/Top" "SPDT_2/out" 3.39513
+cap "SPDT_3/Tgate_0/out" "SPDT_3/Cbar" 173.952
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/Cbar" 132.048
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" -9.96376
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/S" "SPDT_3/Tgate_1/Cbar" 3.09721
+cap "SPDT_3/in1" "cap_m3_5_5_0/Bot" 91.1513
+cap "SPDT_3/Cbar" "SPDT_3/in2" -31.1757
+cap "cap_m3_5_5_0/Top" "SPDT_3/in1" 59.0421
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/Tgate_0/out" -45.2626
+cap "cap_m3_5_5_0/Top" "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" 0.251275
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_0/Bot" 93.2063
+cap "SPDT_3/Cbar" "cap_m3_5_5_0/Bot" 154.448
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_0/Top" 0.221653
+cap "cap_m3_5_5_0/Top" "SPDT_3/Cbar" 13.6393
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_5_5_0/Top" 5.63106
+cap "SPDT_3/Tgate_0/out" "cap_m3_5_5_0/Bot" 403.627
+cap "SPDT_3/Tgate_1/Cbar" "cap_m3_5_5_0/Bot" 30.3178
+cap "SPDT_3/Tgate_0/out" "cap_m3_5_5_0/Top" 3.37047
+cap "cap_m3_5_5_0/Bot" "SPDT_3/in2" 5.08132
+cap "SPDT_3/Tgate_1/Cbar" "cap_m3_5_5_0/Top" 79.1282
+cap "cap_m3_5_5_0/Top" "SPDT_3/in2" 0.180163
+cap "SPDT_3/in1" "SPDT_2/out" 6.82759
+cap "cap_m3_5_5_0/Top" "cap_m3_5_5_0/Bot" -105.325
+cap "cap_m3_5_5_0/Bot" "SPDT_3/Tgate_1/Cbar" 74.6165
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/D" "SPDT_3/Cbar" 47.392
+cap "SPDT_3/Tgate_0/out" "SPDT_3/Tgate_1/Cbar" -39.8032
+cap "SPDT_3/Cbar" "SPDT_3/in2" -5.37462
+cap "cap_m3_5_5_0/Bot" "SPDT_3/Tgate_1/5v_pfet_1_10_0/D" 103.352
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/Cbar" 27.4179
+cap "cap_m3_5_5_0/Bot" "SPDT_3/in2" 32.2563
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/Tgate_1/5v_pfet_1_10_0/D" -2.70056
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_0/Bot" 77.1665
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/in2" 0.300098
+cap "cap_m3_5_5_0/Top" "SPDT_3/Cbar" 0.151507
+cap "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/Tgate_1/Cbar" -13.1781
+cap "SPDT_3/in1" "SPDT_3/Cbar" 54.2247
+cap "SPDT_3/in1" "cap_m3_5_5_0/Bot" 45.4498
+cap "cap_m3_5_5_0/Top" "SPDT_3/Tgate_1/Cbar" 0.227995
+cap "cap_m3_5_5_0/Bot" "SPDT_3/Cbar" 2.33255
+cap "SPDT_3/Tgate_0/out" "SPDT_3/Cbar" 374.793
+cap "SPDT_3/Tgate_1/Cbar" "SPDT_3/Cbar" 488.063
+cap "SPDT_3/Tgate_0/out" "cap_m3_5_5_0/Bot" 387.274
+cap "SPDT_3/Tgate_1/in" "cap_m3_5_5_1/Bot" 141.432
+cap "SPDT_3/out" "SPDT_4/Cbar" 213.698
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "SPDT_4/Cbar" 33.6549
+cap "SPDT_3/out" "cap_m3_5_5_1/Bot" 414.176
+cap "SPDT_4/Cbar" "SPDT_3/Tgate_1/Cbar" 171.5
+cap "SPDT_4/Cbar" "SPDT_3/Tgate_1/in" 197.507
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Bot" 92.3566
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "SPDT_4/Cbar" 26.5698
+cap "cap_m3_5_5_1/Bot" "SPDT_3/in2" 40.1799
+cap "SPDT_4/C" "SPDT_3/in2" 3.09721
+cap "SPDT_3/out" "cap_m3_5_5_1/Bot" 301.425
+cap "SPDT_4/C" "cap_m3_5_5_1/Bot" 5.18138
+cap "SPDT_4/C" "SPDT_3/out" 0.65145
+cap "SPDT_4/in1" "SPDT_3/in2" 20.1316
+cap "cap_m3_5_5_1/Bot" "SPDT_4/in1" 51.7731
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/D" "cap_m3_5_5_1/Bot" 164.721
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/G" "SPDT_3/in2" 0.0756212
+cap "cap_m3_5_5_1/Bot" "SPDT_3/Tgate_1/5v_pfet_1_10_0/G" 2.33255
+cap "SPDT_3/out" "SPDT_4/in1" 36.4471
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/D" "SPDT_3/out" 47.1838
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/D" "SPDT_4/C" -3.77189
+cap "SPDT_3/out" "cap_m3_5_5_1/Top" 1.03107
+cap "SPDT_4/Cbar" "SPDT_3/in2" 51.2996
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Cbar" 44.1819
+cap "SPDT_3/out" "SPDT_3/Tgate_1/5v_pfet_1_10_0/G" 0.0750294
+cap "SPDT_4/Tgate_0/5v_nfet_1_10_0/S" "cap_m3_5_5_1/Bot" 0.450334
+cap "SPDT_3/out" "SPDT_4/Cbar" 388.705
+cap "SPDT_4/C" "SPDT_4/Cbar" 11.0526
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Bot" 75.6667
+cap "SPDT_4/Cbar" "SPDT_4/in1" 53.3537
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/D" "SPDT_4/Cbar" 66.8024
+cap "SPDT_4/Cbar" "cap_m3_5_5_1/Top" -1.07396
+cap "SPDT_3/out" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 5.19768
+cap "SPDT_4/Cbar" "SPDT_3/Tgate_1/5v_pfet_1_10_0/G" 82.1647
+cap "SPDT_4/C" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" -0.830313
+cap "SPDT_3/out" "cap_m3_5_5_1/Top" 3.39513
+cap "SPDT_4/Cbar" "cap_m3_5_5_1/Top" 14.7132
+cap "SPDT_4/Cbar" "SPDT_4/Tgate_0/out" 192.978
+cap "SPDT_4/Cbar" "cap_m3_5_5_1/Bot" 110.416
+cap "SPDT_4/Cbar" "SPDT_4/in2" -46.5039
+cap "SPDT_4/Cbar" "SPDT_3/out" 3.56757
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "SPDT_4/Tgate_1/Cbar" -14.5305
+cap "SPDT_4/in1" "cap_m3_5_5_1/Top" 59.0421
+cap "SPDT_4/in1" "cap_m3_5_5_1/Bot" 78.1559
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Top" 0.444017
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/Tgate_0/out" -66.008
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Top" -0.222364
+cap "SPDT_4/Tgate_1/Cbar" "cap_m3_5_5_1/Top" 79.1282
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Tgate_1/Cbar" 38.1072
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 81.9188
+cap "SPDT_4/Cbar" "SPDT_4/in1" 79.9392
+cap "SPDT_4/Cbar" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 21.0726
+cap "SPDT_4/Tgate_0/out" "cap_m3_5_5_1/Top" 3.37047
+cap "SPDT_4/Cbar" "SPDT_4/Tgate_1/Cbar" 187.783
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_5_5_1/Top" 2.57095
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Tgate_0/out" 414.536
+cap "cap_m3_5_5_1/Bot" "cap_m3_5_5_1/Top" -105.325
+cap "SPDT_4/in2" "cap_m3_5_5_1/Top" 0.431438
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/S" "cap_m3_5_5_1/Top" 3.06011
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Top" 3.69052e-16
+cap "cap_m3_5_5_1/Bot" "SPDT_4/in2" 4.42563
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/S" "cap_m3_5_5_1/Bot" 10.9438
+cap "Vin" "SPDT_4/out" 427.533
+cap "Vin" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" 37.5782
+cap "Vin" "SPDT_4/Tgate_1/in" 85.4605
+cap "Vin" "SPDT_4/Tgate_1/Cbar" 492.621
+cap "SPDT_4/out" "SPDT_4/Tgate_1/Cbar" -17.7585
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/Tgate_1/in" 0.300098
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" -7.78106
+cap "SPDT_4/out" "cap_m3_5_5_1/Bot" 490.625
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Bot" 83.3912
+cap "SPDT_4/Tgate_1/in" "cap_m3_5_5_1/Bot" 84.5618
+cap "SPDT_4/Tgate_1/Cbar" "cap_m3_5_5_1/Bot" 61.6457
+cap "Vin" "SPDT_4/Tgate_0/5v_pfet_1_10_0/G" 25.8763
+cap "SPDT_4/out" "SPDT_4/Tgate_0/5v_pfet_1_10_0/G" 0.151507
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/G" "SPDT_4/Tgate_1/in" 0.0600197
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/G" "SPDT_4/Tgate_1/Cbar" -7.64567
+cap "Vin" "SPDT_4/Tgate_0/5v_pfet_1_10_0/S" 13.379
+cap "SPDT_4/Tgate_0/5v_pfet_1_10_0/G" "cap_m3_5_5_1/Bot" 2.33255
+cap "SPDT_4/Tgate_1/in" "Tgate_0/in" 125.083
+cap "Tgate_0/Cbar" "SPDT_4/out" 406.799
+cap "Tgate_0/in" "SPDT_4/out" 489.978
+cap "SPDT_4/Tgate_1/Cbar" "SPDT_4/out" 0.0750294
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "Tgate_0/Cbar" 55.3525
+cap "Tgate_0/Cbar" "SPDT_4/Tgate_1/Cbar" 156.8
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "Tgate_0/in" 101.869
+cap "SPDT_4/Tgate_1/Cbar" "Tgate_0/in" 1.93182
+cap "Tgate_0/Cbar" "SPDT_4/Tgate_1/in" 177.518
+cap "Tgate_0/in" "SPDT_4/Tgate_1/5v_pfet_1_10_0/S" 61.3373
+cap "Tgate_0/Cbar" "Tgate_0/5v_pfet_1_10_0/B" 4.6651
+cap "Tgate_0/out" "Tgate_0/in" 116.377
+cap "Tgate_0/Cbar" "Tgate_0/in" 71.1855
+cap "Tgate_0/Cbar" "Tgate_0/out" 10.7581
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/G" "Tgate_0/in" 0.400729
+cap "SPDT_4/out" "Tgate_0/5v_pfet_1_10_0/B" 5.19768
+cap "SPDT_4/out" "Tgate_0/in" 127.916
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/G" "Tgate_0/Cbar" 33.1647
+cap "Tgate_0/out" "SPDT_4/out" 47.1838
+cap "Tgate_0/Cbar" "SPDT_4/out" 127.47
+cap "Tgate_0/in" "Tgate_0/5v_pfet_1_10_0/B" 31.4789
+cap "Tgate_0/in" "Tgate_0/Cbar" 0.0674819
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" 19.0946
+cap "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_20_10_0/Bot" 13.5338
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 1.10714
+cap "cap_m3_20_10_0/Bot" "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" 26.8875
+cap "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_10_0/Bot" 6.06343
+cap "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 0.605307
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" 26.8875
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 6.83748
+cap "cap_m3_10_10_0/Bot" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 26.8875
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 1.10714
+cap "cap_m3_10_5_0/Bot" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" 6.06343
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" 0.605307
+cap "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 26.049
+cap "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_10_5_0/Bot" 17.5611
+cap "cap_m3_5_5_0/Bot" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" 14.0998
+cap "cap_m3_5_5_0/Bot" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 25.2287
+cap "cap_m3_5_5_0/Bot" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" 8.43185
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 1.10714
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Bot" 26.8875
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 6.06343
+cap "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 0.605307
+cap "cap_m3_5_5_1/Bot" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" 26.8875
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "cap_m3_5_5_1/Bot" 6.83748
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "Vout" 26.307
+cap "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "Tgate_0/5v_pfet_1_10_0/B" 1.10714
+cap "Tgate_0/5v_pfet_1_10_0/B" "Vout" 1.42109e-14
+merge "cap_m3_5_5_1/VSUBS" "cap_m3_5_5_0/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "cap_m3_5_5_0/VSUBS" "Tgate_0/VSUBS"
+merge "Tgate_0/VSUBS" "SPDT_4/VSUBS"
+merge "SPDT_4/VSUBS" "SPDT_3/VSUBS"
+merge "SPDT_3/VSUBS" "cap_m3_10_5_0/VSUBS"
+merge "cap_m3_10_5_0/VSUBS" "SPDT_2/VSUBS"
+merge "SPDT_2/VSUBS" "cap_m3_10_10_0/VSUBS"
+merge "cap_m3_10_10_0/VSUBS" "SPDT_1/VSUBS"
+merge "SPDT_1/VSUBS" "SPDT_0/VSUBS"
+merge "SPDT_0/VSUBS" "cap_m3_20_10_0/VSUBS"
+merge "cap_m3_20_10_0/VSUBS" "VSUBS"
+merge "SPDT_4/Tgate_1/in" "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" -7129.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -328500 -30200 0 0 0 0 0 0 0 0
+merge "SPDT_3/Tgate_1/5v_nfet_1_10_0/D" "SPDT_4/in2"
+merge "SPDT_4/in2" "SPDT_3/Tgate_1/in"
+merge "SPDT_3/Tgate_1/in" "SPDT_3/in2"
+merge "SPDT_3/in2" "SPDT_2/Tgate_1/in"
+merge "SPDT_2/Tgate_1/in" "SPDT_2/in2"
+merge "SPDT_2/in2" "SPDT_1/Tgate_1/in"
+merge "SPDT_1/Tgate_1/in" "SPDT_0/Tgate_1/5v_nfet_1_10_0/D"
+merge "SPDT_0/Tgate_1/5v_nfet_1_10_0/D" "SPDT_1/in2"
+merge "SPDT_1/in2" "SPDT_0/Tgate_1/in"
+merge "SPDT_0/Tgate_1/in" "SPDT_0/in2"
+merge "SPDT_0/in2" "clkbar"
+merge "SPDT_3/in1" "b0" -1057.25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20400 -750 0 0 0 0 0 0 0 0
+merge "SPDT_1/out" "cap_m3_10_10_0/Top" -1416.68 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28800 -680 0 0 -11700 -440 0 0 0 0
+merge "cap_m3_10_10_0/Top" "m2_9750_1980#"
+merge "SPDT_4/Tgate_1/5v_nfet_1_10_0/B" "Tgate_0/5v_nfet_1_10_0/B" -15117.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5364800 -56380 0 0 0 0 0 0 0 0 0 0
+merge "Tgate_0/5v_nfet_1_10_0/B" "SPDT_4/Tgate_0/5v_nfet_1_10_0/B"
+merge "SPDT_4/Tgate_0/5v_nfet_1_10_0/B" "SPDT_4/Tgate_0/5v_nfet_1_10_0/D"
+merge "SPDT_4/Tgate_0/5v_nfet_1_10_0/D" "SPDT_3/Tgate_1/5v_nfet_1_10_0/B"
+merge "SPDT_3/Tgate_1/5v_nfet_1_10_0/B" "SPDT_4/VSS"
+merge "SPDT_4/VSS" "SPDT_4/in1"
+merge "SPDT_4/in1" "SPDT_3/Tgate_0/5v_nfet_1_10_0/B"
+merge "SPDT_3/Tgate_0/5v_nfet_1_10_0/B" "SPDT_2/Tgate_1/5v_nfet_1_10_0/B"
+merge "SPDT_2/Tgate_1/5v_nfet_1_10_0/B" "SPDT_3/VSS"
+merge "SPDT_3/VSS" "SPDT_2/Tgate_0/5v_nfet_1_10_0/B"
+merge "SPDT_2/Tgate_0/5v_nfet_1_10_0/B" "SPDT_1/Tgate_1/5v_nfet_1_10_0/B"
+merge "SPDT_1/Tgate_1/5v_nfet_1_10_0/B" "SPDT_2/VSS"
+merge "SPDT_2/VSS" "SPDT_1/Tgate_0/5v_nfet_1_10_0/B"
+merge "SPDT_1/Tgate_0/5v_nfet_1_10_0/B" "SPDT_0/Tgate_1/5v_nfet_1_10_0/B"
+merge "SPDT_0/Tgate_1/5v_nfet_1_10_0/B" "SPDT_1/VSS"
+merge "SPDT_1/VSS" "SPDT_0/Tgate_0/5v_nfet_1_10_0/B"
+merge "SPDT_0/Tgate_0/5v_nfet_1_10_0/B" "SPDT_0/VSS"
+merge "SPDT_0/VSS" "VSS"
+merge "cap_m3_5_5_0/Top" "SPDT_3/out" -1881.98 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28800 -680 0 0 -11700 -440 0 0 0 0
+merge "SPDT_3/out" "m2_19910_1980#"
+merge "SPDT_4/Tgate_0/C" "SPDT_3/Tgate_0/C" -6168.95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -240000 -4800 -392000 -5600 0 0 0 0 0 0 0 0
+merge "SPDT_3/Tgate_0/C" "SPDT_2/Tgate_0/C"
+merge "SPDT_2/Tgate_0/C" "SPDT_1/Tgate_0/C"
+merge "SPDT_1/Tgate_0/C" "SPDT_0/Tgate_0/C"
+merge "SPDT_0/Tgate_0/C" "Tgate_0/C"
+merge "Tgate_0/C" "SPDT_4/C"
+merge "SPDT_4/C" "SPDT_3/C"
+merge "SPDT_3/C" "SPDT_2/C"
+merge "SPDT_2/C" "SPDT_1/C"
+merge "SPDT_1/C" "SPDT_0/C"
+merge "SPDT_0/C" "clk"
+merge "cap_m3_5_5_1/Top" "SPDT_4/out" -1917.03 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28800 -680 0 0 -11700 -440 0 0 0 0
+merge "SPDT_4/out" "m2_24990_1980#"
+merge "cap_m3_5_5_1/Bot" "cap_m3_5_5_0/Bot" -19241.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20400 -580 0 0 -8072400 -27150 0 0 0 0 0 0
+merge "cap_m3_5_5_0/Bot" "cap_m3_10_5_0/Bot"
+merge "cap_m3_10_5_0/Bot" "cap_m3_10_10_0/Bot"
+merge "cap_m3_10_10_0/Bot" "cap_m3_20_10_0/Bot"
+merge "cap_m3_20_10_0/Bot" "Tgate_0/in"
+merge "Tgate_0/in" "Vout"
+merge "Tgate_0/Cbar" "SPDT_4/Cbar" -8579.94 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -126000 -3480 -560000 -5600 0 0 0 0 0 0 0 0
+merge "SPDT_4/Cbar" "SPDT_3/Cbar"
+merge "SPDT_3/Cbar" "SPDT_2/Cbar"
+merge "SPDT_2/Cbar" "SPDT_1/Cbar"
+merge "SPDT_1/Cbar" "SPDT_0/Cbar"
+merge "SPDT_0/Cbar" "Vin"
+merge "Tgate_0/5v_pfet_1_10_0/B" "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" -14775.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5360000 -56000 0 0 0 0 0 0 0 0 0 0
+merge "SPDT_4/Tgate_1/5v_pfet_1_10_0/B" "SPDT_4/Tgate_0/5v_pfet_1_10_0/B"
+merge "SPDT_4/Tgate_0/5v_pfet_1_10_0/B" "SPDT_3/Tgate_1/5v_pfet_1_10_0/B"
+merge "SPDT_3/Tgate_1/5v_pfet_1_10_0/B" "SPDT_3/Tgate_0/5v_pfet_1_10_0/B"
+merge "SPDT_3/Tgate_0/5v_pfet_1_10_0/B" "SPDT_2/Tgate_1/5v_pfet_1_10_0/B"
+merge "SPDT_2/Tgate_1/5v_pfet_1_10_0/B" "SPDT_2/Tgate_0/5v_pfet_1_10_0/B"
+merge "SPDT_2/Tgate_0/5v_pfet_1_10_0/B" "SPDT_1/Tgate_1/5v_pfet_1_10_0/B"
+merge "SPDT_1/Tgate_1/5v_pfet_1_10_0/B" "SPDT_1/Tgate_0/5v_pfet_1_10_0/B"
+merge "SPDT_1/Tgate_0/5v_pfet_1_10_0/B" "SPDT_0/Tgate_1/5v_pfet_1_10_0/B"
+merge "SPDT_0/Tgate_1/5v_pfet_1_10_0/B" "SPDT_0/Tgate_0/5v_pfet_1_10_0/B"
+merge "SPDT_0/Tgate_0/5v_pfet_1_10_0/B" "VDD"
+merge "SPDT_2/out" "cap_m3_10_5_0/Top" -1562.63 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28800 -680 0 0 -11700 -440 0 0 0 0
+merge "cap_m3_10_5_0/Top" "m2_14830_1980#"
+merge "SPDT_2/in1" "b1" -784.555 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20400 -580 0 0 0 0 0 0 0 0
+merge "SPDT_0/out" "cap_m3_20_10_0/Top" -1244.86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28800 -680 0 0 -11700 -440 0 0 0 0
+merge "cap_m3_20_10_0/Top" "m2_4670_1980#"
+merge "Tgate_0/out" "Vcm" -280.953 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -32000 -720 0 0 0 0 0 0 0 0 0 0
+merge "SPDT_1/in1" "b2" -1357.67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -496400 -6350 0 0 0 0 0 0 0 0
+merge "SPDT_0/in1" "b3" -146.357 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20400 -580 0 0 0 0 0 0 0 0

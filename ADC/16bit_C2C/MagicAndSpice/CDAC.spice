@@ -1,0 +1,74 @@
+* SPICE3 file created from CDAC.ext - technology: sky130A
+
+X0 SPDT_4/out Vin VSS VDD sky130_fd_pr__pfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X1 VSS clk SPDT_4/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X2 SPDT_4/out clk clkbar VDD sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=150 ps=130 w=10 l=1
+X3 clkbar Vin SPDT_4/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=150 pd=130 as=60 ps=52 w=10 l=1
+X4 SPDT_3/out Vin b0 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=30 ps=26 w=10 l=1
+X5 b0 clk SPDT_3/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=60 ps=52 w=10 l=1
+X6 SPDT_3/out clk clkbar VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X7 clkbar Vin SPDT_3/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X8 SPDT_2/out Vout sky130_fd_pr__cap_mim_m3_1 l=5 w=10
+X9 SPDT_0/out Vout sky130_fd_pr__cap_mim_m3_1 l=10 w=20
+X10 SPDT_1/out Vout sky130_fd_pr__cap_mim_m3_1 l=10 w=10
+X11 Vcm Vin Vout VDD sky130_fd_pr__pfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X12 Vout clk Vcm VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+X13 SPDT_3/out Vout sky130_fd_pr__cap_mim_m3_1 l=5 w=5
+X14 SPDT_4/out Vout sky130_fd_pr__cap_mim_m3_1 l=5 w=5
+X15 SPDT_0/out Vin b3 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=30 ps=26 w=10 l=1
+X16 b3 clk SPDT_0/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=60 ps=52 w=10 l=1
+X17 SPDT_0/out clk clkbar VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X18 clkbar Vin SPDT_0/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X19 SPDT_1/out Vin b2 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=30 ps=26 w=10 l=1
+X20 b2 clk SPDT_1/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=60 ps=52 w=10 l=1
+X21 SPDT_1/out clk clkbar VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X22 clkbar Vin SPDT_1/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X23 SPDT_2/out Vin b1 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=60 pd=52 as=30 ps=26 w=10 l=1
+X24 b1 clk SPDT_2/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=60 ps=52 w=10 l=1
+X25 SPDT_2/out clk clkbar VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+X26 clkbar Vin SPDT_2/out VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0 pd=0 as=0 ps=0 w=10 l=1
+C0 Vout SPDT_1/out 2.15466f
+C1 clkbar b0 2.88691f
+C2 b1 clk 3.44632f
+C3 b1 Vin 2.81771f
+C4 clkbar Vout 5.69278f
+C5 clkbar SPDT_4/out 3.7635f
+C6 clkbar SPDT_1/out 3.24953f
+C7 b2 Vout 2.04112f
+C8 VDD Vout 9.74271f
+C9 b1 b0 2.89885f
+C10 Vin clk 10.05477f
+C11 b3 clk 2.67112f
+C12 clkbar VDD 3.4649f
+C13 Vin SPDT_2/out 2.6791f
+C14 SPDT_0/out clk 2.61741f
+C15 Vin SPDT_0/out 2.68152f
+C16 SPDT_3/out Vin 2.91052f
+C17 b0 clk 6.22194f
+C18 Vin b0 4.17624f
+C19 Vout clk 5.9219f
+C20 Vin Vout 18.49431f
+C21 Vin SPDT_4/out 2.94388f
+C22 Vin SPDT_1/out 2.60439f
+C23 SPDT_3/out Vout 2.18178f
+C24 SPDT_0/out Vout 2.45141f
+C25 clkbar clk 7.87786f
+C26 clkbar Vin 6.0149f
+C27 clkbar SPDT_2/out 3.38984f
+C28 clkbar SPDT_0/out 2.861f
+C29 SPDT_3/out clkbar 4.501f
+C30 b2 clk 2.91648f
+C31 Vin VDD 3.32459f
+C32 Vout SPDT_4/out 2.58648f
+C33 SPDT_2/out VSS 3.5589f
+C34 b1 VSS 2.87611f
+C35 SPDT_1/out VSS 3.30842f
+C36 Vin VSS 11.17746f
+C37 clkbar VSS 7.61357f
+C38 SPDT_0/out VSS 4.12402f
+C39 clk VSS 18.51077f
+C40 VDD VSS 0.16161p
+C41 Vout VSS 12.29942f
+C42 SPDT_3/out VSS 3.8634f
+C43 b0 VSS 3.99159f
+C44 SPDT_4/out VSS 4.78275f
