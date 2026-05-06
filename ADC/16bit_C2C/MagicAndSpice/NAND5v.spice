@@ -1,4 +1,4 @@
-* SPICE3 file created from SRLatch5V.ext - technology: sky130A
+* SPICE3 file created from NAND5v.ext - technology: sky130A
 
 .subckt x5v_nfet_1_2 B D G S
 X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
@@ -8,15 +8,10 @@ X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
 X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
 .ends
 
-.subckt NAND5v A B VDD VSS Y
+.subckt NAND5v A B Y VDD VSS
 X5v_nfet_1_2_0 VSS Y A 5v_nfet_1_2_1/D x5v_nfet_1_2
 X5v_nfet_1_2_1 VSS 5v_nfet_1_2_1/D B VSS x5v_nfet_1_2
 X5v_pfet_1_2_0 VDD Y A VDD x5v_pfet_1_2
 X5v_pfet_1_2_1 VDD Y B VDD x5v_pfet_1_2
-.ends
-
-.subckt SRLatch5V S R Q NQ VDD VSS
-XNAND5v_0 Q R VDD VSS NQ NAND5v
-XNAND5v_1 S NQ VDD VSS Q NAND5v
 .ends
 

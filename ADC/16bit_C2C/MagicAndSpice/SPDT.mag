@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1777586134
+timestamp 1778022479
 << locali >>
 rect 1120 1165 2440 1175
 rect 1120 1095 1130 1165
@@ -16,6 +16,7 @@ rect 1130 1095 1190 1165
 rect 2370 1095 2430 1165
 rect 290 510 350 590
 << metal1 >>
+rect 0 2095 100 2195
 rect 1145 2095 1325 2195
 rect 0 1610 730 1710
 rect 280 1480 360 1490
@@ -57,11 +58,11 @@ rect 0 960 10 1025
 rect 50 960 60 1025
 rect 0 950 60 960
 use Tgate  Tgate_0
-timestamp 1777584931
+timestamp 1778021823
 transform 1 0 0 0 1 0
 box 0 0 1200 2215
 use Tgate  Tgate_1
-timestamp 1777584931
+timestamp 1778021823
 transform 1 0 1240 0 1 0
 box 0 0 1200 2215
 << labels >>
@@ -75,7 +76,7 @@ rlabel locali 0 500 100 600 7 C
 port 4 w
 rlabel metal1 0 1610 100 1710 7 Cbar
 port 5 w
-rlabel space 0 2095 100 2195 7 VDD
+rlabel metal1 0 2095 100 2195 7 VDD
 port 6 w
 rlabel metal1 0 15 100 115 7 VSS
 port 7 w

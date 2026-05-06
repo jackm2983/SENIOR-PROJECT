@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1777789552
+timestamp 1778022479
 << metal1 >>
 rect -20 2095 13900 2195
 rect 12680 1025 12760 1035
@@ -179,54 +179,50 @@ rect 965 195 1165 285
 rect 1250 195 1260 285
 rect 965 185 1260 195
 use cap_m3_5_5  cap_m3_5_5_0
-timestamp 1777780128
+timestamp 1777502523
 transform 0 -1 8135 1 0 1680
 box -15 -15 515 515
 use cap_m3_5_5  cap_m3_5_5_1
-timestamp 1777780128
+timestamp 1777502523
 transform 0 -1 10675 1 0 1680
 box -15 -15 515 515
 use cap_m3_10_5  cap_m3_10_5_0
-timestamp 1777780128
+timestamp 1777502656
 transform 0 -1 5595 1 0 1180
 box -15 -15 1015 515
 use cap_m3_10_10  cap_m3_10_10_0
-timestamp 1777780128
+timestamp 1777502961
 transform 0 -1 3555 1 0 1180
 box -15 -15 1015 1015
 use cap_m3_20_10  cap_m3_20_10_0
-timestamp 1777780128
+timestamp 1777503067
 transform 0 -1 1015 1 0 180
 box -15 -15 2015 1015
 use SPDT  SPDT_0
-timestamp 1777781169
+timestamp 1778022479
 transform 1 0 0 0 1 0
 box 0 0 2440 2215
 use SPDT  SPDT_1
-timestamp 1777781169
+timestamp 1778022479
 transform 1 0 2540 0 1 0
 box 0 0 2440 2215
 use SPDT  SPDT_2
-timestamp 1777781169
+timestamp 1778022479
 transform 1 0 5080 0 1 0
 box 0 0 2440 2215
 use SPDT  SPDT_3
-timestamp 1777781169
+timestamp 1778022479
 transform 1 0 7620 0 1 0
 box 0 0 2440 2215
 use SPDT  SPDT_4
-timestamp 1777781169
+timestamp 1778022479
 transform 1 0 10160 0 1 0
 box 0 0 2440 2215
 use Tgate  Tgate_0
-timestamp 1777781169
+timestamp 1778021823
 transform 1 0 12700 0 1 0
 box 0 0 1200 2215
 << labels >>
-rlabel metal2 -20 1610 0 1710 7 Vin
-port 1 w
-rlabel metal2 -20 1150 0 1270 7 clkbar
-port 2 w
 rlabel metal2 -20 950 0 1035 7 b3
 port 3 w
 rlabel metal2 -20 780 0 865 7 b2
@@ -245,4 +241,8 @@ rlabel metal1 -20 2095 0 2195 7 VDD
 port 10 w
 rlabel metal1 -20 15 0 115 7 VSS
 port 11 w
+rlabel metal2 -20 1610 0 1710 7 clkbar
+port 1 w
+rlabel metal2 -20 1150 0 1270 7 Vin
+port 2 w
 << end >>

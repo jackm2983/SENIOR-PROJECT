@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1777597898
+timestamp 1778021596
 << nwell >>
 rect 15 760 1865 1245
 rect 15 625 2000 760
@@ -138,7 +138,7 @@ rect 1790 385 1810 390
 rect 1660 260 1690 310
 << metal1 >>
 rect -20 1085 2000 1210
-rect -20 1050 5 1085
+rect -20 1050 10 1085
 rect 700 1015 750 1025
 rect 700 970 710 1015
 rect 740 970 750 1015
@@ -286,39 +286,39 @@ rect -20 235 20 275
 rect 1250 235 1305 350
 rect -20 185 1305 235
 use 5v_nfet_1_1  5v_nfet_1_1_0
-timestamp 1777595351
+timestamp 1777353718
 transform 0 1 100 -1 0 435
 box -150 -100 435 200
 use 5v_nfet_1_1  5v_nfet_1_1_1
-timestamp 1777595351
+timestamp 1777353718
 transform 0 1 450 -1 0 435
 box -150 -100 435 200
 use 5v_nfet_1_1  5v_nfet_1_1_2
-timestamp 1777595351
+timestamp 1777353718
 transform 0 1 800 -1 0 435
 box -150 -100 435 200
 use 5v_nfet_1_1  5v_nfet_1_1_3
-timestamp 1777595351
+timestamp 1777353718
 transform 0 1 1150 -1 0 435
 box -150 -100 435 200
 use 5v_nfet_1_1  5v_nfet_1_1_4
-timestamp 1777595351
+timestamp 1777353718
 transform 0 1 1500 -1 0 435
 box -150 -100 435 200
 use 5v_pfet_1_1  5v_pfet_1_1_0
-timestamp 1777594639
+timestamp 1777593882
 transform 0 -1 200 1 0 775
 box -150 -100 470 200
 use 5v_pfet_1_1  5v_pfet_1_1_1
-timestamp 1777594639
+timestamp 1777593882
 transform 0 -1 550 1 0 775
 box -150 -100 470 200
 use 5v_pfet_1_1  5v_pfet_1_1_2
-timestamp 1777594639
+timestamp 1777593882
 transform 0 -1 1780 1 0 775
 box -150 -100 470 200
 use 5v_pfet_1_1  5v_pfet_1_1_3
-timestamp 1777594639
+timestamp 1777593882
 transform 0 1 1850 -1 0 470
 box -150 -100 470 200
 use 5v_pfet_1_2  5v_pfet_1_2_0
@@ -340,8 +340,8 @@ rlabel metal2 2060 625 2080 675 3 outp
 port 4 e
 rlabel metal2 2060 535 2080 585 3 outn
 port 5 e
-rlabel space -20 1050 10 1210 7 VDD
-port 6 w
 rlabel metal1 -20 0 10 160 7 VSS
 port 7 w
+rlabel metal1 -20 1050 10 1210 7 VDD
+port 6 w
 << end >>

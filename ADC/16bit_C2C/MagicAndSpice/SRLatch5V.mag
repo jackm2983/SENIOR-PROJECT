@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1777792623
+timestamp 1778021711
 << locali >>
 rect 1740 705 1780 710
 rect 810 700 1780 705
@@ -55,13 +55,13 @@ rect 235 490 240 520
 rect 275 490 1335 520
 rect 1370 490 1380 520
 rect 235 480 1380 490
-use AND5v  AND5v_0
-timestamp 1777791478
-transform 1 0 20 0 1 0
-box -20 0 840 1220
-use AND5v  AND5v_1
+use NAND5v  NAND5v_0
 timestamp 1777791478
 transform 1 0 940 0 1 0
+box -20 0 840 1220
+use NAND5v  NAND5v_1
+timestamp 1777791478
+transform 1 0 20 0 1 0
 box -20 0 840 1220
 << labels >>
 rlabel metal1 -40 665 0 725 7 S

@@ -1,0 +1,62 @@
+magic
+tech sky130A
+timestamp 1778022479
+<< locali >>
+rect 0 905 50 915
+rect 0 835 10 905
+rect 40 835 50 905
+rect 0 825 50 835
+rect 0 420 50 430
+rect 0 350 10 420
+rect 40 350 50 420
+rect 0 340 50 350
+rect 280 310 390 320
+rect 280 260 345 310
+rect 380 260 390 310
+rect 280 250 390 260
+<< viali >>
+rect 10 835 40 905
+rect 255 745 285 790
+rect 210 460 240 510
+rect 10 350 40 420
+rect 345 260 380 310
+<< metal1 >>
+rect 0 1065 30 1190
+rect 0 905 50 920
+rect 0 835 10 905
+rect 40 835 50 905
+rect 0 420 50 835
+rect 245 790 295 1190
+rect 245 745 255 790
+rect 285 745 295 790
+rect 245 735 295 745
+rect 0 350 10 420
+rect 40 350 50 420
+rect 0 335 50 350
+rect 200 510 250 520
+rect 200 460 210 510
+rect 240 460 250 510
+rect 0 0 50 160
+rect 200 0 250 460
+rect 335 310 390 1005
+rect 335 260 345 310
+rect 380 260 390 310
+rect 335 250 390 260
+use 5v_nfet_1_1  5v_nfet_1_1_0 ~/SeniorProject/vlsi/designs
+timestamp 1777353718
+transform 0 1 100 -1 0 435
+box -150 -100 435 200
+use 5v_pfet_1_2  5v_pfet_1_2_0 ~/SeniorProject/vlsi/designs
+timestamp 1777505670
+transform 0 -1 295 1 0 820
+box -215 -95 400 295
+<< labels >>
+rlabel metal1 0 560 30 685 7 X
+port 1 w
+rlabel metal1 360 560 390 685 3 Y
+port 2 e
+rlabel metal1 0 1065 30 1190 7 VDD
+port 3 w
+rlabel metal1 0 0 30 125 7 VSS
+port 4 w
+<< end >>

@@ -1,8 +1,10 @@
 magic
 tech sky130A
-timestamp 1777353718
+timestamp 1777593882
 << nwell >>
-rect -150 -50 350 150
+rect 240 150 470 185
+rect -150 -50 470 150
+rect 240 -85 470 -50
 << mvpmos >>
 rect 0 0 100 100
 << mvpdiff >>
