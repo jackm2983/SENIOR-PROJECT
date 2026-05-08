@@ -34,17 +34,17 @@ X0 Top Bot sky130_fd_pr__cap_mim_m3_1 l=10 w=10
 X0 Top Bot sky130_fd_pr__cap_mim_m3_1 l=5 w=5
 .ends
 
-.subckt CDAC clkbar Vin b1 b2 b3 b0 clk Vout Vcm VDD VSS
+.subckt CDAC clkbar Vin b3 b2 b1 b0 clk Vout Vcm VDD VSS
 XSPDT_4 VSS Vin SPDT_4/out clkbar VDD VSS clk SPDT
 XSPDT_3 b0 Vin SPDT_3/out clkbar VDD VSS clk SPDT
 Xcap_m3_10_5_0 SPDT_2/out Vout cap_m3_10_5
 Xcap_m3_20_10_0 SPDT_0/out Vout cap_m3_20_10
 Xcap_m3_10_10_0 SPDT_1/out Vout cap_m3_10_10
-XTgate_0 Vout Vcm clkbar VDD VSS clk Tgate
+XTgate_0 Vout Vcm clk VDD VSS clkbar Tgate
 Xcap_m3_5_5_0 SPDT_3/out Vout cap_m3_5_5
 Xcap_m3_5_5_1 SPDT_4/out Vout cap_m3_5_5
-XSPDT_0 b1 Vin SPDT_0/out clkbar VDD VSS clk SPDT
+XSPDT_0 b3 Vin SPDT_0/out clkbar VDD VSS clk SPDT
 XSPDT_1 b2 Vin SPDT_1/out clkbar VDD VSS clk SPDT
-XSPDT_2 b3 Vin SPDT_2/out clkbar VDD VSS clk SPDT
+XSPDT_2 b1 Vin SPDT_2/out clkbar VDD VSS clk SPDT
 .ends
 
