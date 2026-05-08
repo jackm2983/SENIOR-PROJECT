@@ -1,0 +1,61 @@
+** sch_path: /home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sch
+**.subckt CDAC_4bit_VCM_simplified Vin clk clkbar vcm VDD b3 b2 b1 out b0
+*.ipin Vin
+*.ipin clk
+*.ipin clkbar
+*.ipin vcm
+*.iopin VDD
+*.ipin b3
+*.ipin b2
+*.ipin b1
+*.iopin out
+*.ipin b0
+XC1 net5 out sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+XC2 net1 out sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+x2 clkbar vcm out VDD clk GND T_gate
+x3 clkbar VDD GND clk b0 net1 Vin SPDT
+XC3 net2 out sky130_fd_pr__cap_mim_m3_1 W=10 L=5 MF=1 m=1
+x4 clkbar VDD GND clk b1 net2 Vin SPDT
+XC4 net3 out sky130_fd_pr__cap_mim_m3_1 W=10 L=10 MF=1 m=1
+x5 clkbar VDD GND clk b2 net3 Vin SPDT
+XC5 net4 out sky130_fd_pr__cap_mim_m3_1 W=20 L=10 MF=1 m=1
+x6 clkbar VDD GND clk b3 net4 Vin SPDT
+x1 clkbar VDD GND clk GND net5 Vin SPDT
+**.ends
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/T_gate.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/T_gate.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/T_gate.sch
+.subckt T_gate c out in Vdd cbar Vss
+*.ipin in
+*.ipin cbar
+*.ipin c
+*.iopin Vdd
+*.iopin Vss
+*.iopin out
+XM1 in c out Vss sky130_fd_pr__nfet_g5v0d10v5 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 out cbar in Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/SPDT.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/SPDT.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/SPDT.sch
+.subckt SPDT cbar vdd vss c in1 out in2
+*.ipin in1
+*.ipin in2
+*.ipin c
+*.ipin cbar
+*.opin out
+*.iopin vdd
+*.iopin vss
+x1 c out in1 vdd cbar vss T_gate
+x2 cbar out in2 vdd c vss T_gate
+.ends
+
+.GLOBAL GND
+.end

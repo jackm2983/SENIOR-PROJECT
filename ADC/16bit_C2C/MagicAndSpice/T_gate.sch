@@ -24,7 +24,7 @@ lab=in}
 N -30 100 -30 160 {
 lab=Vdd}
 N -30 -70 -30 -50 {
-lab=GND}
+lab=#net1}
 N -30 200 -30 220 {
 lab=cbar}
 N -220 120 -190 120 {
@@ -36,7 +36,7 @@ lab=c}
 N -210 140 -190 140 {
 lab=Vss}
 N -30 -50 -30 -0 {
-lab=GND}
+lab=#net1}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -30 -90 3 1 {name=M1
 W=10
 L=1
@@ -76,5 +76,6 @@ C {iopin.sym} -190 120 0 0 {name=p8 lab=Vdd}
 C {iopin.sym} -190 140 0 0 {name=p9 lab=Vss}
 C {lab_pin.sym} -240 140 0 0 {name=p10 sig_type=std_logic lab=Vss
 }
-C {gnd.sym} -30 0 0 0 {name=l4 lab=GND}
 C {iopin.sym} 140 0 0 0 {name=p1 lab=out}
+C {lab_pin.sym} -30 0 3 0 {name=p4 sig_type=std_logic lab=Vss
+}

@@ -36,15 +36,15 @@ lab=VDD}
 N -190 -50 -190 150 {
 lab=VDD}
 N -190 210 -90 210 {
-lab=VDD}
+lab=GND}
 N -190 210 -190 270 {
-lab=VDD}
+lab=GND}
 N -240 10 -90 10 {
-lab=VDD}
+lab=GND}
 N -240 10 -240 210 {
-lab=VDD}
+lab=GND}
 N -240 210 -190 210 {
-lab=VDD}
+lab=GND}
 N 260 150 270 150 {
 lab=nq}
 N 240 -50 260 -50 {
@@ -54,6 +54,6 @@ C {NAND2_5V.sym} 60 180 0 0 {name=x2}
 C {ipin.sym} -130 -30 0 0 {name=p1 lab=s}
 C {ipin.sym} -130 190 0 0 {name=p2 lab=r}
 C {iopin.sym} -190 -50 2 0 {name=p3 lab=VDD}
-C {iopin.sym} -190 270 2 0 {name=p4 lab=GND}
+C {iopin.sym} -190 270 2 0 {name=p4 lab=VSS}
 C {opin.sym} 260 -50 0 0 {name=p5 lab=q}
 C {opin.sym} 270 150 0 0 {name=p6 lab=nq}

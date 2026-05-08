@@ -1,0 +1,95 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__pfet_g5v0d10v5 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__nfet_g5v0d10v5 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__cap_mim_m3_1 and Circuit 2 cell sky130_fd_pr__cap_mim_m3_1 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Flattening unmatched subcell Tgate in circuit SPDT (0)(2 instances)
+Flattening unmatched subcell x5v_pfet_1_10 in circuit SPDT (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_10 in circuit SPDT (0)(2 instances)
+Flattening unmatched subcell T_gate in circuit SPDT (1)(2 instances)
+
+Subcircuit summary:
+Circuit 1: SPDT                            |Circuit 2: SPDT                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (2)           |sky130_fd_pr__pfet_g5v0d10v5 (2)           
+sky130_fd_pr__nfet_g5v0d10v5 (2)           |sky130_fd_pr__nfet_g5v0d10v5 (2)           
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: SPDT                            |Circuit 2: SPDT                            
+-------------------------------------------|-------------------------------------------
+out                                        |out                                        
+VDD                                        |vdd                                        
+C                                          |c                                          
+Cbar                                       |cbar                                       
+VSS                                        |vss                                        
+in2                                        |in2                                        
+in1                                        |in1                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes SPDT and SPDT are equivalent.
+Flattening unmatched subcell cap_m3_10_5 in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell cap_m3_20_10 in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell cap_m3_10_10 in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell Tgate in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell x5v_pfet_1_10 in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell x5v_nfet_1_10 in circuit CDAC (0)(1 instance)
+Flattening unmatched subcell cap_m3_5_5 in circuit CDAC (0)(2 instances)
+Flattening unmatched subcell T_gate in circuit CDAC_4bit_VCM_simplified (1)(1 instance)
+
+Subcircuit summary:
+Circuit 1: CDAC                            |Circuit 2: CDAC_4bit_VCM_simplified        
+-------------------------------------------|-------------------------------------------
+SPDT (5)                                   |SPDT (5)                                   
+sky130_fd_pr__cap_mim_m3_1 (5)             |sky130_fd_pr__cap_mim_m3_1 (5)             
+sky130_fd_pr__pfet_g5v0d10v5 (1)           |sky130_fd_pr__pfet_g5v0d10v5 (1)           
+sky130_fd_pr__nfet_g5v0d10v5 (1)           |sky130_fd_pr__nfet_g5v0d10v5 (1)           
+Number of devices: 12                      |Number of devices: 12                      
+Number of nets: 16                         |Number of nets: 16                         
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: CDAC                            |Circuit 2: CDAC_4bit_VCM_simplified        
+
+---------------------------------------------------------------------------------------
+Net: clk                                   |Net: clk                                   
+  SPDT/C = 5                               |  SPDT/c = 5                               
+  sky130_fd_pr__nfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       
+                                           |                                           
+Net: clkbar                                |Net: clkbar                                
+  SPDT/Cbar = 5                            |  SPDT/cbar = 5                            
+  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__nfet_g5v0d10v5/2 = 1       
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Port matching may fail to disambiguate symmetries.
+
+Subcircuit pins:
+Circuit 1: CDAC                            |Circuit 2: CDAC_4bit_VCM_simplified        
+-------------------------------------------|-------------------------------------------
+b1                                         |b3 **Mismatch**                            
+b2                                         |b2                                         
+b3                                         |b1 **Mismatch**                            
+b0                                         |b0                                         
+clk                                        |clk                                        
+clkbar                                     |clkbar                                     
+VDD                                        |VDD                                        
+Vcm                                        |vcm                                        
+Vin                                        |Vin                                        
+Vout                                       |out **Mismatch**                           
+VSS                                        |(no pin, node is GND                       
+---------------------------------------------------------------------------------------
+Cell pin lists for CDAC and CDAC_4bit_VCM_simplified altered to match.
+Device classes CDAC and CDAC_4bit_VCM_simplified are equivalent.
+
+Final result: Top level cell failed pin matching.

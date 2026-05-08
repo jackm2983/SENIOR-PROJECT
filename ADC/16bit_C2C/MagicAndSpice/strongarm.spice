@@ -1,4 +1,4 @@
-* SPICE3 file created from strongarm.ext - technology: sky130A
+* NGSPICE file created from strongarm.ext - technology: sky130A
 
 .subckt x5v_pfet_1_1 S B G D
 X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=1 pd=4 as=1 ps=4 w=1 l=1
@@ -13,8 +13,8 @@ X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=1 pd=4 as=1 ps=4 w=1 l=1
 .ends
 
 .subckt strongarm Vinp Vinn clk outp outn VDD VSS
-X5v_pfet_1_1_1 VDD VDD 5v_pfet_1_1_1/G outn x5v_pfet_1_1
-X5v_pfet_1_1_0 VDD VDD 5v_pfet_1_1_1/G 5v_pfet_1_1_0/D x5v_pfet_1_1
+X5v_pfet_1_1_1 VDD VDD clk outn x5v_pfet_1_1
+X5v_pfet_1_1_0 VDD VDD clk 5v_pfet_1_1_0/D x5v_pfet_1_1
 X5v_pfet_1_1_2 VDD VDD clk outp x5v_pfet_1_1
 X5v_pfet_1_1_3 VDD VDD clk 5v_pfet_1_1_3/D x5v_pfet_1_1
 X5v_pfet_1_2_0 VDD outn outp VDD x5v_pfet_1_2

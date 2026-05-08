@@ -188,7 +188,7 @@ rlabel metal1 2645 0 2710 30 5 VN
 port 3 s
 rlabel locali 2715 675 2725 710 3 Y
 port 4 e
-rlabel locali 400 710 500 735 7 X
+rlabel locali 400 710 500 735 7 A
 port 5 w
 rlabel metal1 2630 1220 2695 1250 1 VP
 port 2 n

@@ -1,0 +1,36 @@
+** sch_path: /home/ee431/workspace/6SAR_CDAC/SR_latch.sch
+**.subckt SR_latch s r VDD VSS q nq
+*.ipin s
+*.ipin r
+*.iopin VDD
+*.iopin VSS
+*.opin q
+*.opin nq
+x1 VDD q s nq VSS NAND2_5V
+x2 VDD nq q r VSS NAND2_5V
+**.ends
+
+* expanding   symbol:  NAND2_5V.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2_5V.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2_5V.sch
+.subckt NAND2_5V VDD Y A B GND
+*.ipin A
+*.ipin B
+*.ipin VDD
+*.ipin GND
+*.opin Y
+XM1 Y B VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y A net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

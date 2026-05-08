@@ -8,15 +8,15 @@ E {}
 T {CLK low -> X, Y, P, Q all precharged to 5V
 CLK High -> inputs pull latch and Y swings to 0 or 5V} -350 -300 0 0 0.5 0.5 {}
 N 0 390 0 420 {
-lab=GND}
+lab=VSS}
 N -0 360 40 360 {
-lab=GND}
+lab=VSS}
 N 40 360 70 360 {
-lab=GND}
+lab=VSS}
 N -110 230 -40 230 {
-lab=GND}
+lab=VSS}
 N 30 230 110 230 {
-lab=GND}
+lab=VSS}
 N -110 260 -110 300 {
 lab=#net1}
 N -110 300 -0 300 {
@@ -32,9 +32,9 @@ lab=p}
 N 110 120 110 200 {
 lab=q}
 N -190 90 -110 90 {
-lab=GND}
+lab=VSS}
 N 110 90 180 90 {
-lab=GND}
+lab=VSS}
 N -200 -50 -110 -50 {
 lab=VDD}
 N 110 -50 190 -50 {
@@ -129,6 +129,8 @@ N 110 30 180 30 {
 lab=outp}
 N -180 30 -110 30 {
 lab=outn}
+N -390 310 -370 310 {
+lab=VSS}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -90 90 0 1 {name=M1
 W=1
 L=1
@@ -213,12 +215,6 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {gnd.sym} 0 420 0 0 {name=l1 lab=GND}
-C {gnd.sym} 70 360 3 1 {name=l2 lab=GND}
-C {gnd.sym} -40 230 3 1 {name=l3 lab=GND}
-C {gnd.sym} 30 230 1 0 {name=l4 lab=GND}
-C {gnd.sym} -190 90 1 0 {name=l5 lab=GND}
-C {gnd.sym} 180 90 3 1 {name=l6 lab=GND}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -20 360 0 0 {name=M7
 W=1
 L=1
@@ -320,3 +316,11 @@ value="
 
 "
 spice_ignore=false}
+C {iopin.sym} -390 310 0 1 {name=p23 lab=VSS}
+C {lab_pin.sym} -370 310 0 1 {name=p24 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 0 420 1 1 {name=p26 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 70 360 1 1 {name=p27 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} -40 230 1 1 {name=p28 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 30 230 1 1 {name=p29 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} -190 90 1 1 {name=p30 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 180 90 1 1 {name=p31 sig_type=std_logic lab=VSS}

@@ -14,122 +14,122 @@ port "VDD" 6 0 4190 200 4390 m1
 port "C" 4 0 1000 200 1200 li
 port "out" 3 4720 2170 4880 2350 m2
 node "VSS" 2 1396.37 0 30 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 530000 5700 0 0 0 0 0 0 0 0 0 0
-node "in2" 2 1028.56 0 2300 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15600 500 504900 6280 0 0 0 0 0 0 0 0
-node "in1" 0 163.005 0 1900 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10400 420 20400 580 0 0 0 0 0 0 0 0
+node "in2" 2 1043.11 0 2300 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15600 500 504900 6280 0 0 0 0 0 0 0 0
+node "in1" 0 163.988 0 1900 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10400 420 20400 580 0 0 0 0 0 0 0 0
 node "Cbar" 3 2397.28 0 3220 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1046600 10200 0 0 0 0 0 0 0 0 0 0
 node "m1_2290_4190#" 0 263.351 2290 4190 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 72000 1120 0 0 0 0 0 0 0 0 0 0
 node "VDD" 0 176.007 0 4190 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40000 800 0 0 0 0 0 0 0 0 0 0
 node "C" 50 2354.05 0 1000 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 144000 1840 444800 5960 424000 4640 0 0 0 0 0 0 0 0
-node "out" 189 1832.46 4720 2170 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 475200 5640 33600 1040 28800 680 0 0 0 0 0 0 0 0
+node "out" 189 1885.1 4720 2170 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 475200 5640 33600 1040 28800 680 0 0 0 0 0 0 0 0
 substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-cap "VSS" "Cbar" 76.1951
+cap "in2" "in1" 20.6897
+cap "in2" "out" 162.226
+cap "Cbar" "VDD" 10.7317
+cap "Cbar" "C" 621.703
+cap "Cbar" "VSS" 76.1951
+cap "Cbar" "in1" 3.36749
+cap "Cbar" "out" 14.9352
+cap "C" "VSS" 12.8918
 cap "in2" "Cbar" 360.616
-cap "C" "out" 8.38861
-cap "VSS" "C" 12.8918
-cap "C" "in2" 555.434
-cap "in2" "in1" 22.0928
-cap "VDD" "Cbar" 10.7317
-cap "C" "Cbar" 621.703
-cap "out" "in2" 235.813
-cap "in1" "Cbar" 3.36749
-cap "out" "Cbar" 14.9352
-cap "C" "in1" 15.355
-cap "C" "m1_2290_4190#" 10.047
+cap "C" "in1" 14.9591
+cap "out" "C" 7.46677
+cap "m1_2290_4190#" "C" 10.047
+cap "in2" "C" 555.434
+cap "Tgate_1/VSS" "Tgate_0/out" -4.13397
 cap "Tgate_1/VSS" "Tgate_0/in" 5.68434e-14
 cap "Tgate_1/VSS" "Tgate_0/C" -7.83835
-cap "Tgate_0/in" "Tgate_0/C" 362.812
-cap "Tgate_1/C" "Tgate_0/in" 30.5947
-cap "Tgate_1/C" "Tgate_0/C" 72.5392
-cap "Tgate_1/VSS" "Tgate_0/out" -4.13397
-cap "Tgate_0/out" "Tgate_0/C" 154.346
-cap "Tgate_0/in" "Tgate_0/out" -53.6969
 cap "Tgate_1/C" "Tgate_0/out" 57.1649
+cap "Tgate_0/in" "Tgate_1/C" 30.5947
 cap "Tgate_1/in" "Tgate_0/C" -0.879128
-cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/C" 0.61155
-cap "Tgate_0/5v_pfet_1_10_0/B" "Tgate_1/C" 9.87802
-cap "Tgate_0/in" "Tgate_1/C" 152.676
+cap "Tgate_0/in" "Tgate_0/out" -53.6969
+cap "Tgate_1/C" "Tgate_0/C" 72.5392
+cap "Tgate_0/out" "Tgate_0/C" 154.346
+cap "Tgate_0/in" "Tgate_0/C" 362.812
 cap "Tgate_1/VSS" "Tgate_0/C" -8.32233
-cap "Tgate_1/VSS" "Tgate_1/C" -9.12195
-cap "Tgate_0/C" "Tgate_1/C" 293.355
-cap "Tgate_0/in" "Tgate_1/in" 47.2222
-cap "Tgate_1/VSS" "Tgate_0/out" -12.8928
-cap "Tgate_0/out" "Tgate_0/C" -0.075693
-cap "Tgate_0/C" "Tgate_1/in" 0.06307
-cap "Tgate_1/VSS" "Tgate_0/in" -1.42109e-14
+cap "Tgate_1/in" "Tgate_0/C" 0.06307
 cap "Tgate_0/out" "Tgate_1/C" 157.062
+cap "Tgate_1/VSS" "Tgate_1/C" -9.12195
+cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/C" 0.61155
 cap "Tgate_1/in" "Tgate_1/C" 3.02352
-cap "Tgate_1/in" "Tgate_1/C" 3.14286
+cap "Tgate_0/C" "Tgate_1/C" 293.355
+cap "Tgate_1/VSS" "Tgate_0/in" -1.42109e-14
+cap "Tgate_1/in" "Tgate_0/in" 47.2222
+cap "Tgate_0/5v_pfet_1_10_0/B" "Tgate_1/C" 9.87802
+cap "Tgate_0/out" "Tgate_1/VSS" -12.8928
+cap "Tgate_0/out" "Tgate_0/C" -0.075693
+cap "Tgate_0/in" "Tgate_1/C" 152.676
 cap "Tgate_0/5v_nfet_1_10_0/D" "Tgate_1/in" 12.5666
+cap "Tgate_1/C" "Tgate_1/in" 3.14286
 cap "Tgate_1/out" "Tgate_1/in" 6.50085
 cap "Tgate_1/out" "Tgate_1/5v_nfet_1_10_0/G" -0.0213946
-cap "Tgate_1/in" "Tgate_0/out" 43.0659
-cap "Tgate_1/Cbar" "Tgate_1/VDD" 111.754
-cap "Tgate_0/in" "Tgate_0/out" -80.9966
-cap "Tgate_1/C" "Tgate_0/out" 261.152
-cap "Tgate_1/in" "Tgate_1/Cbar" -15.5273
-cap "Tgate_1/Cbar" "Tgate_0/in" 627.218
-cap "Tgate_1/in" "Tgate_1/VDD" 100.334
-cap "Tgate_1/Cbar" "Tgate_0/out" 289.076
+cap "Tgate_1/VDD" "Tgate_1/in" 100.334
+cap "Tgate_1/VDD" "Tgate_1/C" 91.3761
 cap "Tgate_0/in" "Tgate_1/VDD" -59.6296
-cap "Tgate_1/C" "Tgate_1/VDD" 91.3761
-cap "Tgate_1/in" "Tgate_0/in" 323.722
-cap "Tgate_1/C" "Tgate_0/in" 89.2016
-cap "Tgate_1/VDD" "Tgate_1/Cbar" 34.064
-cap "Tgate_1/C" "Tgate_1/Cbar" -3.59046
-cap "Tgate_0/in" "Tgate_1/in" 46.8316
-cap "Tgate_1/VDD" "Tgate_1/C" 73.2084
-cap "Tgate_0/out" "Tgate_1/in" 392.209
-cap "Tgate_0/out" "Tgate_0/in" -1.9888
-cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/VDD" -4.44004
-cap "Tgate_1/5v_pfet_1_10_0/D" "Tgate_1/in" 2.29444
-cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/C" 0.12231
-cap "Tgate_1/Cbar" "Tgate_1/in" 31.5338
-cap "Tgate_0/in" "Tgate_1/Cbar" 44.9734
-cap "Tgate_0/out" "Tgate_1/Cbar" 58.1601
-cap "Tgate_1/C" "Tgate_1/in" -1.33332
-cap "Tgate_0/in" "Tgate_1/C" 53.0035
-cap "Tgate_1/VDD" "Tgate_1/in" 104.547
-cap "Tgate_0/in" "Tgate_1/VDD" -0.433346
-cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/in" -0.38166
-cap "Tgate_0/out" "Tgate_1/C" 240.514
-cap "Tgate_0/out" "Tgate_1/VDD" 74.2203
-cap "Tgate_0/out" "Tgate_1/VSS" -2.79365
+cap "Tgate_0/in" "Tgate_1/in" 325.125
+cap "Tgate_0/in" "Tgate_1/C" 89.2016
+cap "Tgate_1/VDD" "Tgate_1/Cbar" 111.754
+cap "Tgate_0/out" "Tgate_1/in" 43.0659
+cap "Tgate_1/C" "Tgate_0/out" 261.152
+cap "Tgate_0/in" "Tgate_0/out" -80.9966
+cap "Tgate_1/in" "Tgate_1/Cbar" -15.5273
+cap "Tgate_0/in" "Tgate_1/Cbar" 627.613
+cap "Tgate_0/out" "Tgate_1/Cbar" 289.076
 cap "Tgate_0/out" "Tgate_1/5v_nfet_1_10_0/S" 91.5875
-cap "Tgate_1/VDD" "Tgate_1/out" 280.346
-cap "Tgate_1/VDD" "Tgate_1/in" -45.5784
-cap "Tgate_1/C" "Tgate_1/in" -1.16356
-cap "Tgate_1/out" "Tgate_1/in" 286.469
+cap "Tgate_0/out" "Tgate_0/in" -1.9888
+cap "Tgate_1/Cbar" "Tgate_0/in" 44.9734
+cap "Tgate_0/out" "Tgate_1/VDD" 74.2203
+cap "Tgate_1/Cbar" "Tgate_1/VDD" 34.064
+cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/VDD" -4.44004
+cap "Tgate_0/in" "Tgate_1/VDD" -0.433346
+cap "Tgate_1/C" "Tgate_1/in" -1.33332
+cap "Tgate_0/out" "Tgate_1/C" 240.514
+cap "Tgate_1/VSS" "Tgate_0/out" -2.79365
+cap "Tgate_1/Cbar" "Tgate_1/C" -3.59046
+cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/C" 0.12231
+cap "Tgate_0/in" "Tgate_1/C" 53.0035
+cap "Tgate_1/VDD" "Tgate_1/C" 73.2084
+cap "Tgate_0/out" "Tgate_1/in" 425.489
+cap "Tgate_1/Cbar" "Tgate_1/in" 31.5338
+cap "Tgate_1/5v_pfet_1_10_0/D" "Tgate_1/in" 2.29444
+cap "Tgate_1/5v_nfet_1_10_0/S" "Tgate_1/in" -0.38166
+cap "Tgate_0/out" "Tgate_1/Cbar" 59.082
+cap "Tgate_0/in" "Tgate_1/in" 46.8316
+cap "Tgate_1/VDD" "Tgate_1/in" 104.547
+cap "Tgate_1/in" "Tgate_1/VDD" -45.5784
+cap "Tgate_1/out" "Tgate_1/in" 326.776
 cap "Tgate_1/Cbar" "Tgate_1/in" 4.50971
+cap "Tgate_1/out" "Tgate_1/VDD" 280.346
+cap "Tgate_1/in" "Tgate_1/C" -1.16356
+cap "Tgate_1/5v_nfet_1_10_0/D" "Tgate_1/VDD" -7.94468
 cap "Tgate_1/out" "Tgate_1/5v_nfet_1_10_0/G" 1.31497
-cap "Tgate_1/out" "Tgate_1/5v_nfet_1_10_0/D" 30.9855
+cap "Tgate_1/5v_nfet_1_10_0/D" "Tgate_1/out" 30.9855
 cap "Tgate_1/out" "Tgate_1/VDD" 87.0712
-cap "Tgate_1/VDD" "Tgate_1/5v_nfet_1_10_0/D" -7.94468
+cap "Tgate_1/Cbar" "Tgate_1/VDD" 8.71829
 cap "Tgate_1/Cbar" "Tgate_0/out" 39.6048
-cap "Tgate_1/C" "Tgate_1/in" 0.126711
+cap "Tgate_1/in" "Tgate_1/C" 0.126711
 cap "Tgate_1/VDD" "Tgate_0/in" -20.8227
-cap "Tgate_1/C" "Tgate_0/in" 403.194
+cap "Tgate_0/in" "Tgate_1/C" 403.194
 cap "Tgate_0/in" "Tgate_0/out" -5.78257
 cap "Tgate_1/Cbar" "Tgate_0/in" 396.267
 cap "Tgate_1/VDD" "Tgate_1/C" 79.6402
 cap "Tgate_1/VDD" "Tgate_0/out" 5.68434e-14
 cap "Tgate_1/C" "Tgate_0/out" 207.859
-cap "Tgate_1/VDD" "Tgate_1/Cbar" 8.71829
-cap "Tgate_0/out" "Tgate_1/5v_pfet_1_10_0/D" 92.2154
-cap "Tgate_1/VDD" "Tgate_1/C" 4.21193
-cap "Tgate_1/Cbar" "Tgate_1/C" 72.74
-cap "Tgate_1/Cbar" "Tgate_1/VDD" 10.0723
-cap "Tgate_0/in" "Tgate_1/C" 140.903
-cap "Tgate_1/Cbar" "Tgate_0/in" 178.593
-cap "Tgate_0/in" "Tgate_1/VDD" -0.75163
+cap "Tgate_1/5v_pfet_1_10_0/D" "Tgate_0/out" 92.2154
+cap "Tgate_1/C" "Tgate_1/Cbar" 72.74
+cap "Tgate_0/in" "Tgate_1/Cbar" 178.593
+cap "Tgate_1/VDD" "Tgate_1/Cbar" 10.0723
 cap "Tgate_1/in" "Tgate_1/C" 0.11495
-cap "Tgate_1/Cbar" "Tgate_1/5v_pfet_1_10_0/D" 2.70056
-cap "Tgate_1/Cbar" "Tgate_1/in" 263.054
-cap "Tgate_0/in" "Tgate_1/in" 42.5
+cap "Tgate_1/in" "Tgate_0/in" 42.5
 cap "Tgate_0/out" "Tgate_1/C" 39.4097
-cap "Tgate_0/out" "Tgate_1/VDD" 2.99926
-cap "Tgate_1/Cbar" "Tgate_0/out" 469.332
 cap "Tgate_0/out" "Tgate_0/in" -7.89358
-cap "Tgate_1/Cbar" "Tgate_1/in" 22
+cap "Tgate_0/out" "Tgate_1/VDD" 2.99926
+cap "Tgate_0/in" "Tgate_1/C" 140.903
+cap "Tgate_1/VDD" "Tgate_0/in" -0.75163
+cap "Tgate_1/VDD" "Tgate_1/C" 4.21193
+cap "Tgate_1/5v_pfet_1_10_0/D" "Tgate_1/Cbar" 2.70056
+cap "Tgate_1/in" "Tgate_1/Cbar" 263.054
+cap "Tgate_0/out" "Tgate_1/Cbar" 469.332
+cap "Tgate_1/in" "Tgate_1/Cbar" 22
 cap "Tgate_1/Cbar" "Tgate_1/out" -0.0234598
 merge "Tgate_0/VSUBS" "Tgate_1/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_1/VSUBS" "VSUBS"
@@ -137,14 +137,14 @@ merge "Tgate_0/5v_pfet_1_10_0/B" "Tgate_0/VDD" -480.75 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_0/VDD" "VDD"
 merge "VDD" "Tgate_1/VDD"
 merge "Tgate_1/VDD" "m1_2290_4190#"
-merge "Tgate_0/in" "in1" -263.771 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10400 -420 0 0 0 0 0 0 0 0 0 0
+merge "Tgate_0/in" "in1" -264.754 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10400 -420 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_1/5v_nfet_1_10_0/B" "Tgate_0/5v_nfet_1_10_0/B" -1479.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -514000 -5940 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_0/5v_nfet_1_10_0/B" "Tgate_0/VSS"
 merge "Tgate_0/VSS" "Tgate_1/VSS"
 merge "Tgate_1/VSS" "VSS"
-merge "Tgate_1/5v_nfet_1_10_0/D" "Tgate_1/in" -1036.09 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -15600 -500 0 0 0 0 0 0 0 0 0 0
+merge "Tgate_1/5v_nfet_1_10_0/D" "Tgate_1/in" -1050.64 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -15600 -500 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_1/in" "in2"
-merge "Tgate_1/out" "Tgate_0/out" -1702.56 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -33600 -1040 0 0 0 0 0 0 0 0 0 0
+merge "Tgate_1/out" "Tgate_0/out" -1755.21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -33600 -1040 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_0/out" "out"
 merge "Tgate_1/Cbar" "Tgate_0/C" -2199.38 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -40000 -800 -40000 -800 0 0 0 0 0 0 0 0 0 0
 merge "Tgate_0/C" "C"
