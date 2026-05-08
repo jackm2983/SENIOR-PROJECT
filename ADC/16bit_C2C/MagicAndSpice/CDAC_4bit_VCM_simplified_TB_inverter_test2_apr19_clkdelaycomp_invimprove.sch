@@ -272,3 +272,4 @@ C {gnd.sym} 1860 -390 3 0 {name=l18 lab=GND}
 C {lab_pin.sym} 1890 -450 2 0 {name=p65 sig_type=std_logic lab=VDD1v8}
 C {lab_pin.sym} 1890 -430 0 1 {name=p66 sig_type=std_logic lab=VDD_5V}
 C {gnd.sym} -200 -620 0 0 {name=l3 lab=GND}
+C {gnd.sym} 720 -80 0 0 {name=l14 lab=GND}

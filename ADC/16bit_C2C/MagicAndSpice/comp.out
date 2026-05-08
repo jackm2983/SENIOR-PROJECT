@@ -1,14 +1,45 @@
 
 Circuit 1 cell sky130_fd_pr__pfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__pfet_g5v0d10v5 are black boxes.
-Equate elements:  no current cell.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__pfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
 Device classes sky130_fd_pr__pfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 are equivalent.
 
 Circuit 1 cell sky130_fd_pr__nfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__nfet_g5v0d10v5 are black boxes.
-Equate elements:  no current cell.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
 Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
 
 Circuit 1 cell sky130_fd_pr__cap_mim_m3_1 and Circuit 2 cell sky130_fd_pr__cap_mim_m3_1 are black boxes.
-Equate elements:  no current cell.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
 Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
 Flattening unmatched subcell Tgate in circuit SPDT (0)(2 instances)
 Flattening unmatched subcell x5v_pfet_1_10 in circuit SPDT (0)(2 instances)
@@ -77,19 +108,20 @@ Port matching may fail to disambiguate symmetries.
 Subcircuit pins:
 Circuit 1: CDAC                            |Circuit 2: CDAC_4bit_VCM_simplified        
 -------------------------------------------|-------------------------------------------
-b1                                         |b3 **Mismatch**                            
+b3                                         |b3                                         
 b2                                         |b2                                         
-b3                                         |b1 **Mismatch**                            
+b1                                         |b1                                         
 b0                                         |b0                                         
 clk                                        |clk                                        
 clkbar                                     |clkbar                                     
 VDD                                        |VDD                                        
 Vcm                                        |vcm                                        
 Vin                                        |Vin                                        
-Vout                                       |out **Mismatch**                           
-VSS                                        |(no pin, node is GND                       
+Vout                                       |Vout                                       
+VSS                                        |VSS                                        
 ---------------------------------------------------------------------------------------
-Cell pin lists for CDAC and CDAC_4bit_VCM_simplified altered to match.
+Cell pin lists are equivalent.
 Device classes CDAC and CDAC_4bit_VCM_simplified are equivalent.
 
-Final result: Top level cell failed pin matching.
+Final result: Netlists do not match.
+Port matching may fail to disambiguate symmetries.
