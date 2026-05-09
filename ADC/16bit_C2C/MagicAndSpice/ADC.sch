@@ -159,8 +159,6 @@ C {lab_pin.sym} 560 -170 2 1 {name=p12 sig_type=std_logic lab=b1}
 C {lab_pin.sym} 560 -150 2 1 {name=p13 sig_type=std_logic lab=b0}
 C {lab_pin.sym} 520 -230 0 0 {name=p16 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} -500 -680 0 0 {name=p17 sig_type=std_logic lab=VCM}
-C {vsource.sym} 660 -760 3 0 {name=V7 value=1.8 savecurrent=false}
-C {gnd.sym} 690 -760 3 0 {name=l30 lab=GND}
 C {lab_pin.sym} 610 -760 1 0 {name=p21 sig_type=std_logic lab=VDD1v8}
 C {shift_5v_to_1v8.sym} 450 -640 0 0 {name=x6}
 C {lab_pin.sym} 1220 -590 2 0 {name=p19 sig_type=std_logic lab=DAC_B3}
