@@ -2,7 +2,7 @@ v {xschem version=3.4.4 file_version=1.2
 }
 G {}
 K {type=subcircuit
-format="@name @@A @@Y @@EN @@EN_N @symname"
+format="@name @@A @@Y @@EN @@EN_N @@VP @@VN @symname"
 template="name=x1"
 }
 V {}

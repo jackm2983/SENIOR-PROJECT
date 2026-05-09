@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1764469715
+timestamp 1778294297
 << metal1 >>
 rect 3300 5005 3985 5045
 rect 3825 4805 3865 4810
@@ -782,15 +782,15 @@ rect 7035 10 7040 65
 rect 7155 10 7160 65
 rect 7035 -85 7160 10
 use 2_1_MUX  2_1_MUX_0
-timestamp 1764469063
+timestamp 1778294135
 transform 1 0 3845 0 1 2370
 box -685 -240 -100 825
 use 2_1_MUX  2_1_MUX_1
-timestamp 1764469063
+timestamp 1778294135
 transform 1 0 3845 0 -1 4020
 box -685 -240 -100 825
 use 2_1_MUX  2_1_MUX_2
-timestamp 1764469063
+timestamp 1778294135
 transform 1 0 4100 0 1 4500
 box -685 -240 -100 825
 use AND2  AND2_0
@@ -863,31 +863,31 @@ transform 1 0 3145 0 -1 1765
 box -115 -370 405 700
 << labels >>
 flabel metal1 3335 5025 3335 5025 1 FreeSans 400 0 0 0 COMP
-port 1 n
-flabel metal1 8055 535 8055 535 1 FreeSans 400 0 0 0 RST_N
 port 2 n
+flabel metal1 8055 535 8055 535 1 FreeSans 400 0 0 0 RST_N
+port 1 n
 flabel metal1 -10 230 -10 230 1 FreeSans 400 0 0 0 PHIA
-port 3 n
-flabel metal1 -20 425 -20 425 1 FreeSans 400 0 0 0 PHIB
 port 4 n
+flabel metal1 -20 425 -20 425 1 FreeSans 400 0 0 0 PHIB
+port 12 n
 flabel metal1 7970 4570 7970 4570 1 FreeSans 400 0 0 0 ADC_OUT_B3
-port 5 n
-flabel metal1 7955 3950 7955 3950 1 FreeSans 400 0 0 0 ADC_OUT_B2
 port 6 n
+flabel metal1 7955 3950 7955 3950 1 FreeSans 400 0 0 0 ADC_OUT_B2
+port 5 n
 flabel metal1 7970 2435 7970 2435 1 FreeSans 400 0 0 0 ADC_OUT_B1
 port 7 n
 flabel metal1 7975 1805 7975 1805 1 FreeSans 400 0 0 0 ADC_OUT_B0
 port 8 n
 flabel metal1 3070 1675 3070 1675 1 FreeSans 400 0 0 0 DAC_B3
-port 9 n
+port 11 n
 flabel metal1 3050 1535 3050 1535 1 FreeSans 400 0 0 0 DAC_B2
 port 10 n
 flabel metal1 3035 1380 3035 1380 1 FreeSans 400 0 0 0 DAC_B1
-port 11 n
+port 9 n
 flabel metal1 7990 305 7990 305 1 FreeSans 400 0 0 0 DAC_B0
-port 12 n
-flabel metal4 6235 -80 6235 -80 1 FreeSans 400 0 0 0 VP
-port 13 n
-flabel metal4 7065 -55 7065 -55 1 FreeSans 400 0 0 0 VN
 port 14 n
+flabel metal4 6235 -80 6235 -80 1 FreeSans 400 0 0 0 VP
+port 3 n
+flabel metal4 7065 -55 7065 -55 1 FreeSans 400 0 0 0 VN
+port 13 n
 << end >>

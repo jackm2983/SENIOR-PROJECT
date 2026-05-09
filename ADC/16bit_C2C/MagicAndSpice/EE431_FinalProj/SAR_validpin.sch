@@ -507,6 +507,12 @@ N 1080 -470 1120 -500 {
 lab=#net7}
 N 460 90 700 90 {
 lab=PHIA}
+N 1390 200 1490 200 {
+lab=DAC_B0}
+N 1490 200 1490 500 {
+lab=DAC_B0}
+N 1670 490 1750 490 {
+lab=xxx}
 C {DFFRN.sym} 30 -140 0 0 {name=x2}
 C {DFFRN.sym} 340 -140 0 0 {name=x3}
 C {DFFRN.sym} 650 -140 0 0 {name=x4}
@@ -566,7 +572,7 @@ C {lab_pin.sym} 2390 -1260 2 0 {name=p73 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -1270 2 0 {name=p74 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -960 2 0 {name=p75 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -610 2 0 {name=p76 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 970 -410 2 0 {name=p77 sig_type=std_logic lab=VN}
+C {lab_pin.sym} 930 -410 2 0 {name=p77 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 590 -700 2 0 {name=p78 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 590 -1040 2 0 {name=p79 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 580 -1350 2 0 {name=p80 sig_type=std_logic lab=VN}
@@ -608,6 +614,13 @@ C {lab_pin.sym} -450 -1380 0 0 { name=p57 verilog_type=wire lab=#net1 }
 C {AND2.sym} 930 100 0 0 {name=x21}
 C {AND2.sym} 920 250 0 0 {name=x19}
 C {lab_pin.sym} 770 240 0 0 {name=p9 sig_type=std_logic lab=PHIB}
+C {DFFRN.sym} 1590 560 0 0 {name=x20}
 C {lab_pin.sym} 2550 -1660 1 0 {name=p81 sig_type=std_logic lab=RST_N}
+C {lab_pin.sym} 1580 430 1 0 {name=p82 sig_type=std_logic lab=RST_N}
+C {lab_pin.sym} 1490 620 0 0 {name=p83 sig_type=std_logic lab=VP}
+C {lab_pin.sym} 1490 640 0 0 {name=p84 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 550 -130 1 0 {name=p85 sig_type=std_logic lab=PHIB}
+C {lab_pin.sym} 1490 570 0 0 {name=p86 sig_type=std_logic lab=PHIB}
+C {lab_pin.sym} 1490 590 0 0 {name=p87 sig_type=std_logic lab=PHIA}
 C {opin.sym} 1390 270 1 0 {name=p88 lab=DAC_B0}
+C {opin.sym} 1750 490 0 0 {name=p3 lab=VALID}

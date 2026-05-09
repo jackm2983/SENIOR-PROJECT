@@ -1,0 +1,15 @@
+* NGSPICE file created from Tgate.ext - technology: sky130A
+
+.subckt x5v_pfet_1_10 S G D B
+X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+.ends
+
+.subckt x5v_nfet_1_10 S G D B
+X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=30 pd=26 as=30 ps=26 w=10 l=1
+.ends
+
+.subckt Tgate in out C Cbar VDD VSS
+X5v_pfet_1_10_0 in Cbar out VDD x5v_pfet_1_10
+X5v_nfet_1_10_0 out C in VSS x5v_nfet_1_10
+.ends
+

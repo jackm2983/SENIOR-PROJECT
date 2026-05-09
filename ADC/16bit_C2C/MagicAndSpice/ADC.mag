@@ -674,19 +674,19 @@ box -20 0 2080 1245
 << labels >>
 rlabel metal2 -670 1960 -610 2080 7 Vin
 port 1 w
-rlabel metal2 15095 5220 15125 5270 7 ADCB0
+rlabel metal2 15095 5220 15125 5270 7 ADC_OUT0
 port 2 w
-rlabel metal2 15095 5850 15125 5900 7 ADCB1
+rlabel metal2 15095 5850 15125 5900 7 ADC_OUT1
 port 3 w
-rlabel metal2 15095 7350 15125 7400 7 ADCB2
+rlabel metal2 15095 7350 15125 7400 7 ADC_OUT2
 port 4 w
-rlabel metal2 15095 7980 15125 8030 7 ADCB3
+rlabel metal2 15095 7980 15125 8030 7 ADC_OUT3
 port 5 w
 rlabel metal2 15095 3720 15125 3770 7 DACB0
 port 6 w
-rlabel metal2 15095 3940 15125 3990 7 RSTN
+rlabel metal2 15095 3940 15125 3990 7 RST_N
 port 7 w
-rlabel metal2 2640 8880 2725 8930 7 clkCOMP
+rlabel metal2 2640 8880 2725 8930 7 CLK_comp
 port 8 w
 rlabel metal2 6200 8880 6285 8930 7 clkCDAC
 port 9 w

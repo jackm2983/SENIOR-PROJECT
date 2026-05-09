@@ -1,0 +1,320 @@
+** sch_path: /home/ee431/workspace/6SAR_CDAC/ADC.sch
+.subckt ADC VDD_5V CLK CLK_N CLK_comp VDD1v8 VSS RST_N Vin ADC_OUT3 ADC_OUT2 ADC_OUT1 ADC_OUT0
+*.PININFO VDD_5V:B CLK:B CLK_N:B CLK_comp:B VDD1v8:B VSS:B RST_N:B Vin:B ADC_OUT3:B ADC_OUT2:B
+*+ ADC_OUT1:B ADC_OUT0:B
+x1 CLK5_N CLK5 Vin b3 b0 b2 b1 VCM cdac VDD_5V VSS CDAC_4bit_VCM_simplified
+V7 VDD1v8 GND 1.8
+x6 VDD1v8 latch comp1v8 VSS shift_5v_to_1v8
+x13 compp compn VCM cdac VDD_5V CLK_comp VSS strongarm_comp
+x14 VDD_5V net1 compp latch compn VSS SR_latch
+x10 VDD1v8 VDD_5V DAC_B3 b3 VSS shift_1v8_to_5v
+x3 VDD1v8 VDD_5V DAC_B2 b2 VSS shift_1v8_to_5v
+x2 VDD1v8 VDD_5V DAC_B1 b1 VSS shift_1v8_to_5v
+x4 VDD1v8 VDD_5V DAC_B0 b0 VSS shift_1v8_to_5v
+x5 comp1v8 RST_N CLK CLK_N ADC_OUT3 ADC_OUT2 ADC_OUT1 ADC_OUT0 DAC_B3 DAC_B2 DAC_B1 DAC_B0 VDD1v8
++ VSS SAR
+XR3 VCM VDD_5V VSS sky130_fd_pr__res_xhigh_po W=2 L=10 mult=1 m=1
+XR4 VSS VCM VSS sky130_fd_pr__res_xhigh_po W=2 L=10 mult=1 m=1
+x7 VDD1v8 VDD_5V CLK CLK5 VSS shift_1v8_to_5v
+x8 VDD1v8 VDD_5V CLK_N CLK5_N VSS shift_1v8_to_5v
+.ends
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym # of pins=11
+** sym_path: /home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sch
+.subckt CDAC_4bit_VCM_simplified clkbar clk Vin b3 b0 b2 b1 vcm Vout VDD VSS
+*.PININFO Vin:I clk:I clkbar:I vcm:I VDD:B b3:I b2:I b1:I Vout:B b0:I VSS:B
+XC1 net5 Vout sky130_fd_pr__cap_mim_m3_1 W=5 L=5 m=1
+XC2 net1 Vout sky130_fd_pr__cap_mim_m3_1 W=5 L=5 m=1
+x2 clkbar vcm Vout VDD clk VSS T_gate
+x3 clkbar VDD VSS clk b0 net1 Vin SPDT
+XC3 net2 Vout sky130_fd_pr__cap_mim_m3_1 W=10 L=5 m=1
+x4 clkbar VDD VSS clk b1 net2 Vin SPDT
+XC4 net3 Vout sky130_fd_pr__cap_mim_m3_1 W=10 L=10 m=1
+x5 clkbar VDD VSS clk b2 net3 Vin SPDT
+XC5 net4 Vout sky130_fd_pr__cap_mim_m3_1 W=20 L=10 m=1
+x6 clkbar VDD VSS clk b3 net4 Vin SPDT
+x1 clkbar VDD VSS clk VSS net5 Vin SPDT
+.ends
+
+
+* expanding   symbol:  shift_5v_to_1v8.sym # of pins=4
+** sym_path: /home/ee431/workspace/6SAR_CDAC/shift_5v_to_1v8.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/shift_5v_to_1v8.sch
+.subckt shift_5v_to_1v8 VP A Y VN
+*.PININFO VN:B VP:B A:I Y:O
+XM1 net1 A VP VP sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM2 net1 A VN VN sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM3 Y net1 VP VP sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM4 Y net1 VN VN sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/strongarm_comp.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/strongarm_comp.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/strongarm_comp.sch
+.subckt strongarm_comp outp outn Vinp Vinn VDD clk VSS
+*.PININFO Vinp:I Vinn:I clk:I VDD:B outp:O outn:O VSS:B
+XM1 outn outp p VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM2 outn outp VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM3 outp outn VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM4 outp outn q VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM5 p Vinp net1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM6 q Vinn net1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM7 net1 clk VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM9 outp clk VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM10 outn clk VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM8 p clk VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM11 q clk VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/SR_latch.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/SR_latch.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/SR_latch.sch
+.subckt SR_latch VDD q s nq r VSS
+*.PININFO s:I r:I VDD:B VSS:B q:O nq:O
+x1 VDD q s nq VSS NAND2_5V
+x2 VDD nq q r VSS NAND2_5V
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sch
+.subckt shift_1v8_to_5v V1v8 VP A Y VN
+*.PININFO A:I Y:O VP:B VN:B V1v8:B
+XM6 net1 A VN VN sky130_fd_pr__nfet_g5v0d10v5 L=1 W=6 nf=1 m=1
+XM11 net1 Y VP VP sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM1 Y net2 VN VN sky130_fd_pr__nfet_g5v0d10v5 L=1 W=6 nf=1 m=1
+XM2 Y net1 VP VP sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM3 net2 A VN VN sky130_fd_pr__nfet_g5v0d10v5 L=1 W=1 nf=1 m=1
+XM4 net2 A V1v8 V1v8 sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  SAR.sym # of pins=14
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/SAR.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/SAR.sch
+.subckt SAR COMP RST_N PHIA PHIB ADC_OUT_B3 ADC_OUT_B2 ADC_OUT_B1 ADC_OUT_B0 DAC_B3 DAC_B2 DAC_B1
++ DAC_B0 VP VN
+*.PININFO RST_N:I COMP:I VP:I PHIA:I ADC_OUT_B2:O ADC_OUT_B3:O ADC_OUT_B1:O ADC_OUT_B0:O DAC_B1:O
+*+ DAC_B2:O DAC_B3:O PHIB:I VN:I DAC_B0:O
+x2 PHIA PHIB S3 S2 RST_N VP VN DFFRN
+x3 PHIA PHIB S2 S1 RST_N VP VN DFFRN
+x4 PHIA PHIB S1 DAC_B0 RST_N VP VN DFFRN
+x12 net6 S1 DAC_B1 VP VN OR2
+x13 net5 S2 DAC_B2 VP VN OR2
+x14 net4 S3 DAC_B3 VP VN OR2
+x15 PHIA PHIB net2 net4 RST_N VP VN DFFRN
+x16 PHIA PHIB net3 net5 RST_N DAC_B0 VP VN DFFRNRS
+x17 PHIA PHIB net1 net6 RST_N DAC_B0 VP VN DFFRNRS
+x18 VP net7 DAC_B0 COMP VN AND2
+x1 PHIA PHIB DAC_B0 S3 RST_N VP VN DFFS
+x5 net6 COMP S1 net1 VP VN MUX_2_1
+x6 net5 COMP S2 net3 VP VN MUX_2_1
+x7 net4 COMP S3 net2 VP VN MUX_2_1
+x8 PHIA_GATED PHIB_GATED net4 ADC_OUT_B3 RST_N VP VN DFFRN
+x9 PHIA_GATED PHIB_GATED net5 ADC_OUT_B2 RST_N VP VN DFFRN
+x10 PHIA_GATED PHIB_GATED net6 ADC_OUT_B1 RST_N VP VN DFFRN
+x11 PHIA_GATED PHIB_GATED net7 ADC_OUT_B0 RST_N VP VN DFFRN
+x21 VP PHIA_GATED PHIA DAC_B0 VN AND2
+x19 VP PHIB_GATED PHIB DAC_B0 VN AND2
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/T_gate.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/T_gate.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/T_gate.sch
+.subckt T_gate c out in Vdd cbar Vss
+*.PININFO in:I cbar:I c:I Vdd:B Vss:B out:B
+XM1 in c out Vss sky130_fd_pr__nfet_g5v0d10v5 L=1 W=10 nf=1 m=1
+XM2 out cbar in Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=10 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/ee431/workspace/6SAR_CDAC/SPDT.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/SPDT.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/SPDT.sch
+.subckt SPDT cbar vdd vss c in1 out in2
+*.PININFO in1:I in2:I c:I cbar:I out:O vdd:B vss:B
+x1 c out in1 vdd cbar vss T_gate
+x2 cbar out in2 vdd c vss T_gate
+.ends
+
+
+* expanding   symbol:  NAND2_5V.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2_5V.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2_5V.sch
+.subckt NAND2_5V VDD Y A B GND
+*.PININFO A:I B:I VDD:I GND:I Y:O
+XM1 Y B VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM2 Y A VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM3 Y A net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  DFFRN.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFRN.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFRN.sch
+.subckt DFFRN PHIA PHIB D Q RST_N VP VN
+*.PININFO Q:O D:I VN:I RST_N:I VP:I PHIB:I PHIA:I
+x1 D net5 VP VN inverter
+x2 net3 net5 PHIB PHIB_N VP VN TGATE
+x3 net3 net4 VP VN inverter
+x4 net4 net2 PHIA PHIA_N VP VN TGATE
+x6 net1 Q VP VN inverter
+x7 net1 net2 PHIA_N PHIA VP VN tristate_inv
+x8 net4 RST_N net3 PHIB_N PHIB VP VN tristate_NAND2
+x10 VP net1 net2 RST_N VN NAND2
+x5 PHIA PHIA_N VP VN inverter
+x9 PHIB PHIB_N VP VN inverter
+.ends
+
+
+* expanding   symbol:  OR2.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/OR2.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/OR2.sch
+.subckt OR2 A B Y VP VN
+*.PININFO A:I B:I VP:I VN:I Y:O
+x1 A B net1 VP VN NOR2
+x2 net1 Y VP VN inverter
+.ends
+
+
+* expanding   symbol:  DFFRNRS.sym # of pins=8
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFRNRS.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFRNRS.sch
+.subckt DFFRNRS PHIA PHIB D Q RST_N RST VP VN
+*.PININFO Q:O D:I VN:I RST_N:I VP:I PHIB:I PHIA:I RST:I
+x2 net3 net5 PHIB PHIB_N VP VN TGATE
+x3 net3 net4 VP VN inverter
+x4 net4 net2 PHIA PHIA_N VP VN TGATE
+x6 net1 Q VP VN inverter
+x7 net1 net2 PHIA_N PHIA VP VN tristate_inv
+x8 net4 RST_N net3 PHIB_N PHIB VP VN tristate_NAND2
+x10 VP net1 net2 RST_N VN NAND2
+x5 PHIA PHIA_N VP VN inverter
+x9 PHIB PHIB_N VP VN inverter
+x1 VP net5 D net6 VN NAND2
+x11 RST net6 VP VN inverter
+.ends
+
+
+* expanding   symbol:  AND2.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/AND2.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/AND2.sch
+.subckt AND2 VDD Y A B GND
+*.PININFO A:I B:I VDD:I GND:I Y:O
+XM1 net2 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM2 net2 A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM3 net2 A net1 GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 m=1
+x1 net2 Y VDD GND inverter
+.ends
+
+
+* expanding   symbol:  DFFS.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFS.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/DFFS.sch
+.subckt DFFS PHIA PHIB D Q SET_N VP VN
+*.PININFO D:I VN:I SET_N:I VP:I Q:O PHIB:I PHIA:I
+x1 D net3 VP VN inverter
+x2 net3 net1 PHIB PHIB_N VP VN TGATE
+x3 VP net2 net1 SET_N VN NAND2
+x4 net2 net1 PHIB_N PHIB VP VN tristate_inv
+x6 net2 net4 PHIA PHIA_N VP VN TGATE
+x7 net4 net5 VP VN inverter
+x8 net5 SET_N net4 PHIA_N PHIA VP VN tristate_NAND2
+x9 net5 Q VP VN inverter
+x5 PHIA PHIA_N VP VN inverter
+x10 PHIB PHIB_N VP VN inverter
+.ends
+
+
+* expanding   symbol:  MUX_2_1.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/MUX_2_1.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/MUX_2_1.sch
+.subckt MUX_2_1 A B S Y VP VN
+*.PININFO A:I B:I S:I Y:O VN:I VP:I
+x1 B Y S net1 VP VN TGATE
+x2 A Y net1 S VP VN TGATE
+x3 S net1 VP VN inverter
+.ends
+
+
+* expanding   symbol:  inverter.sym # of pins=4
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/inverter.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/inverter.sch
+.subckt inverter A Y VP VN
+*.PININFO A:I Y:O VP:B VN:B
+XM1 Y A VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM2 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  TGATE.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/TGATE.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/TGATE.sch
+.subckt TGATE A Y EN EN_N VP VN
+*.PININFO A:B Y:B EN:I EN_N:I VP:I VN:I
+XM5 A EN Y VN sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 m=1
+XM6 A EN_N Y VP sky130_fd_pr__pfet_01v8 L=0.5 W=3 nf=1 m=1
+**** begin user architecture code
+type=subcircuit
+**** end user architecture code
+.ends
+
+
+* expanding   symbol:  tristate_inv.sym # of pins=6
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/tristate_inv.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/tristate_inv.sch
+.subckt tristate_inv A Y EN EN_N VP VN
+*.PININFO A:I Y:O VP:I VN:I EN_N:I EN:I
+XM1 net2 A VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM2 net1 A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XM3 Y EN net1 VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XM4 Y EN_N net2 VP sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  tristate_NAND2.sym # of pins=7
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/tristate_NAND2.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/tristate_NAND2.sch
+.subckt tristate_NAND2 A B Y EN EN_N VDD GND
+*.PININFO A:I B:I VDD:I GND:I Y:O EN:I EN_N:I
+XM1 net2 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 m=1
+XM2 net2 A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 m=1
+XM3 net3 A net1 GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 m=1
+XM5 Y EN_N net2 VDD sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 m=1
+XM6 Y EN net3 GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  NAND2.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NAND2.sch
+.subckt NAND2 VDD Y A B GND
+*.PININFO A:I B:I VDD:I GND:I Y:O
+XM1 Y B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM2 Y A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+XM3 Y A net1 GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 m=1
+XM4 net1 B GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  NOR2.sym # of pins=5
+** sym_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NOR2.sym
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/NOR2.sch
+.subckt NOR2 A B Y VP VN
+*.PININFO A:I B:I VP:I VN:I Y:O
+XM1 Y A net1 VP sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 m=1
+XM2 net1 B VP VP sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 m=1
+XM3 Y B VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XM4 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+.ends
+
+.GLOBAL GND
+.end

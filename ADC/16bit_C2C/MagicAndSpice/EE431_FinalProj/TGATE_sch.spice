@@ -1,0 +1,10 @@
+** sch_path: /home/ee431/workspace/6SAR_CDAC/EE431_FinalProj/TGATE.sch
+.subckt TGATE A Y EN EN_N VP VN
+*.PININFO A:B Y:B EN:I EN_N:I VP:I VN:I
+XM5 A EN Y VN sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 m=1
+XM6 A EN_N Y VP sky130_fd_pr__pfet_01v8 L=0.5 W=3 nf=1 m=1
+**** begin user architecture code
+type=subcircuit
+**** end user architecture code
+.ends
+.end

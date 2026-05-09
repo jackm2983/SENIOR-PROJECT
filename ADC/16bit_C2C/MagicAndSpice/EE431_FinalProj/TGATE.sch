@@ -3,7 +3,7 @@ v {xschem version=3.4.4 file_version=1.2
 G {}
 K {}
 V {}
-S {}
+S {type=subcircuit}
 E {}
 N 250 -10 250 80 {
 lab=Y}
