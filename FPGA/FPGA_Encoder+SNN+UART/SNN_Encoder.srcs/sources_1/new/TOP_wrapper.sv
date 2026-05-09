@@ -3,7 +3,7 @@
 // all four encoders share the same clk. output mux selects which encoder's
 // spikeP/spikeN reach the top-level outputs. the unused encoders still run,
 // but their outputs are ignored (negligible power cost, and it eliminates the
-// fabric-routed "gated clocks" that were causing massive skew and hold fails).
+// fabric-routed gated clocks that were causing massive skew and hold fails).
 
 module TOP_wrapper #(
     parameter int WIDTH      = 1,

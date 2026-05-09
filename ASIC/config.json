@@ -1,5 +1,6 @@
 {
   "DESIGN_NAME": "TOP_wrapper",
+
   "VERILOG_FILES": [
     "dir::rtl/TOP_wrapper.sv",
     "dir::rtl/delta_mod.sv",
@@ -7,6 +8,21 @@
     "dir::rtl/rate_mod.sv",
     "dir::rtl/temporal_mod.sv"
   ],
+
+  "VERILOG_FILES_BLACKBOX": [
+    "dir::rtl/adc_macro.v"
+  ],
+
+  "EXTRA_LEFS": [
+    "dir::macros/adc_macro.lef"
+  ],
+
+  "EXTRA_GDS_FILES": [
+    "dir::macros/adc_macro.gds"
+  ],
+
+  "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
+
   "CLOCK_PORT": "clk",
   "CLOCK_PERIOD": 10.0,
 
