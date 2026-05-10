@@ -7,12 +7,12 @@ module TOP_no_adc_tb;
     localparam int MAX_SPIKES = 16;
     localparam int JUMP = 5;
 
-    // smaller values for faster simulation
     localparam int ADC_DIV = 32;
     localparam int ADC_COMP_DELAY = 8;
 
     logic clk;
     logic rst;
+    logic adc_valid;
     logic [1:0] encoding_select;
     logic [WIDTH*LENGTH-1:0] adc_data_in;
     logic [WIDTH-1:0] spikeP;
@@ -30,7 +30,7 @@ module TOP_no_adc_tb;
         .rst(rst),
         .encoding_select(encoding_select),
         .adc_data_in(adc_data_in),
-        // .adc_valid(adc_valid),
+        .adc_valid(adc_valid),
         .spikeP(spikeP),
         .spikeN(spikeN)
     );
@@ -40,25 +40,22 @@ module TOP_no_adc_tb;
     initial begin
         clk = 1'b0;
         rst = 1'b1;
+        adc_valid = 1'b0;
         encoding_select = 2'b00;
         adc_data_in = 4'd0;
 
         repeat (5) @(posedge clk);
         rst = 1'b0;
 
-        // rate encoding
         encoding_select = 2'b00;
         run_adc_ramp();
 
-        // temporal encoding
         encoding_select = 2'b01;
         run_adc_ramp();
 
-        // delta encoding
         encoding_select = 2'b10;
         run_adc_ramp();
 
-        // multispike encoding
         encoding_select = 2'b11;
         run_adc_ramp();
 
@@ -66,13 +63,22 @@ module TOP_no_adc_tb;
         $finish;
     end
 
+    task automatic pulse_adc_valid;
+        begin
+            adc_valid = 1'b1;
+            @(posedge clk);
+            adc_valid = 1'b0;
+        end
+    endtask
+
     task automatic run_adc_ramp;
         begin
             for (int value = 0; value < 16; value++) begin
                 adc_data_in = value[3:0];
 
-                // hold each fake adc value for one sample frame
-                repeat (ADC_DIV) @(posedge clk);
+                // adc result becomes valid once per conversion frame
+                repeat (ADC_DIV - 1) @(posedge clk);
+                pulse_adc_valid();
             end
         end
     endtask

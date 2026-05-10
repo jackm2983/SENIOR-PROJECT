@@ -9,6 +9,7 @@ module adc_macro (
     output wire ADC_OUT1,
     output wire ADC_OUT2,
     output wire ADC_OUT3,
+    output wire VALID,
 
     inout  wire VSS,
     inout  wire VDD1v8,

@@ -35,8 +35,7 @@ module TOP_wrapper #(
 
     logic [CNT_WIDTH-1:0] adc_cnt;
     
-    // adc needs a valid pin for this to work
-    /*
+
     logic adc_valid;
     logic adc_valid_d;
 
@@ -49,7 +48,6 @@ module TOP_wrapper #(
             sample_pulse <= adc_valid & ~adc_valid_d;
         end
     end
-    */
 
     // clock generation for ADC
     always_ff @(posedge clk) begin
@@ -57,14 +55,9 @@ module TOP_wrapper #(
             adc_cnt <= '0;
             adc_clk <= 1'b0;
             adc_clk_comp <= 1'b0;
-            sample_pulse <= 1'b0;
         end else begin
-            sample_pulse <= 1'b0;
             if (adc_cnt == ADC_DIV - 1) begin
                 adc_cnt <= '0;
-                // for now it will just sample every cycle even though the 
-                // adc is only right every 4rth cycle.
-                sample_pulse <= 1'b1;
             end else begin
                 adc_cnt <= adc_cnt + 1'b1;
             end
@@ -94,6 +87,7 @@ module TOP_wrapper #(
         .ADC_OUT1(adc_out[1]),
         .ADC_OUT2(adc_out[2]),
         .ADC_OUT3(adc_out[3]),
+        .VALID(adc_valid),
 
         .VSS(VSS),
         .VDD1v8(VDD1v8),
