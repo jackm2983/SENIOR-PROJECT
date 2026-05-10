@@ -23,8 +23,6 @@ N 220 200 260 200 {
 lab=ADC_OUT1}
 N 220 220 260 220 {
 lab=ADC_OUT0}
-N 440 -70 440 -50 {
-lab=CLK_N}
 C {/home/ee431/workspace/6SAR_CDAC/ADC_validpin.sym} 70 110 0 0 {name=x1}
 C {vsource.sym} 480 110 0 0 {name=V2 value="PULSE(0 1.8 0       10n 10n 312.5u 625u)" savecurrent=false}
 C {gnd.sym} 480 140 0 0 {name=l2 lab=GND}
@@ -32,9 +30,6 @@ C {lab_pin.sym} 480 60 0 0 {name=p2 sig_type=std_logic lab=CLK}
 C {vsource.sym} 830 120 0 0 {name=V3 value="PULSE(0 1.8 156.25u       10n 10n 312.5u 625u)" savecurrent=false}
 C {gnd.sym} 830 150 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 830 70 0 0 {name=p36 sig_type=std_logic lab=CLK_comp}
-C {gnd.sym} 780 10 0 0 {name=l33 lab=GND}
-C {vsource.sym} 780 -20 0 0 {name=V10 value="PULSE(0 1.8 0 10n 10n 2.5m 3.125m)" savecurrent=false}
-C {lab_pin.sym} 780 -50 2 1 {name=p28 sig_type=std_logic lab=RST_N}
 C {devices/code.sym} 800 -250 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -75,7 +70,6 @@ C {vsource.sym} 1150 260 0 0 {name=V5 value=0 savecurrent=false}
 C {gnd.sym} 1150 290 0 0 {name=l5 lab=GND}
 C {lab_pin.sym} 1150 230 0 0 {name=p16 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 220 0 2 0 {name=p3 sig_type=std_logic lab=VSS}
-C {vsource.sym} 440 -20 0 0 {name=V6 value="PULSE(1.8 0 0       10n 10n 312.5u 625u)" savecurrent=false}
-C {gnd.sym} 440 10 0 0 {name=l4 lab=GND}
-C {lab_pin.sym} 440 -70 0 0 {name=p17 sig_type=std_logic lab=CLK_N}
-C {lab_pin.sym} 220 240 2 0 {name=p18 sig_type=std_logic lab=CLK_N}
+C {gnd.sym} 770 0 0 0 {name=l33 lab=GND}
+C {vsource.sym} 770 -30 0 0 {name=V10 value="PULSE(0 1.8 0 10n 10n 2.5m 3.125m)" savecurrent=false}
+C {lab_pin.sym} 770 -60 2 1 {name=p28 sig_type=std_logic lab=RST_N}

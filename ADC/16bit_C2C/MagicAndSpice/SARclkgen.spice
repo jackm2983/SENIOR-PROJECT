@@ -1,0 +1,24 @@
+* NGSPICE file created from SARclkgen.ext - technology: sky130A
+
+.subckt inverter Y VP VN A
+X0 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.4 ps=2.8 w=1 l=0.5
+X1 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0.804 pd=4.82 as=0.804 ps=4.82 w=2.01 l=0.5
+.ends
+
+.subckt AND2 A B Y VDD GND
+X0 Y a_n50_550# GND GND sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.8 as=0.4 ps=2.8 w=1 l=0.5
+X1 VDD B a_n50_550# VDD sky130_fd_pr__pfet_01v8 ad=0.45 pd=2.45 as=0.9 ps=4.9 w=2 l=0.5
+X2 a_n50_550# A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.45 ps=2.45 w=2 l=0.5
+X3 a_n50_550# A a_45_n100# GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.25 ps=2.25 w=2 l=0.5
+X4 Y a_n50_550# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.804 pd=4.82 as=0.804 ps=4.82 w=2.01 l=0.5
+X5 a_45_n100# B GND GND sky130_fd_pr__nfet_01v8 ad=0.25 pd=2.25 as=0.8 ps=4.8 w=2 l=0.5
+.ends
+
+.subckt SARclkgen VSS VDD PHIA PHIB CLK
+Xinverter_0 AND2_1/B VDD VSS PHIB inverter
+Xinverter_1 AND2_0/B VDD VSS PHIA inverter
+Xinverter_2 AND2_0/A VDD VSS CLK inverter
+XAND2_0 AND2_0/A AND2_0/B PHIB VDD VSS AND2
+XAND2_1 CLK AND2_1/B PHIA VDD VSS AND2
+.ends
+

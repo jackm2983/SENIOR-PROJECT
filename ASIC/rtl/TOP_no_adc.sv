@@ -23,7 +23,6 @@ module TOP_no_adc #(
     localparam int CNT_WIDTH = $clog2(ADC_DIV);
 
     logic adc_clk;
-    logic adc_clk_n;
     logic adc_clk_comp;
     logic sample_pulse;
 
@@ -79,7 +78,6 @@ module TOP_no_adc #(
         end
     end
 
-    assign adc_clk_n = ~adc_clk;
 
     logic [WIDTH-1:0] spikeP_rate;
     logic [WIDTH-1:0] spikeN_rate;

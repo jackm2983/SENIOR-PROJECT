@@ -1,6 +1,5 @@
 module adc_macro (
     input  wire CLK,
-    input  wire CLK_N,
     input  wire CLK_comp,
     input  wire RST_N,
     input  wire Vin,

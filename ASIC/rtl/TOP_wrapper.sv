@@ -26,7 +26,6 @@ module TOP_wrapper #(
     localparam int CNT_WIDTH = $clog2(ADC_DIV);
 
     logic adc_clk;
-    logic adc_clk_n;
     logic adc_clk_comp;
 
     logic [CNT_WIDTH-1:0] adc_cnt;
@@ -41,7 +40,6 @@ module TOP_wrapper #(
     logic [3:0] adc_out;
     logic [3:0] adc_sample;
 
-    assign adc_clk_n = ~adc_clk;
     assign adc_rst_n = ~rst & ~adc_rst; 
 
     // sample adc output first, then reset adc one clk later
@@ -93,7 +91,6 @@ module TOP_wrapper #(
 
     adc_macro u_adc (
         .CLK(adc_clk),
-        .CLK_N(adc_clk_n),
         .CLK_comp(adc_clk_comp),
         .RST_N(adc_rst_n),
         .Vin(Vin),

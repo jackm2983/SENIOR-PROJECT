@@ -1,4 +1,12 @@
 magic
 tech sky130A
-timestamp 0
+timestamp 1778382670
+use CDAC  CDAC_0
+timestamp 1778276328
+transform 1 0 -7110 0 1 -2290
+box -20 0 13935 2215
+use SAR_validpin  SAR_validpin_0
+timestamp 1778370643
+transform 1 0 60 0 1 100
+box -60 -100 8090 5325
 << end >>

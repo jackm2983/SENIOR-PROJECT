@@ -1,0 +1,270 @@
+timestamp 1778448990
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 1e+06
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use inverter inverter_2 1 0 -1339 0 1 190
+use inverter inverter_1 1 0 -949 0 1 190
+use inverter inverter_0 1 0 -559 0 1 190
+use AND2 AND2_1 1 0 715 0 1 200
+use AND2 AND2_0 1 0 86 0 1 196
+port "VSS" 1 1160 -40 1280 70 m1
+port "VDD" 2 1170 950 1270 1060 m1
+port "PHIB" 4 1190 150 1260 220 m1
+port "CLK" 5 -1250 640 -1200 700 m1
+port "PHIA" 3 1200 280 1270 350 m1
+node "VSS" 3 2157.72 1160 -40 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 290400 5080 0 0 0 0 0 0 0 0 0 0
+node "m1_n590_270#" 2 394.147 -590 270 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22600 1020 37800 1220 0 0 0 0 0 0 0 0
+node "m1_n980_270#" 4 913.146 -980 270 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12000 680 81600 2880 0 0 0 0 0 0 0 0
+node "m1_n200_270#" 3 678.442 -200 270 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 70500 2880 0 0 0 0 0 0 0 0 0 0
+node "VDD" 3 2467.82 1170 950 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 294000 5140 0 0 0 0 0 0 0 0 0 0
+node "PHIB" 51 1243.57 1190 150 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 380 166500 3980 0 0 0 0 0 0 0 0 0 0
+node "CLK" 23 1864.49 -1250 640 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3500 240 167000 5580 0 0 0 0 0 0 0 0 0 0
+node "PHIA" 32 2053.61 1200 280 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7200 360 29400 1120 127600 4940 0 0 0 0 0 0 0 0
+substrate "SUB" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "PHIB" "m1_n200_270#" 178.693
+cap "PHIB" "m1_n590_270#" 370.173
+cap "PHIB" "m1_n980_270#" 828.899
+cap "PHIB" "CLK" 49.1229
+cap "PHIB" "VSS" 861.136
+cap "PHIB" "PHIA" 185.528
+cap "m1_n980_270#" "VDD" 0.319162
+cap "CLK" "VDD" 321.799
+cap "m1_n200_270#" "m1_n590_270#" 228.076
+cap "m1_n200_270#" "m1_n980_270#" 15.1004
+cap "m1_n200_270#" "CLK" 680.596
+cap "PHIA" "VDD" 47.8139
+cap "m1_n980_270#" "m1_n590_270#" 285.547
+cap "CLK" "m1_n590_270#" 18.7801
+cap "m1_n200_270#" "PHIA" 432.978
+cap "VSS" "m1_n590_270#" 27.8668
+cap "m1_n980_270#" "CLK" 23.9785
+cap "m1_n980_270#" "VSS" 374.016
+cap "PHIA" "m1_n590_270#" 100.584
+cap "CLK" "VSS" 40.8353
+cap "m1_n980_270#" "PHIA" 64.8153
+cap "CLK" "PHIA" 1431.43
+cap "PHIA" "VSS" 18.578
+cap "PHIB" "VDD" 14.0106
+cap "inverter_2/Y" "inverter_1/Y" 59.2086
+cap "inverter_1/A" "inverter_0/A" 14.0554
+cap "inverter_2/VP" "inverter_1/A" 25.7474
+cap "inverter_2/VN" "inverter_1/Y" 3.62321
+cap "inverter_1/Y" "inverter_0/Y" 14.5161
+cap "inverter_1/A" "inverter_2/A" 61.8653
+cap "inverter_2/VN" "inverter_2/Y" 50.7826
+cap "inverter_2/Y" "inverter_0/Y" 0.0651779
+cap "inverter_2/VP" "inverter_2/A" 0.492536
+cap "inverter_0/A" "inverter_1/Y" 9.17341
+cap "inverter_1/A" "inverter_1/Y" 53.3101
+cap "inverter_2/Y" "inverter_0/A" 0.247366
+cap "inverter_2/Y" "inverter_1/A" 52.4792
+cap "inverter_2/VP" "inverter_1/Y" -2.06739
+cap "inverter_2/VP" "inverter_2/Y" -1.2486
+cap "inverter_1/Y" "inverter_2/A" 29.0055
+cap "inverter_2/VN" "inverter_1/A" 3.93022
+cap "inverter_1/A" "inverter_0/Y" 0.0171938
+cap "inverter_2/Y" "inverter_2/A" 66.2849
+cap "inverter_2/VN" "inverter_2/VP" -2.27534
+cap "inverter_2/VN" "inverter_2/A" 5.4706
+cap "inverter_2/VN" "AND2_0/a_45_n100#" -2.95233
+cap "inverter_2/VN" "inverter_2/VP" -1.9995
+cap "AND2_0/a_45_n100#" "inverter_1/A" 0.210484
+cap "inverter_1/A" "inverter_2/VP" 43.9969
+cap "AND2_0/a_45_n100#" "inverter_0/A" 8.96628
+cap "inverter_0/A" "inverter_2/VP" 0.300885
+cap "inverter_2/Y" "inverter_1/Y" 26.3532
+cap "AND2_0/a_n50_550#" "inverter_1/Y" 1.33009
+cap "inverter_1/Y" "inverter_2/A" 15.6025
+cap "inverter_1/Y" "inverter_0/Y" 92.5504
+cap "inverter_2/Y" "inverter_0/Y" 15.9621
+cap "AND2_0/a_n50_550#" "inverter_0/Y" 9.52813
+cap "inverter_2/A" "inverter_0/Y" 25.1793
+cap "inverter_2/VN" "inverter_1/Y" 7.4401
+cap "inverter_2/VN" "inverter_2/Y" 45.5937
+cap "inverter_1/A" "inverter_1/Y" 30.7171
+cap "inverter_2/Y" "inverter_1/A" 0.385715
+cap "inverter_2/VN" "AND2_0/a_n50_550#" -0.214854
+cap "inverter_0/A" "inverter_1/Y" 94.9607
+cap "AND2_0/a_n50_550#" "inverter_1/A" 11.769
+cap "inverter_2/Y" "inverter_0/A" 8.13098
+cap "inverter_2/VN" "inverter_2/A" 0.123547
+cap "AND2_0/a_n50_550#" "inverter_0/A" 1.70861
+cap "AND2_0/a_45_n100#" "inverter_1/Y" 0.461815
+cap "inverter_2/VN" "inverter_0/Y" 15.511
+cap "inverter_0/A" "inverter_2/A" 28.2922
+cap "AND2_0/a_45_n100#" "inverter_2/Y" 5.41804
+cap "inverter_1/Y" "inverter_2/VP" -1.89546
+cap "inverter_1/A" "inverter_0/Y" 27.3477
+cap "inverter_0/A" "inverter_0/Y" 150.354
+cap "inverter_2/VN" "inverter_1/A" 1.09659
+cap "AND2_0/a_45_n100#" "inverter_0/Y" 0.26165
+cap "inverter_2/VN" "inverter_0/A" 213.779
+cap "inverter_0/Y" "inverter_2/VP" -2.14485
+cap "inverter_1/A" "inverter_0/A" 45.0639
+cap "inverter_1/VP" "inverter_0/Y" -1.818
+cap "AND2_0/A" "AND2_1/Y" 25.3822
+cap "inverter_0/A" "AND2_0/a_45_n100#" 2.77077
+cap "inverter_1/Y" "inverter_0/A" 0.0248515
+cap "AND2_0/a_n50_550#" "inverter_1/VP" 0.0501167
+cap "AND2_1/Y" "inverter_0/Y" 22.5409
+cap "AND2_0/a_n50_550#" "AND2_1/A" 45.2056
+cap "inverter_1/VP" "inverter_1/VN" -2.35036
+cap "inverter_1/VN" "AND2_1/A" -17.4243
+cap "AND2_0/a_n50_550#" "AND2_1/Y" 68.8364
+cap "AND2_0/A" "inverter_0/Y" 44.9907
+cap "inverter_1/VN" "AND2_1/Y" 2.11155
+cap "inverter_1/VP" "inverter_0/A" -2.13803
+cap "inverter_0/A" "AND2_1/A" 72.6207
+cap "AND2_1/A" "AND2_1/a_n50_550#" 42.5782
+cap "AND2_1/A" "AND2_1/a_45_n100#" 0.916291
+cap "AND2_0/a_n50_550#" "AND2_0/A" 41.3089
+cap "AND2_0/A" "inverter_1/VN" -15.1085
+cap "AND2_1/Y" "AND2_1/a_n50_550#" 14.4096
+cap "inverter_0/A" "AND2_1/Y" 27.708
+cap "AND2_0/a_n50_550#" "inverter_0/Y" 153.485
+cap "AND2_1/Y" "AND2_1/a_45_n100#" 0.835466
+cap "inverter_1/VN" "inverter_0/Y" -12.5086
+cap "inverter_1/Y" "AND2_1/A" 0.182006
+cap "AND2_0/A" "AND2_1/a_n50_550#" 0.36558
+cap "AND2_0/A" "inverter_0/A" 35.8714
+cap "AND2_0/A" "AND2_1/a_45_n100#" 0.342957
+cap "AND2_0/a_n50_550#" "inverter_1/VN" -17.1953
+cap "AND2_1/a_n50_550#" "inverter_0/Y" -2.11721
+cap "inverter_0/A" "inverter_0/Y" 116.536
+cap "inverter_1/VP" "AND2_1/A" -2.06512
+cap "AND2_0/A" "AND2_0/a_45_n100#" 1.50005
+cap "AND2_0/a_n50_550#" "AND2_1/a_n50_550#" 1.61118
+cap "AND2_0/a_n50_550#" "inverter_0/A" 200.898
+cap "AND2_0/A" "inverter_1/Y" 3.16679
+cap "inverter_1/VN" "AND2_1/a_n50_550#" -2.33419
+cap "inverter_0/A" "inverter_1/VN" 245.339
+cap "AND2_1/Y" "AND2_1/A" 15.6178
+cap "inverter_1/VP" "AND2_1/Y" 43.4529
+cap "inverter_1/Y" "inverter_0/Y" 0.718848
+cap "inverter_1/VN" "AND2_1/a_45_n100#" -4.06636
+cap "inverter_1/VN" "AND2_0/a_45_n100#" -0.932316
+cap "inverter_0/A" "AND2_1/a_n50_550#" 59.8081
+cap "AND2_0/a_n50_550#" "inverter_1/Y" 1.20532
+cap "AND2_0/A" "inverter_1/VP" -2.06324
+cap "AND2_0/A" "AND2_1/A" 15.5654
+cap "inverter_0/A" "AND2_1/a_45_n100#" 13.21
+cap "AND2_1/A" "inverter_0/Y" 35.9807
+cap "AND2_1/Y" "AND2_1/GND" -11.9754
+cap "AND2_1/a_n50_550#" "AND2_1/GND" -18.3587
+cap "AND2_0/a_n50_550#" "AND2_1/Y" 1.39379
+cap "AND2_1/Y" "AND2_1/B" 2.3008
+cap "AND2_1/Y" "AND2_0/Y" 101.501
+cap "AND2_1/a_n50_550#" "AND2_0/Y" 145.218
+cap "AND2_1/B" "AND2_1/a_n50_550#" 6.20927
+cap "AND2_0/a_n50_550#" "AND2_1/a_n50_550#" 1.38169
+cap "AND2_1/a_45_n100#" "AND2_1/Y" 0.383157
+cap "AND2_1/VDD" "AND2_1/GND" -1.464
+cap "AND2_1/Y" "AND2_1/a_n50_550#" 131.204
+cap "AND2_1/A" "AND2_1/GND" -0.37217
+cap "AND2_1/VDD" "AND2_0/Y" 2.63001
+cap "AND2_1/A" "AND2_0/Y" 0.936792
+cap "AND2_1/VDD" "AND2_1/Y" 24.0968
+cap "AND2_1/VDD" "AND2_1/a_n50_550#" 0.0530139
+cap "AND2_1/Y" "AND2_1/A" 8.13207
+cap "AND2_1/GND" "AND2_0/Y" 110.212
+cap "AND2_1/A" "AND2_1/a_n50_550#" 32.7248
+cap "inverter_0/A" "inverter_1/Y" 0.650119
+cap "inverter_0/A" "inverter_1/A" 2.21176
+cap "inverter_1/Y" "inverter_2/VP" 24.1952
+cap "inverter_1/A" "inverter_1/Y" 0.460345
+cap "inverter_1/A" "inverter_2/VP" 3.93071
+cap "inverter_1/Y" "inverter_0/Y" 2.65625
+cap "inverter_1/Y" "inverter_2/A" 52.1281
+cap "inverter_1/A" "inverter_2/A" 40.3617
+cap "inverter_2/VP" "inverter_2/A" 108.538
+cap "inverter_1/Y" "inverter_2/Y" 5.3125
+cap "inverter_2/VP" "inverter_2/Y" 34.4395
+cap "inverter_1/A" "inverter_2/Y" 0.787712
+cap "inverter_2/VN" "inverter_2/VP" -0.169621
+cap "inverter_2/A" "inverter_2/Y" 51.803
+cap "inverter_1/A" "AND2_0/a_n50_550#" 3.34774
+cap "inverter_0/Y" "inverter_2/Y" 0.28979
+cap "inverter_2/A" "inverter_2/VP" 77.881
+cap "inverter_2/A" "inverter_1/Y" 30.0983
+cap "inverter_2/A" "inverter_0/A" 35.7248
+cap "inverter_2/VP" "inverter_1/Y" 12.3624
+cap "inverter_2/VP" "inverter_0/A" 1.51961
+cap "inverter_0/Y" "inverter_1/A" 0.460345
+cap "inverter_2/A" "AND2_0/a_n50_550#" 51.1964
+cap "inverter_1/Y" "inverter_0/A" 5.04794
+cap "inverter_2/VP" "AND2_0/a_n50_550#" 16.132
+cap "inverter_2/VN" "inverter_2/VP" -0.205043
+cap "AND2_0/a_n50_550#" "inverter_0/A" 0.364969
+cap "AND2_0/a_n50_550#" "inverter_1/Y" 0.175844
+cap "inverter_0/Y" "inverter_2/A" 52.24
+cap "inverter_2/VN" "AND2_0/a_n50_550#" 0.0293518
+cap "inverter_0/Y" "inverter_2/VP" 9.13705
+cap "inverter_0/Y" "inverter_0/A" 0.0205473
+cap "inverter_2/Y" "AND2_0/a_n50_550#" 0.0862947
+cap "inverter_1/A" "inverter_2/VP" 1.84006
+cap "inverter_0/Y" "inverter_1/Y" 3.44084
+cap "AND2_0/a_45_n100#" "inverter_2/VP" -0.180614
+cap "inverter_1/A" "inverter_0/A" 2.21176
+cap "inverter_0/Y" "AND2_0/a_n50_550#" 31.012
+cap "AND2_0/a_n50_550#" "AND2_1/a_n50_550#" 0.235031
+cap "inverter_1/VN" "AND2_1/a_n50_550#" 0.043434
+cap "inverter_0/Y" "AND2_1/a_n50_550#" 3.59098
+cap "AND2_0/A" "AND2_1/a_n50_550#" 0.00267231
+cap "AND2_1/Y" "inverter_0/A" 0.440228
+cap "inverter_1/VP" "AND2_1/Y" 1.65086
+cap "AND2_1/A" "AND2_1/Y" 0.198474
+cap "inverter_1/VP" "inverter_0/A" 12.4748
+cap "AND2_0/a_n50_550#" "AND2_1/Y" 2.82156
+cap "AND2_1/A" "inverter_0/A" 50.7622
+cap "AND2_0/a_n50_550#" "inverter_0/A" 0.0673641
+cap "AND2_1/A" "inverter_1/VP" 70.4414
+cap "inverter_0/Y" "inverter_0/A" 1.14305
+cap "AND2_1/A" "AND2_0/a_n50_550#" 120.443
+cap "AND2_0/a_n50_550#" "inverter_1/VP" 11.3153
+cap "inverter_1/VP" "AND2_0/a_45_n100#" -0.057036
+cap "inverter_1/VN" "inverter_1/VP" -0.205043
+cap "AND2_1/A" "inverter_0/Y" 30.0313
+cap "inverter_0/Y" "inverter_1/VP" 3.58328
+cap "AND2_1/A" "AND2_0/A" 28.3144
+cap "AND2_0/A" "inverter_1/VP" -0.869591
+cap "AND2_0/a_n50_550#" "inverter_1/VN" 0.0158048
+cap "AND2_0/a_n50_550#" "inverter_0/Y" 8.96365
+cap "AND2_0/a_n50_550#" "AND2_0/A" 0.117962
+cap "AND2_1/a_45_n100#" "inverter_1/VP" -0.23765
+cap "AND2_1/Y" "AND2_1/a_n50_550#" 3.65596
+cap "inverter_0/A" "AND2_1/a_n50_550#" 31.5041
+cap "inverter_1/VP" "AND2_1/a_n50_550#" 16.5208
+cap "AND2_1/A" "AND2_1/a_n50_550#" 78.1622
+cap "AND2_0/Y" "AND2_1/Y" 0.0151162
+cap "AND2_1/a_n50_550#" "AND2_1/VDD" 18.3092
+cap "AND2_1/A" "AND2_1/VDD" 1.7461
+cap "AND2_1/VDD" "AND2_1/Y" 11.307
+cap "AND2_0/Y" "AND2_1/a_n50_550#" 1.54358
+cap "AND2_1/A" "AND2_1/a_n50_550#" 6.95506
+cap "AND2_1/a_n50_550#" "AND2_1/Y" 0.924257
+cap "AND2_1/GND" "AND2_1/VDD" -0.0848105
+merge "AND2_1/VDD" "AND2_0/VDD" -2304.97 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -156275 -4240 0 0 0 0 0 0 0 0 0 0
+merge "AND2_0/VDD" "inverter_0/VP"
+merge "inverter_0/VP" "inverter_1/VP"
+merge "inverter_1/VP" "inverter_2/VP"
+merge "inverter_2/VP" "VDD"
+merge "AND2_0/A" "inverter_2/Y" -364.051 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2590 -290 0 0 0 0 0 0 0 0 0 0
+merge "inverter_2/Y" "m1_n980_270#"
+merge "AND2_0/B" "inverter_1/Y" -341.238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2985 -310 0 0 0 0 0 0 0 0 0 0
+merge "inverter_1/Y" "m1_n590_270#"
+merge "AND2_1/A" "inverter_2/A" -778.748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1770 -178 -1750 -170 0 0 0 0 0 0 0 0 0 0
+merge "inverter_2/A" "CLK"
+merge "AND2_1/GND" "AND2_0/GND" -1861.33 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -127600 -3990 0 0 0 0 0 0 0 0 0 0
+merge "AND2_0/GND" "inverter_0/VN"
+merge "inverter_0/VN" "inverter_1/VN"
+merge "inverter_1/VN" "inverter_2/VN"
+merge "inverter_2/VN" "SUB"
+merge "SUB" "VSS"
+merge "AND2_1/Y" "inverter_1/A" -690.573 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2670 -238 -1350 -150 0 0 0 0 0 0 0 0 0 0
+merge "inverter_1/A" "PHIA"
+merge "AND2_0/Y" "inverter_0/A" -795.622 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4170 -338 -1350 -150 0 0 0 0 0 0 0 0 0 0
+merge "inverter_0/A" "PHIB"
+merge "AND2_1/B" "inverter_0/Y" -445.169 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3000 -310 0 0 0 0 0 0 0 0 0 0
+merge "inverter_0/Y" "m1_n200_270#"
