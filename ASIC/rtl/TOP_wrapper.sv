@@ -6,8 +6,8 @@ module TOP_wrapper #(
     parameter int MAX_SPIKES = 16,
     parameter int JUMP = 5,
 
-    parameter int ADC_DIV = 62500, // 625 us period
-    parameter int ADC_COMP_DELAY = 15625 // 156.25 us delay
+    parameter int ADC_DIV = 62500,
+    parameter int ADC_COMP_DELAY = 15625
 )(
     input  logic clk,
     input  logic rst,
@@ -25,35 +25,54 @@ module TOP_wrapper #(
 
     localparam int CNT_WIDTH = $clog2(ADC_DIV);
 
-    logic rst_n;
-    assign rst_n = ~rst;
-
     logic adc_clk;
     logic adc_clk_n;
     logic adc_clk_comp;
-    logic sample_pulse;
 
     logic [CNT_WIDTH-1:0] adc_cnt;
-    
 
     logic adc_valid;
     logic adc_valid_d;
 
+    logic sample_pulse;
+    logic adc_rst;
+    logic adc_rst_n;
+
+    logic [3:0] adc_out;
+    logic [3:0] adc_sample;
+
+    assign adc_clk_n = ~adc_clk;
+    assign adc_rst_n = ~rst & ~adc_rst; 
+
+    // sample adc output first, then reset adc one clk later
     always_ff @(posedge clk) begin
         if (rst) begin
             adc_valid_d  <= 1'b0;
             sample_pulse <= 1'b0;
+            adc_rst <= 1'b0;
+            adc_sample   <= '0;
         end else begin
             adc_valid_d  <= adc_valid;
-            sample_pulse <= adc_valid & ~adc_valid_d;
+
+            sample_pulse <= 1'b0;
+            adc_rst <= 1'b0;
+
+            if (adc_valid & ~adc_valid_d) begin
+                adc_sample   <= adc_out;
+                sample_pulse <= 1'b1;
+            end
+
+            if (sample_pulse) begin
+                adc_rst <= 1'b1;
+            end
         end
     end
 
     // clock generation for ADC
     always_ff @(posedge clk) begin
         if (rst) begin
-            adc_cnt <= '0;
-            adc_clk <= 1'b0;
+            adc_cnt      <= '0;
+            adc_clk      <= 1'b0;
             adc_clk_comp <= 1'b0;
         end else begin
             if (adc_cnt == ADC_DIV - 1) begin
@@ -72,15 +91,11 @@ module TOP_wrapper #(
         end
     end
 
-    assign adc_clk_n = ~adc_clk;
-
-    logic [3:0] adc_out;
-
     adc_macro u_adc (
         .CLK(adc_clk),
         .CLK_N(adc_clk_n),
         .CLK_comp(adc_clk_comp),
-        .RST_N(rst_n),
+        .RST_N(adc_rst_n),
         .Vin(Vin),
 
         .ADC_OUT0(adc_out[0]),
@@ -113,7 +128,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[0]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_out),
+        .data_in(adc_sample),
         .divider(ADC_DIV),
         .spikeP(spikeP_rate),
         .spikeN(spikeN_rate)
@@ -127,7 +142,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[1]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_out),
+        .data_in(adc_sample),
         .divider(ADC_DIV),
         .spikeP(spikeP_temporal),
         .spikeN(spikeN_temporal)
@@ -142,7 +157,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[2]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_out),
+        .data_in(adc_sample),
         .divider(ADC_DIV),
         .spikeP(spikeP_delta),
         .spikeN(spikeN_delta)
@@ -157,7 +172,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[3]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_out),
+        .data_in(adc_sample),
         .divider(ADC_DIV),
         .spikeP(spikeP_multispike),
         .spikeN(spikeN_multispike)
