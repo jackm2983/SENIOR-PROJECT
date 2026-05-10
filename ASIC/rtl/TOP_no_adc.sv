@@ -62,18 +62,18 @@ module TOP_no_adc #(
             adc_clk      <= 1'b0;
             adc_clk_comp <= 1'b0;
         end else begin
-            if (adc_cnt == ADC_DIV - 1) begin
+            if (adc_cnt == CNT_WIDTH'(ADC_DIV - 1)) begin
                 adc_cnt <= '0;
             end else begin
                 adc_cnt <= adc_cnt + 1'b1;
             end
 
-            adc_clk <= adc_cnt < (ADC_DIV / 2);
+            adc_clk <= adc_cnt < CNT_WIDTH'(ADC_DIV / 2);
 
-            if (adc_cnt >= ADC_COMP_DELAY) begin
-                adc_clk_comp <= (adc_cnt - ADC_COMP_DELAY) < (ADC_DIV / 2);
+            if (adc_cnt >= CNT_WIDTH'(ADC_COMP_DELAY)) begin
+                adc_clk_comp <= (adc_cnt - CNT_WIDTH'(ADC_COMP_DELAY)) < CNT_WIDTH'(ADC_DIV / 2);
             end else begin
-                adc_clk_comp <= (adc_cnt + ADC_DIV - ADC_COMP_DELAY) < (ADC_DIV / 2);
+                adc_clk_comp <= (adc_cnt + CNT_WIDTH'(ADC_DIV - ADC_COMP_DELAY)) < CNT_WIDTH'(ADC_DIV / 2);
             end
         end
     end

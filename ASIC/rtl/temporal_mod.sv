@@ -29,7 +29,7 @@ module temporal_mod #(
             if (LENGTH == 12) begin : gen_eq12
                 assign spike_location[i] = data_in_array[i];
             end else if (LENGTH < 12) begin : gen_lt12
-                assign spike_location[i] = data_in_array[i] << (12 - LENGTH);
+                assign spike_location[i] = {{(12-LENGTH){1'b0}}, data_in_array[i]} << (12 - LENGTH);
             end else begin : gen_gt12
                 assign spike_location[i] = data_in_array[i] >> (LENGTH - 12);
             end

@@ -41,11 +41,11 @@ module delta_mod #(
                 for (int i = 0; i < WIDTH; i++) begin
                     current[i] <= data_in_array[i];
 
-                    if (($signed(previous[i]) - $signed(data_in_array[i])) > $signed(JUMP)) begin
+                    if (($signed({{28{previous[i][LENGTH-1]}}, previous[i]}) - $signed({{28{data_in_array[i][LENGTH-1]}}, data_in_array[i]})) > $signed(JUMP)) begin
                         spikeN[i] <= 1'b1;
                     end
 
-                    if (($signed(data_in_array[i]) - $signed(previous[i])) > $signed(JUMP)) begin
+                    if (($signed({{28{data_in_array[i][LENGTH-1]}}, data_in_array[i]}) - $signed({{28{previous[i][LENGTH-1]}}, previous[i]})) > $signed(JUMP)) begin
                         spikeP[i] <= 1'b1;
                     end
 
