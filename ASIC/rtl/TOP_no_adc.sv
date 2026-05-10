@@ -14,7 +14,7 @@ module TOP_no_adc #(
     input  logic [1:0] encoding_select,
 
     input  logic [WIDTH*LENGTH-1:0] adc_data_in,
-    input logic adc_valid,
+    input  logic adc_valid,
 
     output logic [WIDTH-1:0] spikeP,
     output logic [WIDTH-1:0] spikeN
@@ -30,26 +30,41 @@ module TOP_no_adc #(
     logic [CNT_WIDTH-1:0] adc_cnt;
 
     logic adc_valid_d;
+    logic adc_rst;
+
+    logic [WIDTH*LENGTH-1:0] adc_sample;
 
     always_ff @(posedge clk) begin
         if (rst) begin
             adc_valid_d  <= 1'b0;
             sample_pulse <= 1'b0;
+            adc_rst <= 1'b0;
+            adc_sample   <= '0;
         end else begin
             adc_valid_d  <= adc_valid;
-            sample_pulse <= adc_valid & ~adc_valid_d;
+
+            sample_pulse <= 1'b0;
+            adc_rst <= 1'b0;
+
+            if (adc_valid & ~adc_valid_d) begin
+                adc_sample   <= adc_data_in;
+                sample_pulse <= 1'b1;
+            end
+
+            if (sample_pulse) begin
+                adc_rst <= 1'b1;
+            end
         end
     end
 
-
     always_ff @(posedge clk) begin
         if (rst) begin
-            adc_cnt        <= '0;
-            adc_clk        <= 1'b0;
-            adc_clk_comp   <= 1'b0;
+            adc_cnt      <= '0;
+            adc_clk      <= 1'b0;
+            adc_clk_comp <= 1'b0;
         end else begin
             if (adc_cnt == ADC_DIV - 1) begin
-                adc_cnt      <= '0;
+                adc_cnt <= '0;
             end else begin
                 adc_cnt <= adc_cnt + 1'b1;
             end
@@ -85,7 +100,7 @@ module TOP_no_adc #(
         .rst(rst),
         .clk_en(clk_en[0]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_data_in),
+        .data_in(adc_sample),
         .divider(ADC_DIV[15:0]),
         .spikeP(spikeP_rate),
         .spikeN(spikeN_rate)
@@ -99,7 +114,7 @@ module TOP_no_adc #(
         .rst(rst),
         .clk_en(clk_en[1]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_data_in),
+        .data_in(adc_sample),
         .divider(ADC_DIV[15:0]),
         .spikeP(spikeP_temporal),
         .spikeN(spikeN_temporal)
@@ -114,7 +129,7 @@ module TOP_no_adc #(
         .rst(rst),
         .clk_en(clk_en[2]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_data_in),
+        .data_in(adc_sample),
         .divider(ADC_DIV[15:0]),
         .spikeP(spikeP_delta),
         .spikeN(spikeN_delta)
@@ -129,7 +144,7 @@ module TOP_no_adc #(
         .rst(rst),
         .clk_en(clk_en[3]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_data_in),
+        .data_in(adc_sample),
         .divider(ADC_DIV[15:0]),
         .spikeP(spikeP_multispike),
         .spikeN(spikeN_multispike)
