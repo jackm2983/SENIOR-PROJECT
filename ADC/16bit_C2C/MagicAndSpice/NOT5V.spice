@@ -1,4 +1,4 @@
-* SPICE3 file created from NOT5V.ext - technology: sky130A
+* NGSPICE file created from NOT5V.ext - technology: sky130A
 
 .subckt x5v_pfet_1_2 B D G S
 X0 D G S B sky130_fd_pr__pfet_g5v0d10v5 ad=2 pd=6 as=2 ps=6 w=2 l=1
@@ -9,7 +9,7 @@ X0 D G S B sky130_fd_pr__nfet_g5v0d10v5 ad=1 pd=4 as=1 ps=4 w=1 l=1
 .ends
 
 .subckt NOT5V X Y VDD VSS
-X5v_pfet_1_2_0 VDD 5v_pfet_1_2_0/D 5v_pfet_1_2_0/G VDD x5v_pfet_1_2
-X5v_nfet_1_1_0 VSS VSS 5v_nfet_1_1_0/G Y x5v_nfet_1_1
+X5v_pfet_1_2_0 VDD Y X VDD x5v_pfet_1_2
+X5v_nfet_1_1_0 VSS VSS X Y x5v_nfet_1_1
 .ends
 

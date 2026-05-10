@@ -512,7 +512,7 @@ lab=DAC_B0}
 N 1490 200 1490 500 {
 lab=DAC_B0}
 N 1670 490 1750 490 {
-lab=xxx}
+lab=VALID}
 C {DFFRN.sym} 30 -140 0 0 {name=x2}
 C {DFFRN.sym} 340 -140 0 0 {name=x3}
 C {DFFRN.sym} 650 -140 0 0 {name=x4}
@@ -572,7 +572,7 @@ C {lab_pin.sym} 2390 -1260 2 0 {name=p73 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -1270 2 0 {name=p74 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -960 2 0 {name=p75 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 840 -610 2 0 {name=p76 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 930 -410 2 0 {name=p77 sig_type=std_logic lab=VN}
+C {lab_pin.sym} 970 -410 2 0 {name=p77 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 590 -700 2 0 {name=p78 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 590 -1040 2 0 {name=p79 sig_type=std_logic lab=VN}
 C {lab_pin.sym} 580 -1350 2 0 {name=p80 sig_type=std_logic lab=VN}

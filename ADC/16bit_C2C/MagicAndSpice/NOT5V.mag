@@ -1,10 +1,20 @@
 magic
 tech sky130A
-timestamp 1778022479
+timestamp 1778374080
+<< poly >>
+rect 8 898 43 905
+rect 8 844 14 898
+rect 38 844 43 898
+rect 8 836 43 844
+<< polycont >>
+rect 14 844 38 898
+rect 14 356 38 410
 << locali >>
 rect 0 905 50 915
-rect 0 835 10 905
-rect 40 835 50 905
+rect 0 836 8 905
+rect 43 836 50 905
+rect 0 835 10 836
+rect 40 835 50 836
 rect 0 825 50 835
 rect 0 420 50 430
 rect 0 350 10 420
@@ -15,38 +25,55 @@ rect 280 260 345 310
 rect 380 260 390 310
 rect 280 250 390 260
 << viali >>
-rect 10 835 40 905
+rect 344 943 385 993
+rect 8 898 43 905
+rect 8 844 14 898
+rect 14 844 38 898
+rect 38 844 43 898
+rect 8 836 43 844
+rect 10 835 40 836
 rect 255 745 285 790
 rect 210 460 240 510
-rect 10 350 40 420
+rect 10 410 40 420
+rect 10 356 14 410
+rect 14 356 38 410
+rect 38 356 40 410
+rect 10 350 40 356
 rect 345 260 380 310
 << metal1 >>
 rect 0 1065 30 1190
-rect 0 905 50 920
-rect 0 835 10 905
-rect 40 835 50 905
-rect 0 420 50 835
+rect -2 905 52 920
+rect -2 836 8 905
+rect 43 836 52 905
+rect -2 835 10 836
+rect 40 835 52 836
+rect -2 819 52 835
+rect 0 436 50 819
 rect 245 790 295 1190
 rect 245 745 255 790
 rect 285 745 295 790
 rect 245 735 295 745
-rect 0 350 10 420
-rect 40 350 50 420
-rect 0 335 50 350
+rect 335 993 390 1005
+rect 335 943 344 993
+rect 385 943 390 993
 rect 200 510 250 520
 rect 200 460 210 510
 rect 240 460 250 510
+rect -6 420 51 436
+rect -6 350 10 420
+rect 40 350 51 420
+rect -6 334 51 350
 rect 0 0 50 160
 rect 200 0 250 460
-rect 335 310 390 1005
+rect 335 310 390 943
 rect 335 260 345 310
 rect 380 260 390 310
 rect 335 250 390 260
-use 5v_nfet_1_1  5v_nfet_1_1_0 ~/SeniorProject/vlsi/designs
+use 5v_nfet_1_1  5v_nfet_1_1_0
 timestamp 1777353718
 transform 0 1 100 -1 0 435
 box -150 -100 435 200
-use 5v_pfet_1_2  5v_pfet_1_2_0 ~/SeniorProject/vlsi/designs
+use 5v_pfet_1_2  5v_pfet_1_2_0
 timestamp 1777505670
 transform 0 -1 295 1 0 820
 box -215 -95 400 295

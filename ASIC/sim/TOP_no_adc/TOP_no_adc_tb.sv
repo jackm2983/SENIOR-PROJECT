@@ -30,6 +30,7 @@ module TOP_no_adc_tb;
         .rst(rst),
         .encoding_select(encoding_select),
         .adc_data_in(adc_data_in),
+        // .adc_valid(adc_valid),
         .spikeP(spikeP),
         .spikeN(spikeN)
     );
