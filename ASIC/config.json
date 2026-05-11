@@ -9,28 +9,29 @@
     "dir::rtl/temporal_mod.sv"
   ],
 
-  "VERILOG_FILES_BLACKBOX": [
-    "dir::rtl/adc_macro.v"
-  ],
+  "MACROS": {
+    "ADC_validpin": {
+      "instances": {
+        "u_adc": {
+          "location": [100, 100],
+          "orientation": "N"
+        }
+      },
+      "gds": ["dir::macros/ADC_validpin.gds"],
+      "lef": ["dir::macros/ADC_validpin.lef"],
+      "nl": ["dir::rtl/ADC_validpin.sv"]
+    }
+  },
 
-  "EXTRA_LEFS": [
-    "dir::macros/adc_macro.lef"
-  ],
-
-  "EXTRA_GDS_FILES": [
-    "dir::macros/adc_macro.gds"
-  ],
-
-  "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 400 300",
+  "CORE_AREA": "10 10 390 290",
 
   "CLOCK_PORT": "clk",
   "CLOCK_PERIOD": 10.0,
 
-  "FP_SIZING": "relative",
-  "FP_CORE_UTIL": 40,
-
-  "FP_PDN_VPITCH": 25,
-  "FP_PDN_HPITCH": 25,
+  "FP_PDN_VPITCH": 50,
+  "FP_PDN_HPITCH": 50,
 
   "PL_TARGET_DENSITY": 0.5,
 
