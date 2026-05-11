@@ -7,17 +7,9 @@ S {}
 E {}
 T {} 920 -750 0 0 0.2 0.2 {}
 T {Comparator operating off of delayed Clock} -530 -760 0 0 0.2 0.2 {}
-N 350 -130 350 -60 {
-lab=CLK5_N}
-N 420 -110 420 10 {
-lab=CLK5}
-N 420 -110 560 -110 {
-lab=CLK5}
-N 350 -130 560 -130 {
-lab=CLK5_N}
 N -150 -380 -120 -380 {
 lab=b3}
-N 860 -250 880 -250 {
+N 760 -380 780 -380 {
 lab=cdac}
 N 610 -760 630 -760 {
 lab=VDD1v8}
@@ -53,20 +45,14 @@ N 660 -690 660 -670 {
 lab=comp1v8}
 N 790 -630 820 -630 {
 lab=PHIA}
-N 720 -330 720 -280 {
-lab=VDD_5V}
 N 180 -720 180 -680 {
 lab=VDD_5V}
 N 210 -640 220 -640 {
 lab=latch}
-N 1420 -610 1420 -590 {
-lab=CLK}
 N 180 -640 210 -640 {
 lab=latch}
-N 520 -230 560 -230 {
+N 420 -360 460 -360 {
 lab=VCM}
-N 450 -250 560 -250 {
-lab=Vin}
 N 660 -670 820 -670 {
 lab=comp1v8}
 N 700 -650 700 -540 {
@@ -115,41 +101,35 @@ N -150 100 -120 100 {
 lab=VDD1v8}
 N -150 120 -120 120 {
 lab=VDD_5V}
-N 1400 -170 1400 -140 {
+N 80 -420 80 -390 {
 lab=VCM}
-N 1400 -150 1530 -150 {
+N 80 -400 210 -400 {
 lab=VCM}
-N 1400 -260 1400 -230 {
+N 80 -510 80 -480 {
 lab=VDD_5V}
-N 1400 -80 1400 -40 {
+N 80 -330 80 -290 {
 lab=VSS}
-N 1860 -570 1890 -570 {
+N 480 -70 510 -70 {
 lab=CLK5}
-N 1860 -610 1890 -610 {
+N 480 -110 510 -110 {
 lab=VDD1v8}
-N 1860 -590 1890 -590 {
+N 480 -90 510 -90 {
 lab=VDD_5V}
-N 1420 -610 1560 -610 {
-lab=CLK}
-N 1420 -450 1420 -430 {
-lab=CLK_comp}
-N 1860 -410 1890 -410 {
+N 480 90 510 90 {
 lab=CLK_comp5}
-N 1860 -450 1890 -450 {
+N 480 50 510 50 {
 lab=VDD1v8}
-N 1860 -430 1890 -430 {
+N 480 70 510 70 {
 lab=VDD_5V}
-N 1420 -450 1560 -450 {
-lab=CLK_comp}
-N 1890 -570 1990 -570 {
+N 510 -70 610 -70 {
 lab=CLK5}
-C {/home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym} 710 -180 0 0 {name=x1}
+C {/home/ee431/workspace/6SAR_CDAC/CDAC_4bit_VCM_simplified.sym} 610 -310 0 0 {name=x1}
 C {lab_pin.sym} -120 -380 2 0 {name=p4 sig_type=std_logic lab=b3}
-C {lab_pin.sym} 560 -210 2 1 {name=p10 sig_type=std_logic lab=b3}
-C {lab_pin.sym} 560 -190 2 1 {name=p11 sig_type=std_logic lab=b2}
-C {lab_pin.sym} 560 -170 2 1 {name=p12 sig_type=std_logic lab=b1}
-C {lab_pin.sym} 560 -150 2 1 {name=p13 sig_type=std_logic lab=b0}
-C {lab_pin.sym} 520 -230 0 0 {name=p16 sig_type=std_logic lab=VCM}
+C {lab_pin.sym} 460 -340 2 1 {name=p10 sig_type=std_logic lab=b3}
+C {lab_pin.sym} 460 -320 2 1 {name=p11 sig_type=std_logic lab=b2}
+C {lab_pin.sym} 460 -300 2 1 {name=p12 sig_type=std_logic lab=b1}
+C {lab_pin.sym} 460 -280 2 1 {name=p13 sig_type=std_logic lab=b0}
+C {lab_pin.sym} 420 -360 0 0 {name=p16 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} -500 -680 0 0 {name=p17 sig_type=std_logic lab=VCM}
 C {lab_pin.sym} 610 -760 1 0 {name=p21 sig_type=std_logic lab=VDD1v8}
 C {shift_5v_to_1v8.sym} 450 -640 0 0 {name=x6}
@@ -166,22 +146,21 @@ C {lab_pin.sym} 660 -690 0 1 {name=p18 sig_type=std_logic lab=comp1v8}
 C {lab_pin.sym} -450 -230 2 1 {name=p33 sig_type=std_logic lab=DAC_B2}
 C {/home/ee431/workspace/6SAR_CDAC/strongarm_comp.sym} -350 -660 0 0 {name=x13}
 C {/home/ee431/workspace/6SAR_CDAC/SR_latch.sym} 30 -650 0 0 {name=x14}
-C {lab_pin.sym} 880 -250 0 1 {name=p1 sig_type=std_logic lab=cdac}
+C {lab_pin.sym} 780 -380 0 1 {name=p1 sig_type=std_logic lab=cdac}
 C {lab_pin.sym} -500 -660 0 0 {name=p41 sig_type=std_logic lab=cdac}
-C {lab_pin.sym} 720 -330 0 1 {name=p42 sig_type=std_logic lab=VDD_5V}
+C {lab_pin.sym} 620 -410 0 1 {name=p42 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} 180 -720 3 1 {name=p51 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} -200 -640 0 1 {name=p52 sig_type=std_logic lab=VDD_5V}
-C {lab_pin.sym} 1960 -570 3 0 {name=p53 sig_type=std_logic lab=CLK5}
-C {lab_pin.sym} 420 -60 0 1 {name=p55 sig_type=std_logic lab=CLK5}
-C {lab_pin.sym} 350 -60 2 1 {name=p6 sig_type=std_logic lab=CLK5_N}
-C {lab_pin.sym} 1420 -610 0 0 {name=p7 sig_type=std_logic lab=CLK}
-C {lab_pin.sym} 490 -250 1 0 {name=p5 sig_type=std_logic lab=Vin}
+C {lab_pin.sym} 580 -70 3 0 {name=p53 sig_type=std_logic lab=CLK5}
+C {lab_pin.sym} 460 -240 2 1 {name=p55 sig_type=std_logic lab=CLK5}
+C {lab_pin.sym} 460 -260 2 1 {name=p6 sig_type=std_logic lab=CLK5_N}
+C {lab_pin.sym} 180 -110 0 0 {name=p7 sig_type=std_logic lab=CLK}
+C {lab_pin.sym} 460 -380 1 0 {name=p5 sig_type=std_logic lab=Vin}
 C {lab_pin.sym} -450 -420 2 1 {name=p32 sig_type=std_logic lab=DAC_B3}
 C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} -300 -390 0 0 {name=x10}
 C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} -300 -200 0 0 {name=x3}
 C {lab_pin.sym} 610 -760 1 0 {name=p37 sig_type=std_logic lab=VDD1v8}
 C {lab_pin.sym} -120 -420 2 0 {name=p43 sig_type=std_logic lab=VDD1v8}
-C {lab_pin.sym} 720 -330 0 1 {name=p47 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} -120 -400 0 1 {name=p48 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} -120 -190 2 0 {name=p49 sig_type=std_logic lab=b2}
 C {lab_pin.sym} -120 -230 2 0 {name=p50 sig_type=std_logic lab=VDD1v8}
@@ -197,28 +176,27 @@ C {lab_pin.sym} -120 -70 0 1 {name=p35 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} -120 140 2 0 {name=p38 sig_type=std_logic lab=b0}
 C {lab_pin.sym} -120 100 2 0 {name=p44 sig_type=std_logic lab=VDD1v8}
 C {lab_pin.sym} -120 120 0 1 {name=p45 sig_type=std_logic lab=VDD_5V}
-C {lab_pin.sym} 1530 -150 2 0 {name=p46 sig_type=std_logic lab=VCM}
-C {lab_pin.sym} 720 -330 0 1 {name=p58 sig_type=std_logic lab=VDD_5V}
-C {lab_pin.sym} 1400 -260 0 1 {name=p59 sig_type=std_logic lab=VDD_5V}
+C {lab_pin.sym} 210 -400 2 0 {name=p46 sig_type=std_logic lab=VCM}
+C {lab_pin.sym} 80 -510 0 1 {name=p59 sig_type=std_logic lab=VDD_5V}
 C {lab_pin.sym} 790 -630 0 0 {name=p60 sig_type=std_logic lab=PHIA}
 C {lab_pin.sym} 780 -610 2 1 {name=p30 sig_type=std_logic lab=PHIB}
 C {lab_pin.sym} 790 -590 0 0 {name=p31 sig_type=std_logic lab=VDD1v8}
 C {SAR_validpin.sym} 970 -580 0 0 {name=x5}
-C {sky130_fd_pr/res_xhigh_po.sym} 1400 -200 0 0 {name=R3
+C {sky130_fd_pr/res_xhigh_po.sym} 80 -450 0 0 {name=R3
 W=2
 L=10
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
-C {sky130_fd_pr/res_xhigh_po.sym} 1400 -110 0 0 {name=R4
+C {sky130_fd_pr/res_xhigh_po.sym} 80 -360 0 0 {name=R4
 W=2
 L=10
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
-C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} 1710 -580 0 0 {name=x7}
-C {lab_pin.sym} 1890 -610 2 0 {name=p61 sig_type=std_logic lab=VDD1v8}
-C {lab_pin.sym} 1890 -590 0 1 {name=p62 sig_type=std_logic lab=VDD_5V}
+C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} 330 -80 0 0 {name=x7}
+C {lab_pin.sym} 510 -110 2 0 {name=p61 sig_type=std_logic lab=VDD1v8}
+C {lab_pin.sym} 510 -90 0 1 {name=p62 sig_type=std_logic lab=VDD_5V}
 C {iopin.sym} -770 -280 2 0 {name=p15 lab=VDD_5V}
 C {iopin.sym} -770 -260 2 0 {name=p29 lab=CLK}
 C {iopin.sym} -770 -240 2 0 {name=p64 lab=CLK_comp}
@@ -237,17 +215,17 @@ C {lab_pin.sym} -770 -320 2 0 {name=p79 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -150 160 2 0 {name=p80 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -150 -30 2 0 {name=p81 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -150 -170 2 0 {name=p82 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 720 -80 2 0 {name=p83 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 620 -210 2 0 {name=p83 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -150 -360 2 0 {name=p84 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -200 -620 2 0 {name=p85 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 180 -620 2 0 {name=p86 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 600 -620 2 0 {name=p87 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 820 -540 3 0 {name=p88 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1860 -550 2 0 {name=p89 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1400 -40 2 0 {name=p91 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1380 -110 0 0 {name=p92 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 480 -50 2 0 {name=p89 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 80 -290 2 0 {name=p91 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 60 -360 0 0 {name=p92 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -770 -320 2 0 {name=p93 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1380 -200 0 0 {name=p95 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 60 -450 0 0 {name=p95 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -770 -140 2 0 {name=p94 sig_type=std_logic lab=ADC_OUT3}
 C {lab_pin.sym} -770 -120 2 0 {name=p97 sig_type=std_logic lab=ADC_OUT2}
 C {lab_pin.sym} -770 -100 2 0 {name=p98 sig_type=std_logic lab=ADC_OUT1}
@@ -259,25 +237,23 @@ C {iopin.sym} -770 -80 2 0 {name=p103 lab=ADC_OUT0}
 C {lab_pin.sym} 220 -650 3 1 {name=p104 sig_type=std_logic lab=latch}
 C {lab_pin.sym} -160 -680 3 1 {name=p39 sig_type=std_logic lab=compp}
 C {lab_pin.sym} -130 -660 1 1 {name=p105 sig_type=std_logic lab=compn}
-C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} 1710 -420 0 0 {name=x9}
-C {lab_pin.sym} 1890 -450 2 0 {name=p106 sig_type=std_logic lab=VDD1v8}
-C {lab_pin.sym} 1890 -430 0 1 {name=p107 sig_type=std_logic lab=VDD_5V}
-C {lab_pin.sym} 1860 -390 2 0 {name=p109 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1420 -450 0 0 {name=p110 sig_type=std_logic lab=CLK_comp}
-C {lab_pin.sym} 1420 -450 0 0 {name=p40 sig_type=std_logic lab=CLK_comp}
-C {lab_pin.sym} 1420 -450 0 0 {name=p108 sig_type=std_logic lab=CLK_comp}
-C {lab_pin.sym} 1890 -410 2 0 {name=p111 sig_type=std_logic lab=CLK_comp5}
+C {/home/ee431/workspace/6SAR_CDAC/shift_1v8_to_5v.sym} 330 80 0 0 {name=x9}
+C {lab_pin.sym} 510 50 2 0 {name=p106 sig_type=std_logic lab=VDD1v8}
+C {lab_pin.sym} 510 70 0 1 {name=p107 sig_type=std_logic lab=VDD_5V}
+C {lab_pin.sym} 480 110 2 0 {name=p109 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 180 50 0 0 {name=p110 sig_type=std_logic lab=CLK_comp}
+C {lab_pin.sym} 510 90 2 0 {name=p111 sig_type=std_logic lab=CLK_comp5}
 C {lab_pin.sym} -670 -640 0 0 {name=p14 sig_type=std_logic lab=CLK_comp5}
 C {lab_pin.sym} 1120 -490 2 0 {name=p2 sig_type=std_logic lab=VALID}
 C {lab_pin.sym} -770 -180 2 0 {name=p112 sig_type=std_logic lab=VALID}
 C {iopin.sym} -770 -180 2 0 {name=p113 lab=VALID}
-C {lab_pin.sym} 2290 -550 2 0 {name=p114 sig_type=std_logic lab=CLK5_N}
-C {/home/ee431/workspace/6SAR_CDAC/NOT5V.sym} 2140 -550 0 0 {name=x11}
-C {lab_pin.sym} 2150 -600 0 1 {name=p115 sig_type=std_logic lab=VDD_5V}
-C {lab_pin.sym} 2150 -500 2 0 {name=p116 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1630 -770 0 0 {name=p56 sig_type=std_logic lab=CLK}
-C {lab_pin.sym} 1930 -770 2 0 {name=p66 sig_type=std_logic lab=VDD1v8}
-C {lab_pin.sym} 1930 -750 2 0 {name=p126 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 1930 -730 2 0 {name=p127 sig_type=std_logic lab=PHIA}
-C {lab_pin.sym} 1930 -710 0 1 {name=p128 sig_type=std_logic lab=PHIB}
-C {/home/ee431/workspace/6SAR_CDAC/SARclkgen.sym} 1780 -740 0 0 {name=x8}
+C {lab_pin.sym} 910 -50 2 0 {name=p114 sig_type=std_logic lab=CLK5_N}
+C {/home/ee431/workspace/6SAR_CDAC/NOT5V.sym} 760 -50 0 0 {name=x11}
+C {lab_pin.sym} 770 -100 0 1 {name=p115 sig_type=std_logic lab=VDD_5V}
+C {lab_pin.sym} 770 0 2 0 {name=p116 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 820 -800 0 0 {name=p56 sig_type=std_logic lab=CLK}
+C {lab_pin.sym} 1120 -800 2 0 {name=p66 sig_type=std_logic lab=VDD1v8}
+C {lab_pin.sym} 1120 -780 2 0 {name=p126 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1120 -760 2 0 {name=p127 sig_type=std_logic lab=PHIA}
+C {lab_pin.sym} 1120 -740 0 1 {name=p128 sig_type=std_logic lab=PHIB}
+C {/home/ee431/workspace/6SAR_CDAC/SARclkgen.sym} 970 -770 0 0 {name=x8}
