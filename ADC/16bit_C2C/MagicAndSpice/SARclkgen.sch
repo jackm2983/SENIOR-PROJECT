@@ -14,21 +14,21 @@ lab=CLK}
 N -180 80 -160 80 {
 lab=PHIA}
 N -120 -100 -120 -80 {
-lab=#net2}
+lab=VDD}
 N -120 110 -120 140 {
 lab=VSS}
 N -120 -20 -120 0 {
 lab=VSS}
 N -120 30 -120 50 {
-lab=#net3}
+lab=VDD}
 N -80 -50 0 -50 {
-lab=#net4}
+lab=#net2}
 N 0 -30 0 80 {
-lab=#net5}
+lab=#net3}
 N -80 80 0 80 {
-lab=#net5}
+lab=#net3}
 N -140 -240 -140 -220 {
-lab=#net6}
+lab=VDD}
 N -140 -160 -140 -130 {
 lab=VSS}
 C {lab_pin.sym} -10 -210 0 0 {name=p54 sig_type=std_logic lab=CLK}
@@ -47,7 +47,6 @@ C {lab_pin.sym} -120 0 2 0 {name=p120 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 150 20 2 0 {name=p122 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 140 -140 2 0 {name=p123 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} -140 -130 2 0 {name=p125 sig_type=std_logic lab=VSS}
-C {iopin.sym} -290 -390 2 0 {name=p1 lab=VDD}
 C {iopin.sym} -290 -370 2 0 {name=p2 lab=VSS}
 C {ipin.sym} -290 -350 0 0 {name=p4 lab=CLK}
 C {lab_pin.sym} -290 -350 2 0 {name=p3 sig_type=std_logic lab=CLK}

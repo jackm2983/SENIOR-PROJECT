@@ -1,4 +1,34 @@
 
+Circuit 1 cell sky130_fd_pr__pfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__pfet_g5v0d10v5 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__pfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__nfet_g5v0d10v5 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
+
 Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
 Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
 Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
@@ -28,6 +58,75 @@ Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Flattening unmatched subcell x5v_pfet_1_10 in circuit Tgate (0)(1 instance)
+Flattening unmatched subcell x5v_nfet_1_10 in circuit Tgate (0)(1 instance)
+
+Subcircuit summary:
+Circuit 1: Tgate                           |Circuit 2: TGATE                           
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (1)           |(no matching element)                      
+sky130_fd_pr__nfet_g5v0d10v5 (1)           |(no matching element)                      
+(no matching element)                      |sky130_fd_pr__nfet_01v8 (1)                
+(no matching element)                      |sky130_fd_pr__pfet_01v8 (1)                
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 6                          |Number of nets: 6                          
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: Tgate                           |Circuit 2: TGATE                           
+
+---------------------------------------------------------------------------------------
+Net: VSS                                   |Net: VP                                    
+  sky130_fd_pr__nfet_g5v0d10v5/4 = 1       |  sky130_fd_pr__pfet_01v8/4 = 1            
+                                           |                                           
+Net: C                                     |Net: EN_N                                  
+  sky130_fd_pr__nfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__pfet_01v8/2 = 1            
+                                           |                                           
+Net: VDD                                   |Net: VN                                    
+  sky130_fd_pr__pfet_g5v0d10v5/4 = 1       |  sky130_fd_pr__nfet_01v8/4 = 1            
+                                           |                                           
+Net: Cbar                                  |Net: EN                                    
+  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__nfet_01v8/2 = 1            
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: out                                   |Net: Y                                     
+  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__pfet_01v8/(1|3) = 1        
+                                           |                                           
+Net: in                                    |Net: A                                     
+  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__pfet_01v8/(1|3) = 1        
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: Tgate                           |Circuit 2: TGATE                           
+
+---------------------------------------------------------------------------------------
+Instance: x5v_pfet_1_10:5v_pfet_1_10_0/sky |Instance: sky130_fd_pr__nfet_01v8:M5       
+  (1,3) = (2,2)                            |  (1,3) = (2,2)                            
+  2 = 1                                    |  2 = 1                                    
+  4 = 1                                    |  4 = 1                                    
+                                           |                                           
+Instance: x5v_nfet_1_10:5v_nfet_1_10_0/sky |Instance: sky130_fd_pr__pfet_01v8:M6       
+  (1,3) = (2,2)                            |  (1,3) = (2,2)                            
+  2 = 1                                    |  2 = 1                                    
+  4 = 1                                    |  4 = 1                                    
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Port matching may fail to disambiguate symmetries.
+  Flattening non-matched subcircuits Tgate TGATE
+
+Circuit 1 cell sky130_fd_pr__cap_mim_m3_1 and Circuit 2 cell sky130_fd_pr__cap_mim_m3_1 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
 
 Subcircuit summary:
 Circuit 1: inverter                        |Circuit 2: inverter                        
@@ -49,6 +148,46 @@ VN                                         |VN
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes inverter and inverter are equivalent.
+
+Circuit 1 cell sky130_fd_pr__res_xhigh_po and Circuit 2 cell sky130_fd_pr__res_xhigh_po are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__res_xhigh_po      |Circuit 2: sky130_fd_pr__res_xhigh_po      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__res_xhigh_po and sky130_fd_pr__res_xhigh_po are equivalent.
+Flattening unmatched subcell NOR2 in circuit OR2 (1)(1 instance)
+
+Flattening instances of inverter in cell OR2 (1) makes a better match
+Making another compare attempt.
+
+Subcircuit summary:
+Circuit 1: OR2                             |Circuit 2: OR2                             
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8 (3)                |sky130_fd_pr__pfet_01v8 (3)                
+sky130_fd_pr__nfet_01v8 (3)                |sky130_fd_pr__nfet_01v8 (3)                
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: OR2                             |Circuit 2: OR2                             
+-------------------------------------------|-------------------------------------------
+VN                                         |VN                                         
+VP                                         |VP                                         
+A                                          |A                                          
+B                                          |B                                          
+Y                                          |Y                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes OR2 and OR2 are equivalent.
 
 Flattening instances of inverter in cell AND2 (1) makes a better match
 Making another compare attempt.
@@ -74,6 +213,113 @@ Y                                          |Y
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes AND2 and AND2 are equivalent.
+Flattening unmatched subcell NAND2 in circuit DFFS (1)(1 instance)
+Flattening unmatched subcell tristate_inv in circuit DFFS (1)(1 instance)
+Flattening unmatched subcell tristate_NAND2 in circuit DFFS (1)(1 instance)
+
+Flattening instances of inverter in cell DFFS (1) makes a better match
+Making another compare attempt.
+
+Subcircuit summary:
+Circuit 1: DFFS                            |Circuit 2: DFFS                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8 (14)               |sky130_fd_pr__pfet_01v8 (14)               
+sky130_fd_pr__nfet_01v8 (14)               |sky130_fd_pr__nfet_01v8 (14)               
+Number of devices: 28                      |Number of devices: 28                      
+Number of nets: 20                         |Number of nets: 20                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: DFFS                            |Circuit 2: DFFS                            
+-------------------------------------------|-------------------------------------------
+D                                          |D                                          
+Q                                          |Q                                          
+VN                                         |VN                                         
+VP                                         |VP                                         
+PHIB                                       |PHIB                                       
+SET_N                                      |SET_N                                      
+PHIA                                       |PHIA                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes DFFS and DFFS are equivalent.
+Flattening unmatched subcell T_gate in circuit SPDT (1)(2 instances)
+
+Subcircuit summary:
+Circuit 1: SPDT                            |Circuit 2: SPDT                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (2)           |sky130_fd_pr__pfet_g5v0d10v5 (2)           
+sky130_fd_pr__nfet_g5v0d10v5 (2)           |sky130_fd_pr__nfet_g5v0d10v5 (2)           
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: SPDT                            |Circuit 2: SPDT                            
+-------------------------------------------|-------------------------------------------
+out                                        |out                                        
+VDD                                        |vdd                                        
+C                                          |c                                          
+Cbar                                       |cbar                                       
+VSS                                        |vss                                        
+in2                                        |in2                                        
+in1                                        |in1                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes SPDT and SPDT are equivalent.
+Flattening unmatched subcell x2_1_MUX in circuit SAR_validpin (0)(3 instances)
+Flattening unmatched subcell DFFR in circuit SAR_validpin (0)(9 instances)
+Flattening unmatched subcell DFFRR in circuit SAR_validpin (0)(2 instances)
+Flattening unmatched subcell DFFRN in circuit SAR_validpin (1)(9 instances)
+Flattening unmatched subcell tristate_inv in circuit SAR_validpin (1)(9 instances)
+Flattening unmatched subcell tristate_NAND2 in circuit SAR_validpin (1)(9 instances)
+Flattening unmatched subcell NAND2 in circuit SAR_validpin (1)(9 instances)
+Flattening unmatched subcell DFFRNRS in circuit SAR_validpin (1)(2 instances)
+Flattening unmatched subcell tristate_inv in circuit SAR_validpin (1)(2 instances)
+Flattening unmatched subcell tristate_NAND2 in circuit SAR_validpin (1)(2 instances)
+Flattening unmatched subcell NAND2 in circuit SAR_validpin (1)(4 instances)
+Flattening unmatched subcell MUX_2_1 in circuit SAR_validpin (1)(3 instances)
+
+Flattening instances of inverter in cell SAR_validpin (1) makes a better match
+Making another compare attempt.
+
+Subcircuit summary:
+Circuit 1: SAR_validpin                    |Circuit 2: SAR_validpin                    
+-------------------------------------------|-------------------------------------------
+OR2 (3)                                    |OR2 (3)                                    
+sky130_fd_pr__nfet_01v8 (167)              |sky130_fd_pr__nfet_01v8 (167)              
+sky130_fd_pr__pfet_01v8 (167)              |sky130_fd_pr__pfet_01v8 (167)              
+AND2 (3)                                   |AND2 (3)                                   
+DFFS (1)                                   |DFFS (1)                                   
+Number of devices: 341                     |Number of devices: 341                     
+Number of nets: 177                        |Number of nets: 177                        
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: SAR_validpin                    |Circuit 2: SAR_validpin                    
+-------------------------------------------|-------------------------------------------
+ADC_OUT_B3                                 |ADC_OUT_B3                                 
+ADC_OUT_B2                                 |ADC_OUT_B2                                 
+ADC_OUT_B1                                 |ADC_OUT_B1                                 
+ADC_OUT_B0                                 |ADC_OUT_B0                                 
+VALID                                      |VALID                                      
+DAC_B0                                     |DAC_B0                                     
+RST_N                                      |RST_N                                      
+PHIA                                       |PHIA                                       
+PHIB                                       |PHIB                                       
+VN                                         |VN                                         
+VP                                         |VP                                         
+DAC_B1                                     |DAC_B1                                     
+DAC_B2                                     |DAC_B2                                     
+DAC_B3                                     |DAC_B3                                     
+COMP                                       |COMP                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes SAR_validpin and SAR_validpin are equivalent.
 
 Subcircuit summary:
 Circuit 1: SARclkgen                       |Circuit 2: SARclkgen                       
@@ -96,6 +342,92 @@ PHIB                                       |PHIB
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes SARclkgen and SARclkgen are equivalent.
+Flattening unmatched subcell x5v_pfet_1_2 in circuit NOT5V (0)(1 instance)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit NOT5V (0)(1 instance)
+
+Subcircuit summary:
+Circuit 1: NOT5V                           |Circuit 2: NOT5V                           
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (1)           |sky130_fd_pr__pfet_g5v0d10v5 (1)           
+sky130_fd_pr__nfet_g5v0d10v5 (1)           |sky130_fd_pr__nfet_g5v0d10v5 (1)           
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: NOT5V                           |Circuit 2: NOT5V                           
+-------------------------------------------|-------------------------------------------
+Y                                          |Y                                          
+X                                          |X                                          
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes NOT5V and NOT5V are equivalent.
+Flattening unmatched subcell SRLatch5V in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell NAND5v in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_2 in circuit ADC_validpin (0)(4 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(4 instances)
+Flattening unmatched subcell shift1v8to5 in circuit ADC_validpin (0)(6 instances)
+Flattening unmatched subcell x5v_nfet_1_6 in circuit ADC_validpin (0)(12 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(18 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(6 instances)
+Flattening unmatched subcell polyR_2_10 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell shift5to1v8 in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell strongarm in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell x5v_pfet_1_1 in circuit ADC_validpin (0)(4 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(5 instances)
+Flattening unmatched subcell CDAC in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell cap_m3_10_5 in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell cap_m3_20_10 in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell cap_m3_10_10 in circuit ADC_validpin (0)(1 instance)
+Flattening unmatched subcell cap_m3_5_5 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell CDAC_4bit_VCM_simplified in circuit ADC_validpin (1)(1 instance)
+Flattening unmatched subcell T_gate in circuit ADC_validpin (1)(1 instance)
+Flattening unmatched subcell shift_5v_to_1v8 in circuit ADC_validpin (1)(1 instance)
+Flattening unmatched subcell strongarm_comp in circuit ADC_validpin (1)(1 instance)
+Flattening unmatched subcell SR_latch in circuit ADC_validpin (1)(1 instance)
+Flattening unmatched subcell NAND2_5V in circuit ADC_validpin (1)(2 instances)
+Flattening unmatched subcell shift_1v8_to_5v in circuit ADC_validpin (1)(6 instances)
+
+Subcircuit summary:
+Circuit 1: ADC_validpin                    |Circuit 2: ADC_validpin                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_g5v0d10v5 (30)          |sky130_fd_pr__nfet_g5v0d10v5 (30)          
+sky130_fd_pr__pfet_g5v0d10v5 (31)          |sky130_fd_pr__pfet_g5v0d10v5 (31)          
+sky130_fd_pr__res_xhigh_po (2)             |sky130_fd_pr__res_xhigh_po (2)             
+SAR_validpin (1)                           |SAR_validpin (1)                           
+SARclkgen (1)                              |SARclkgen (1)                              
+SPDT (5)                                   |SPDT (5)                                   
+sky130_fd_pr__cap_mim_m3_1 (5)             |sky130_fd_pr__cap_mim_m3_1 (5)             
+NOT5V (1)                                  |NOT5V (1)                                  
+Number of devices: 76                      |Number of devices: 76                      
+Number of nets: 55                         |Number of nets: 55                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: ADC_validpin                    |Circuit 2: ADC_validpin                    
+-------------------------------------------|-------------------------------------------
+CLK_comp                                   |CLK_comp                                   
+VALID                                      |VALID                                      
+RST_N                                      |RST_N                                      
+ADC_OUT3                                   |ADC_OUT3                                   
+ADC_OUT2                                   |ADC_OUT2                                   
+ADC_OUT1                                   |ADC_OUT1                                   
+ADC_OUT0                                   |ADC_OUT0                                   
+VDD1v8                                     |VDD1v8                                     
+CLK                                        |CLK                                        
+VSS                                        |VSS                                        
+VDD_5V                                     |VDD_5V                                     
+Vin                                        |Vin                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes ADC_validpin and ADC_validpin are equivalent.
 
 Final result: Circuits match uniquely.
 .

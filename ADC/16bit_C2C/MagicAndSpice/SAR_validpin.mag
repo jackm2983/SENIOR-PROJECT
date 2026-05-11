@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1778370643
+timestamp 1778451337
 << metal1 >>
 rect 3300 5005 3985 5045
 rect 3825 4805 3865 4810
@@ -908,15 +908,15 @@ rect 7035 10 7040 65
 rect 7155 10 7160 65
 rect 7035 -85 7160 10
 use 2_1_MUX  2_1_MUX_0
-timestamp 1778294135
+timestamp 1778296044
 transform 1 0 3845 0 1 2370
 box -685 -240 -100 825
 use 2_1_MUX  2_1_MUX_1
-timestamp 1778294135
+timestamp 1778296044
 transform 1 0 3845 0 -1 4020
 box -685 -240 -100 825
 use 2_1_MUX  2_1_MUX_2
-timestamp 1778294135
+timestamp 1778296044
 transform 1 0 4100 0 1 4500
 box -685 -240 -100 825
 use AND2  AND2_0
