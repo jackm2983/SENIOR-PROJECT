@@ -1,0 +1,19 @@
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+.include /home/ee431/workspace/6SAR_CDAC/ADC_validpin.spice
+
+x1 CLK CLK_comp RST_N Vin VALID ADC_OUT3 ADC_OUT2 ADC_OUT1 ADC_OUT0 VSS VDD1v8 VDD_5V ADC_validpin
+
+V2 CLK VSS PULSE(0 1.8 0 10n 10n 312.5u 625u)
+V3 CLK_comp VSS PULSE(0 1.8 156.25u 10n 10n 312.5u 625u)
+V1 Vin VSS 4
+V4 VDD_5V VSS 5
+V7 VDD1v8 VSS 1.8
+V5 VSS 0 0
+V10 RST_N VSS PULSE(0 1.8 0 10n 10n 2.5m 3.125m)
+
+.tran 1u 10000u 0 1u
+.options method=gear reltol=1e-4
+.control
+run
+plot v(ADC_OUT0) v(ADC_OUT1)+3 v(ADC_OUT2)+6 v(ADC_OUT3)+9 v(VALID)+12
+.endc
