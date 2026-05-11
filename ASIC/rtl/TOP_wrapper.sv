@@ -89,7 +89,7 @@ module TOP_wrapper #(
         end
     end
 
-    adc_macro u_adc (
+    ADC_validpin u_adc (
         .CLK(adc_clk),
         .CLK_comp(adc_clk_comp),
         .RST_N(adc_rst_n),

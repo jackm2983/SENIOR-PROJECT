@@ -365,27 +365,27 @@ VDD                                        |VDD
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes NOT5V and NOT5V are equivalent.
-Flattening unmatched subcell SRLatch5V in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell NAND5v in circuit ADC_validpin (0)(2 instances)
-Flattening unmatched subcell x5v_nfet_1_2 in circuit ADC_validpin (0)(4 instances)
-Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(4 instances)
-Flattening unmatched subcell shift1v8to5 in circuit ADC_validpin (0)(6 instances)
-Flattening unmatched subcell x5v_nfet_1_6 in circuit ADC_validpin (0)(12 instances)
-Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(18 instances)
-Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(6 instances)
-Flattening unmatched subcell polyR_2_10 in circuit ADC_validpin (0)(2 instances)
-Flattening unmatched subcell shift5to1v8 in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(2 instances)
-Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(2 instances)
-Flattening unmatched subcell strongarm in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell x5v_pfet_1_1 in circuit ADC_validpin (0)(4 instances)
-Flattening unmatched subcell x5v_pfet_1_2 in circuit ADC_validpin (0)(2 instances)
-Flattening unmatched subcell x5v_nfet_1_1 in circuit ADC_validpin (0)(5 instances)
-Flattening unmatched subcell CDAC in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell cap_m3_10_5 in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell cap_m3_20_10 in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell cap_m3_10_10 in circuit ADC_validpin (0)(1 instance)
-Flattening unmatched subcell cap_m3_5_5 in circuit ADC_validpin (0)(2 instances)
+Flattening unmatched subcell polyR_2_10 in circuit positive_coords_v2 (0)(2 instances)
+Flattening unmatched subcell shift1v8to5 in circuit positive_coords_v2 (0)(6 instances)
+Flattening unmatched subcell x5v_nfet_1_6 in circuit positive_coords_v2 (0)(12 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit positive_coords_v2 (0)(18 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit positive_coords_v2 (0)(6 instances)
+Flattening unmatched subcell SRLatch5V in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell NAND5v in circuit positive_coords_v2 (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_2 in circuit positive_coords_v2 (0)(4 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit positive_coords_v2 (0)(4 instances)
+Flattening unmatched subcell shift5to1v8 in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit positive_coords_v2 (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit positive_coords_v2 (0)(2 instances)
+Flattening unmatched subcell strongarm in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell x5v_pfet_1_1 in circuit positive_coords_v2 (0)(4 instances)
+Flattening unmatched subcell x5v_pfet_1_2 in circuit positive_coords_v2 (0)(2 instances)
+Flattening unmatched subcell x5v_nfet_1_1 in circuit positive_coords_v2 (0)(5 instances)
+Flattening unmatched subcell CDAC in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell cap_m3_10_5 in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell cap_m3_20_10 in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell cap_m3_10_10 in circuit positive_coords_v2 (0)(1 instance)
+Flattening unmatched subcell cap_m3_5_5 in circuit positive_coords_v2 (0)(2 instances)
 Flattening unmatched subcell CDAC_4bit_VCM_simplified in circuit ADC_validpin (1)(1 instance)
 Flattening unmatched subcell T_gate in circuit ADC_validpin (1)(1 instance)
 Flattening unmatched subcell shift_5v_to_1v8 in circuit ADC_validpin (1)(1 instance)
@@ -395,11 +395,11 @@ Flattening unmatched subcell NAND2_5V in circuit ADC_validpin (1)(2 instances)
 Flattening unmatched subcell shift_1v8_to_5v in circuit ADC_validpin (1)(6 instances)
 
 Subcircuit summary:
-Circuit 1: ADC_validpin                    |Circuit 2: ADC_validpin                    
+Circuit 1: positive_coords_v2              |Circuit 2: ADC_validpin                    
 -------------------------------------------|-------------------------------------------
+sky130_fd_pr__res_xhigh_po (2)             |sky130_fd_pr__res_xhigh_po (2)             
 sky130_fd_pr__nfet_g5v0d10v5 (30)          |sky130_fd_pr__nfet_g5v0d10v5 (30)          
 sky130_fd_pr__pfet_g5v0d10v5 (31)          |sky130_fd_pr__pfet_g5v0d10v5 (31)          
-sky130_fd_pr__res_xhigh_po (2)             |sky130_fd_pr__res_xhigh_po (2)             
 SAR_validpin (1)                           |SAR_validpin (1)                           
 SARclkgen (1)                              |SARclkgen (1)                              
 SPDT (5)                                   |SPDT (5)                                   
@@ -411,7 +411,7 @@ Number of nets: 55                         |Number of nets: 55
 Netlists match uniquely.
 
 Subcircuit pins:
-Circuit 1: ADC_validpin                    |Circuit 2: ADC_validpin                    
+Circuit 1: positive_coords_v2              |Circuit 2: ADC_validpin                    
 -------------------------------------------|-------------------------------------------
 CLK_comp                                   |CLK_comp                                   
 VALID                                      |VALID                                      
@@ -420,14 +420,14 @@ ADC_OUT3                                   |ADC_OUT3
 ADC_OUT2                                   |ADC_OUT2                                   
 ADC_OUT1                                   |ADC_OUT1                                   
 ADC_OUT0                                   |ADC_OUT0                                   
+VDD_5V                                     |VDD_5V                                     
 VDD1v8                                     |VDD1v8                                     
 CLK                                        |CLK                                        
 VSS                                        |VSS                                        
-VDD_5V                                     |VDD_5V                                     
 Vin                                        |Vin                                        
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes ADC_validpin and ADC_validpin are equivalent.
+Device classes positive_coords_v2 and ADC_validpin are equivalent.
 
 Final result: Circuits match uniquely.
 .

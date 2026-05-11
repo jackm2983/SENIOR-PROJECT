@@ -11,6 +11,7 @@ synth/*
 sim/*
 !sim/*/
 !sim/**/*.sv
+verilator_lib
 
 # Build artifacts
 *.o
