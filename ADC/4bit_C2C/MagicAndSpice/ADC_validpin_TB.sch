@@ -35,12 +35,13 @@ value="
 
 "
 spice_ignore=false}
-C {code_shown.sym} -40 -140 0 0 {name=spice only_toplevel=false value=".tran 1u 10000u 0 1u
+C {code_shown.sym} -40 -140 0 0 {name=spice only_toplevel=false value=".tran 100u 60m 0 100u
 .options method=gear reltol=1e-4
 .control
 run
+PLOT V(Vin) V(ADC_OUT0)+5 (ADC_OUT1)+8 V(ADC_OUT2)+11 V(ADC_OUT3)+14 V(VALID)+17
 .endc"}
-C {vsource.sym} 550 280 0 0 {name=V1 value=4 savecurrent=false}
+C {vsource.sym} 550 280 0 0 {name=V1 value="PWL(0 0 60m 5)" savecurrent=false}
 C {gnd.sym} 550 310 0 0 {name=l8 lab=GND}
 C {lab_pin.sym} 550 250 1 0 {name=p5 sig_type=std_logic lab=Vin}
 C {vsource.sym} 610 280 0 0 {name=V4 value=5 savecurrent=false}
