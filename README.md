@@ -7,11 +7,14 @@
 * **Cameron Young**
 
 ### Advisor
-* **Nishith Chakraborty**
+* **Dr. Nishith Chakraborty**
 
 ## Software
 * Vivado 2024.2
 * OpenLane & Magic VLSI
 
-![](/Misc/Photos/senior_proj_finalversion.png)
+![](/Misc/Photos/klayout_final.png)
+*KLayout final layout*
 
+![](/Misc/Photos/adc_fsr_sim.png)
+*ADC full-scale range simulation*
