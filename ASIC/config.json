@@ -13,7 +13,7 @@
     "ADC_validpin": {
       "instances": {
         "u_adc": {
-          "location": [100, 100],
+          "location": [10, 10],
           "orientation": "N"
         }
       },

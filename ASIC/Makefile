@@ -184,13 +184,16 @@ sta:
 	
 OPENLANE_CONF ?= config.*
 openlane:
-	@`which openlane` --flow Classic $(OPENLANE_CONF)
-	@cd runs && rm -f recent && ln -sf `ls | tail -n 1` recent
+	@`which openlane` --flow Classic $(OPENLANE_CONF); \
+	status=$$?; \
+	cd runs && rm -f recent && ln -sfn "$$(ls -td RUN_* | head -n 1)" recent; \
+	exit $$status
 
 openlane_sta:
-	@`which openlane` --flow Classic $(OPENLANE_CONF) -T openroad.floorplan
-	@cd runs && rm -f recent && ln -sf `ls | tail -n 1` recent
-
+	@`which openlane` --flow Classic $(OPENLANE_CONF) -T openroad.floorplan; \
+	status=$$?; \
+	cd runs && rm -f recent && ln -sfn "$$(ls -td RUN_* | head -n 1)" recent; \
+	exit $$status
 
 
 
