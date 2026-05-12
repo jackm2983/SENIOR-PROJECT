@@ -65,6 +65,10 @@ TEST_ORANGE := $(shell tput setaf 214)
 TEST_RED := $(shell tput setaf 1)
 TEST_RESET := $(shell tput sgr0)
 
+.PHONY: show_chip
+show_chip:
+	$(shell which klayout) runs/recent/57-klayout-streamout/TOP_wrapper.klayout.gds
+
 .PHONY: rars
 rars:
 	java -jar asm/rars.jar
