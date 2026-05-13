@@ -19,3 +19,6 @@
 
 ![](/Misc/Photos/adc_fsr_sim.png)
 *ADC full-scale range simulation*
+
+![](/Misc/Photos/ecoding_schemes_with_4bitADC.png)
+*Encoding Schemes*
