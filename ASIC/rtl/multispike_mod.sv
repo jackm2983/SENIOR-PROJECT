@@ -2,7 +2,7 @@
 
 module multispike_mod #(
     parameter WIDTH = 1,
-    parameter LENGTH = 4,
+    parameter LENGTH = 12,
     parameter MAX_SPIKES = 16
 )(
     input  logic clk,

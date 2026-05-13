@@ -1,6 +1,6 @@
 module delta_mod #(
     parameter int WIDTH = 1,
-    parameter int LENGTH = 4,
+    parameter int LENGTH = 12,
     parameter int JUMP = 5
 )(
     input  logic clk,

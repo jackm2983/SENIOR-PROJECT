@@ -125,7 +125,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[0]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_sample),
+        .data_in({adc_sample, 8'b0}),
         .divider(ADC_DIV),
         .spikeP(spikeP_rate),
         .spikeN(spikeN_rate)
@@ -139,7 +139,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[1]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_sample),
+        .data_in({adc_sample, 8'b0}),
         .divider(ADC_DIV),
         .spikeP(spikeP_temporal),
         .spikeN(spikeN_temporal)
@@ -154,7 +154,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[2]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_sample),
+        .data_in({adc_sample, 8'b0}),
         .divider(ADC_DIV),
         .spikeP(spikeP_delta),
         .spikeN(spikeN_delta)
@@ -169,7 +169,7 @@ module TOP_wrapper #(
         .rst(rst),
         .clk_en(clk_en[3]),
         .sample_pulse(sample_pulse),
-        .data_in(adc_sample),
+        .data_in({adc_sample, 8'b0}),
         .divider(ADC_DIV),
         .spikeP(spikeP_multispike),
         .spikeN(spikeN_multispike)

@@ -1,6 +1,6 @@
 module rate_mod #(
     parameter WIDTH = 1,
-    parameter LENGTH = 4
+    parameter LENGTH = 12
 )(
     input  logic clk,
     input  logic rst,
