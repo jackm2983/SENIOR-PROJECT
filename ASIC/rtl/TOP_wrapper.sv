@@ -2,7 +2,7 @@
 
 module TOP_wrapper #(
     parameter int WIDTH = 1,
-    parameter int LENGTH = 12,
+    parameter int LENGTH = 4,
     parameter int MAX_SPIKES = 16,
     parameter int JUMP = 5,
 

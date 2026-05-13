@@ -7,7 +7,7 @@ module TOP_no_adc_tb;
     localparam int MAX_SPIKES = 16;
     localparam int JUMP = 5;
 
-    localparam int ADC_DIV = 32;
+    localparam int ADC_DIV = 500;  // Match 500-cycle sample period
     localparam int ADC_COMP_DELAY = 8;
 
     logic clk;
@@ -17,6 +17,9 @@ module TOP_no_adc_tb;
     logic [WIDTH*LENGTH-1:0] adc_data_in;
     logic [WIDTH-1:0] spikeP;
     logic [WIDTH-1:0] spikeN;
+
+    int spike_count_p;
+    int spike_count_n;
 
     TOP_no_adc #(
         .WIDTH(WIDTH),
@@ -43,21 +46,43 @@ module TOP_no_adc_tb;
         adc_valid = 1'b0;
         encoding_select = 2'b00;
         adc_data_in = 4'd0;
+        spike_count_p = 0;
+        spike_count_n = 0;
 
         repeat (5) @(posedge clk);
         rst = 1'b0;
 
+        // Test 1: Rate encoding - ramp 0-15
+        $display("[%t] Test 1: Rate Encoding", $time);
         encoding_select = 2'b00;
-        run_adc_ramp();
+        spike_count_p = 0;
+        spike_count_n = 0;
+        run_adc_ramp(0, 15, 1);
+        $display("[%t] Rate Encoding: Generated %0d spikeP, %0d spikeN", $time, spike_count_p, spike_count_n);
 
+        // Test 2: Temporal encoding - ramp 0-15
+        $display("[%t] Test 2: Temporal Encoding", $time);
         encoding_select = 2'b01;
-        run_adc_ramp();
+        spike_count_p = 0;
+        spike_count_n = 0;
+        run_adc_ramp(0, 15, 1);
+        $display("[%t] Temporal Encoding: Generated %0d spikeP, %0d spikeN", $time, spike_count_p, spike_count_n);
 
+        // Test 3: Delta encoding - step changes > JUMP threshold
+        $display("[%t] Test 3: Delta Encoding (with jumps > %0d)", $time, JUMP);
         encoding_select = 2'b10;
-        run_adc_ramp();
+        spike_count_p = 0;
+        spike_count_n = 0;
+        run_delta_test();
+        $display("[%t] Delta Encoding: Generated %0d spikeP, %0d spikeN", $time, spike_count_p, spike_count_n);
 
+        // Test 4: Multispike encoding - ramp 0-15
+        $display("[%t] Test 4: Multispike Encoding", $time);
         encoding_select = 2'b11;
-        run_adc_ramp();
+        spike_count_p = 0;
+        spike_count_n = 0;
+        run_adc_ramp(0, 15, 1);
+        $display("[%t] Multispike Encoding: Generated %0d spikeP, %0d spikeN", $time, spike_count_p, spike_count_n);
 
         repeat (100) @(posedge clk);
         $finish;
@@ -71,17 +96,69 @@ module TOP_no_adc_tb;
         end
     endtask
 
-    task automatic run_adc_ramp;
+    task automatic run_adc_ramp(int start_val, int end_val, int step);
         begin
-            for (int value = 0; value < 16; value++) begin
+            for (int value = start_val; value <= end_val; value = value + step) begin
                 adc_data_in = value[3:0];
 
                 // adc result becomes valid once per conversion frame
-                repeat (ADC_DIV - 1) @(posedge clk);
+                repeat (499) @(posedge clk);
                 pulse_adc_valid();
+                
+                // Wait for next sample period to start
+                repeat (1) @(posedge clk);
             end
         end
     endtask
+
+    task automatic run_delta_test;
+        begin
+            // Test sequence designed to trigger delta encoding
+            // JUMP threshold = 5, so we need changes > 5
+            
+            // Start at 0
+            adc_data_in = 4'd0;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+            
+            // Jump to 7 (change of +7 > JUMP)
+            adc_data_in = 4'd7;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+            
+            // Jump to 1 (change of -6 > JUMP)
+            adc_data_in = 4'd1;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+            
+            // Jump to 12 (change of +11 > JUMP)
+            adc_data_in = 4'd12;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+            
+            // Jump to 4 (change of -8 > JUMP)
+            adc_data_in = 4'd4;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+            
+            // Jump to 15 (change of +11 > JUMP)
+            adc_data_in = 4'd15;
+            repeat (499) @(posedge clk);
+            pulse_adc_valid();
+            repeat (1) @(posedge clk);
+        end
+    endtask
+
+    // Monitor spikes
+    always @(posedge clk) begin
+        if (spikeP) spike_count_p = spike_count_p + 1;
+        if (spikeN) spike_count_n = spike_count_n + 1;
+    end
 
     initial begin
         $dumpfile("TOP_no_adc_tb.vcd");

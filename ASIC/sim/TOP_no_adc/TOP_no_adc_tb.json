@@ -1,0 +1,51 @@
+{
+  "extensionVersion": "1.5.2",
+  "fileName": "/home/dev/carp-tools/workspace/seniorproj/sim/TOP_no_adc/TOP_no_adc_tb.vcd",
+  "markerTime": null,
+  "altMarkerTime": null,
+  "displayTimeUnit": "ps",
+  "selectedSignal": null,
+  "zoomRatio": 0.0000022158543043577716,
+  "scrollLeft": 0,
+  "displayedSignals": [
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 10,
+      "name": "TOP_no_adc_tb.adc_data_in",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "adc_data_in",
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 11,
+      "name": "TOP_no_adc_tb.spikeP",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "spikeP",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 12,
+      "name": "TOP_no_adc_tb.spikeN",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "spikeN",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    }
+  ]
+}

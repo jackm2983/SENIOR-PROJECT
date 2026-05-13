@@ -42,9 +42,10 @@ module multispike_mod #(
                     num_spikes[i]  <= (data_in[i] * MAX_SPIKES) >> LENGTH;
 
                     if (((data_in[i] * MAX_SPIKES) >> LENGTH) == 0) begin
-                        spike_interval[i] <= '1;
+                        spike_interval[i] <= 16'hFFFF;
                     end else begin
-                        spike_interval[i] <= (divider << 1) / ((data_in[i] * MAX_SPIKES) >> LENGTH);
+                        // spike_interval = divider / num_spikes
+                        spike_interval[i] <= (divider) / ((data_in[i] * MAX_SPIKES) >> LENGTH);
                     end
 
                     spike_count[i]      <= '0;
