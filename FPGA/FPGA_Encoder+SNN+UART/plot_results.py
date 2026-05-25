@@ -1,15 +1,33 @@
 #!/usr/bin/env python3
 """
-plot fpga streamer output. auto-detects mode (snn vs encoding) and only
-shows panels with data.
+plot fpga streamer output. auto-detects snn vs encoding, and for encoding mode
+applies the right semantics per encoder type.
 
-usage: python plot_results.py fpga_results.csv
+the csv does not record which encoder ran (the fpga packs the same fields for
+all of them), so pass --enc to tell the plotter how to read the spike_p field:
+
+  rate / delta / multispike : spike_p is a spike COUNT per window
+  temporal                  : spike_p is the spike POSITION in the window
+                              (time-to-first-spike), not a count
+
+usage:
+  python plot_results.py fpga_results.csv --enc rate
+  python plot_results.py fpga_results.csv --enc temporal
+  python plot_results.py fpga_results.csv            # snn or generic encoding
 """
 import sys
+import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
 
-csv_file = sys.argv[1] if len(sys.argv) > 1 else 'fpga_results.csv'
+p = argparse.ArgumentParser()
+p.add_argument('csv', nargs='?', default='fpga_results.csv')
+p.add_argument('--enc', choices=['rate', 'temporal', 'delta', 'multispike'],
+               default=None, help='which encoder produced this capture')
+args = p.parse_args()
+
+csv_file = args.csv
+enc = args.enc
 df = pd.read_csv(csv_file)
 
 # coerce empty strings to NaN, then to numeric
@@ -40,15 +58,41 @@ ann = df[df['ground_truth'].notna() & (df['ground_truth'].astype(str) != '')]
 for _, row in ann.iterrows():
     ax_ecg.axvline(row['sample_idx'], color='r', alpha=0.15, lw=0.5)
 
-# encoding spikes
+# encoding panel, semantics depend on encoder
 if has_enc:
     ax = axes[panels.index('enc')]
     sp = df['spike_p'].fillna(0)
     sn = df['spike_n'].fillna(0)
-    ax.plot(df['sample_idx'], sp, label='spike_p', lw=0.6, color='green')
-    ax.plot(df['sample_idx'], -sn, label='spike_n', lw=0.6, color='red')
-    ax.set_ylabel('spikes')
-    ax.legend(loc='upper right')
+
+    if enc == 'temporal':
+        # spike_p holds the time-to-first-spike position (0..63), not a count.
+        # plot it as a position trace. there is no negative-spike component.
+        ax.plot(df['sample_idx'], sp, label='spike position', lw=0.6, color='purple')
+        ax.set_ylabel('temporal\nspike position')
+        ax.set_ylim(0, 64)
+        ax.legend(loc='upper right')
+
+    elif enc == 'delta':
+        # delta is the only encoder that drives spike_n. show both polarities.
+        ax.plot(df['sample_idx'], sp, label='spike_p (up)', lw=0.6, color='green')
+        ax.plot(df['sample_idx'], -sn, label='spike_n (down)', lw=0.6, color='red')
+        ax.set_ylabel('delta\nspike count')
+        ax.legend(loc='upper right')
+
+    elif enc in ('rate', 'multispike'):
+        # count-coded, spike_n is always 0 for these. show count only.
+        label = f'{enc} spike count'
+        ax.plot(df['sample_idx'], sp, label=label, lw=0.6, color='green')
+        ax.set_ylabel(f'{enc}\nspike count')
+        ax.legend(loc='upper right')
+
+    else:
+        # no --enc given: generic view, show both fields as before
+        ax.plot(df['sample_idx'], sp, label='spike_p', lw=0.6, color='green')
+        ax.plot(df['sample_idx'], -sn, label='spike_n', lw=0.6, color='red')
+        ax.set_ylabel('spikes')
+        ax.legend(loc='upper right')
+
     ax.grid(alpha=0.3)
 
 # snn outputs
@@ -65,5 +109,5 @@ plt.tight_layout()
 
 out = csv_file.replace('.csv', '.png')
 plt.savefig(out, dpi=120)
-print(f"saved {out}  (mode: {'snn' if has_snn else 'encoding'})")
-plt.show()
+mode_str = 'snn' if has_snn else (enc if enc else 'encoding')
+print(f"saved {out}  (mode: {mode_str})")

@@ -40,22 +40,21 @@ def load_record(record_num, channel=0):
 
 def parse_result(raw_val, mode):
     if mode == 'snn':
-        # {7'b0, winner[4:0], fire[4:0]} -- wait, winner is 5 bits too
-        # from top: snn_output = {7'b0, snn_winner, snn_fire} with N_neurons=5
-        # that's 7 + 5 + 5 = 17 bits which overflows 12. the fpga truncates.
-        # actual 12-bit packing: lower 5 = fire, upper bits = winner (partial)
+        # {7'b0, winner[4:0], fire[4:0]} -- truncated to 12 bits by the fpga.
+        # lower 5 = fire, next bits = winner (partial)
         fire = raw_val & 0x1F
         winner = (raw_val >> 5) & 0x1F
         return {'fire': fire, 'winner': winner, 'spike_p': '', 'spike_n': ''}
     else:
-        # {input[9:0], spikeP, spikeN}
+        # encoding mode, new packing: {spikeP_count[5:0], spikeN_count[5:0]}
+        # each is a saturating 6-bit count (0..63) over the per-sample window.
+        # only delta drives spikeN, so spike_n is 0 for rate/temporal/multispike.
         return {
-            'spike_n': raw_val & 0x1,
-            'spike_p': (raw_val >> 1) & 0x1,
+            'spike_p': (raw_val >> 6) & 0x3F,
+            'spike_n': raw_val & 0x3F,
             'fire': '',
             'winner': '',
         }
-
 
 class Streamer:
     def __init__(self, port, record, mode, outfile, limit=None):

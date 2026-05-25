@@ -16,7 +16,9 @@ module TOP_wrapper #(
     input  logic [WIDTH*LENGTH-1:0]  data_in,
     input  logic [15:0]              divider,
     input  logic [1:0]               encoding_select,
-    (* max_fanout = 8 *) output logic sample_pulse,
+    // sample_pulse is now driven externally, one pulse per arriving sample.
+    // the old free-running counter is gone, it was uncorrelated with input.
+    (* max_fanout = 8 *) input  logic sample_pulse,
     output logic [WIDTH-1:0]         spikeP,
     output logic [WIDTH-1:0]         spikeN
 );
@@ -24,22 +26,6 @@ module TOP_wrapper #(
     logic [WIDTH-1:0] spikeP_temporal,   spikeN_temporal;
     logic [WIDTH-1:0] spikeP_delta,      spikeN_delta;
     logic [WIDTH-1:0] spikeP_multispike, spikeN_multispike;
-
-    // sample pulse generator
-    logic [15:0] sample_cnt;
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            sample_cnt   <= '0;
-            sample_pulse <= 1'b0;
-        end else begin
-            sample_pulse <= 1'b0;
-            sample_cnt   <= sample_cnt + 1;
-            if (sample_cnt >= divider) begin
-                sample_cnt   <= '0;
-                sample_pulse <= 1'b1;
-            end
-        end
-    end
 
     // ---------------- encoders ----------------
     // all on the same clk. each encoder has its own internal sample_pulse_q
