@@ -3,7 +3,7 @@
 module delta_mod #(
     parameter int WIDTH  = 1,
     parameter int LENGTH = 12,
-    parameter int JUMP   = 40
+    parameter int JUMP   = 60
 )(
     input  logic                     clk,
     input  logic                     rst,
