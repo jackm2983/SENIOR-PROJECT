@@ -1,4 +1,5 @@
 # Senior Project 2025-26
+Cal Poly SLO EE
 
 ### Team Members
 * **Wyatt Tack**
