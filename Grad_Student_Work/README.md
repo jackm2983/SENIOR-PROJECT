@@ -1,3 +1,8 @@
+See: https://github.com/ssrini22/neuromorphic_hardware
+
+
+
+## README
 Code that went through the Librelane flow; some results and config.json used below; Everything passed except 1 antenna pin/net violation
 
 KLayout:

@@ -1,0 +1,1 @@
+See 4bit_C2C for latest design.
