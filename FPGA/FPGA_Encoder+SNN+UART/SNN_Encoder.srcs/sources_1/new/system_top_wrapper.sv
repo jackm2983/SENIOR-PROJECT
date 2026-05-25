@@ -40,7 +40,7 @@ module system_top_wrapper #(
     parameter int WIDTH = 1,
     parameter int LENGTH = 12,
     parameter int MAX_SPIKES = 16,
-    parameter int JUMP = 5,
+    parameter int JUMP = 250,
     parameter int N_inputs = 2,
     parameter int N_neurons = 5,
     parameter int b_weight = 4,
