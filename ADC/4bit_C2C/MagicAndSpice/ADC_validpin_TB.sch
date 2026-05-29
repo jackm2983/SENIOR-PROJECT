@@ -35,13 +35,14 @@ value="
 
 "
 spice_ignore=false}
-C {code_shown.sym} -40 -140 0 0 {name=spice only_toplevel=false value=".tran 100u 60m 0 100u
+C {code_shown.sym} -40 -140 0 0 {name=spice only_toplevel=false value=".tran 100u 80.625m 0 100u
 .options method=gear reltol=1e-4
 .control
 run
 PLOT V(Vin) V(ADC_OUT0)+5 (ADC_OUT1)+8 V(ADC_OUT2)+11 V(ADC_OUT3)+14 V(VALID)+17
+wrdata adc_tran.txt v(Vin) v(ADC_OUT0) v(ADC_OUT1) v(ADC_OUT2) v(ADC_OUT3) v(VALID)
 .endc"}
-C {vsource.sym} 550 280 0 0 {name=V1 value="PWL(0 0 60m 5)" savecurrent=false}
+C {vsource.sym} 550 280 0 0 {name=V1 value="PWL(0 0 625u 0 80.625m 5)" savecurrent=false}
 C {gnd.sym} 550 310 0 0 {name=l8 lab=GND}
 C {lab_pin.sym} 550 250 1 0 {name=p5 sig_type=std_logic lab=Vin}
 C {vsource.sym} 610 280 0 0 {name=V4 value=5 savecurrent=false}
@@ -66,5 +67,5 @@ C {gnd.sym} 730 310 0 0 {name=l5 lab=GND}
 C {lab_pin.sym} 730 250 1 0 {name=p16 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 220 0 2 0 {name=p3 sig_type=std_logic lab=VSS}
 C {gnd.sym} 760 0 0 0 {name=l33 lab=GND}
-C {vsource.sym} 760 -30 0 0 {name=V10 value="PULSE(0 1.8 0 10n 10n 2.5m 3.125m)" savecurrent=false}
+C {vsource.sym} 760 -30 0 0 {name=V10 value="PULSE(0 1.8 625u 10n 10n 1e9 2e9)" savecurrent=false}
 C {lab_pin.sym} 760 -60 2 1 {name=p28 sig_type=std_logic lab=RST_N}

@@ -18,7 +18,7 @@ Cal Poly SLO EE
 ![](/Misc/Photos/klayout_final.png)
 *KLayout final layout*
 
-![](/Misc/Photos/adc_fsr_sim.png)
+![](/Misc/Photos/ADC_paracitic_noreset.png)
 *ADC full-scale range simulation*
 
 ![](/Misc/Photos/ecoding_schemes_with_4bitADC.png)
