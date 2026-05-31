@@ -30,3 +30,6 @@ inoremap <C-y> <Esc><C-r>i
 " ctrl+a select all
 nnoremap <C-a> ggVG
 inoremap <C-a> <Esc>ggVG
+
+set visualbell
+set t_vb=

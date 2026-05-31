@@ -28,6 +28,8 @@ RUN mkdir -p /home/ee431/scripts && \
     mkdir -p /home/ee431/.xschem && \
     chown -R ubuntu:ubuntu /home/ee431
 
+RUN echo 'set bell-style none' >> /root/.inputrc
+
 COPY LVS /home/ee431/scripts/LVS
 COPY LVS /usr/local/bin/LVS
 COPY vimrc /home/ee431/.vimrc
