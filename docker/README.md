@@ -9,7 +9,7 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt install -y build-essenti
 
 Then do these commands:
 ```bash
-cd SENIOR-PROJECT/docker
+cd ~/SENIOR-PROJECT/docker
 ./build.sh
 ./run.sh
 ```
