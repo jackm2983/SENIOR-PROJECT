@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import os, sys, re, tempfile, subprocess
+
+if len(sys.argv) not in (3, 5):
+    print('usage: LVS file1.spice file2.spice [cell1 cell2]')
+    sys.exit(1)
+
+setup = '/usr/local/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl'
+
+def prep(path, forced_cell=None):
+    text = open(path).read()
+    text = re.sub(r'^\*\*\.', '.', text, flags=re.MULTILINE)
+    matches = re.findall(r'^\.subckt\s+(\S+)', text, re.MULTILINE)
+
+    if forced_cell:
+        cell = forced_cell
+    elif matches:
+        cell = matches[0]
+    else:
+        cell = os.path.splitext(os.path.basename(path))[0]
+
+    tmp = tempfile.NamedTemporaryFile(mode='w', suffix='.spice', delete=False)
+    tmp.write(text)
+    tmp.close()
+    return tmp.name, cell
+
+forced1 = sys.argv[3] if len(sys.argv) == 5 else None
+forced2 = sys.argv[4] if len(sys.argv) == 5 else None
+
+f1, c1 = prep(sys.argv[1], forced1)
+f2, c2 = prep(sys.argv[2], forced2)
+
+subprocess.run([
+    'netgen', '-batch', 'lvs',
+    f'{f1} {c1}',
+    f'{f2} {c2}',
+    setup
+])

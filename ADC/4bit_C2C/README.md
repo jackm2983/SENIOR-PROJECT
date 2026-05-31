@@ -1,6 +1,12 @@
 ## Setup
 
-To use the files in MagicAndSpice, run them inside the EE431 Docker environment:
+To use the files in MagicAndSpice:
+
+Use the senior project docker.
+
+OR 
+
+Run them inside the EE431 Docker environment:
 
 https://github.com/HenryAEvans/EE431_Toolchain
 

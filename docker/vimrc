@@ -1,0 +1,32 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+syntax on
+
+" mouse enable
+set mouse=a
+
+" use system clipboard
+set clipboard=unnamedplus
+
+" ctrl+s to save
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
+
+" ctrl+c to copy (visual mode)
+vnoremap <C-c> "+y
+
+" ctrl+v to paste
+nnoremap <C-v> "+p
+inoremap <C-v> <C-r>+
+
+" ctrl+z undo, ctrl+y redo
+nnoremap <C-z> u
+inoremap <C-z> <Esc>ui
+nnoremap <C-y> <C-r>
+inoremap <C-y> <Esc><C-r>i
+
+" ctrl+a select all
+nnoremap <C-a> ggVG
+inoremap <C-a> <Esc>ggVG
