@@ -1,6 +1,13 @@
 ## Setup
 
-Clone the whole senior project repo into WSL. Then do these commands:
+Clone the whole senior project repo into WSL. 
+
+Install the dependencies:
+```bash
+sudo apt update && sudo apt full-upgrade -y && sudo apt install -y build-essential git curl wget unzip zip tar gdb htop net-tools man-db lsb-release software-properties-common python3 python3-pip python3-venv cmake valgrind openssh-client nodejs npm default-jdk golang tmux neofetch tree nano vim lsof
+```
+
+Then do these commands:
 ```bash
 cd SENIOR-PROJECT/docker
 ./build.sh
